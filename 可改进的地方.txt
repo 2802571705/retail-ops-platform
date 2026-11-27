@@ -1,0 +1,82 @@
+ 需要注意/可改进的地方：
+agent.py：
+
+agent_slots 是进程内限制
+多 worker/多副本时总并发不是 2，而是 2 × 进程数。若要全局限制，需要 Redis/数据库信号量。
+
+/runs 同步路由 + 同步 urlopen
+路由是同步 def，FastAPI 会放到线程池执行；Semaphore(2) 限制进入。慢模型调用不会阻塞事件循环，但会占用线程池线程。当前限制 2 个，影响可控。
+
+get_price_change_history 有 N+1 查询
+对最多 10 条变更逐条调用 effect，每条 effect 又做多次查询。虽然最多 10 条，但单次工具调用可能较慢，可考虑批量聚合。
+
+effect 被路由和工具复用
+dispatch_tool 里调用 effect(...)['data‮']，而 effect 是带 request、require_hq、response 包装的路由函数。功能可用，但耦合较重，未来可抽成纯服务函数。
+
+证据校验的日期类型要一致
+propose 中比较 JSONB 里的 scope.date_from/date_to 和 s 中的日期表示。需要确保 scope 返回的日期是 ISO 字符串，与 JSONB 反序列化结果一致；否则可能比较失败。当前代码依赖 scope 的实现。
+
+审批冲突先 commit 再返回 409
+这是有意设计：把建议标记为 STALE 并提交，然后返回冲突。调用方需要理解 409 时状态可能已变为 STALE。
+
+模型输出不是决策依据
+代码明确要求“具体数字及建议价以结构化工具证据为准”，审批也重新计算规则。模型总结只用于解释，不直接驱动写操作。
+
+
+agent_graph.py：
+
+第 4 轮模型如果还请求工具，工具会执行，但之后无法再总结。
+因为执行完工具回到 model 时 rounds=4，直接 ROUND_LIMIT。所以第 4 轮模型最好直接回答；否则会浪费工具调用并最终失败。
+
+TOOL_LIMIT 是整批拒绝。
+如果已执行 5 个，模型一次请求 2 个，则两个都不执行，直接失败，而不是执行 1 个到上限。
+
+successful 只统计成功次数，不校验工具与问题的相关性。
+相关性主要由 system prompt 和 agent.py 的工具白名单、固定 scope 保证；调价证据在 agent.py 的 propose 里还有额外精确校验。
+
+model_call 抛异常不在这里捕获。
+由 agent.py 的 ask 外层 try/except 捕获，并映射成 DEEPSEEK_NOT_CONFIGURED 或 DEEPSEEK_UNAVAILABLE。
+
+recursion_limit=12 与业务限制是两套机制。
+业务限制更严格；如果未来调整轮数或工具数，要确认 12 仍然够用。
+
+messages 手动复制追加，没有 reducer。
+节点返回的是完整的新列表，LangGraph 默认覆盖该字段。不要改成原地 append 后只返回部分状态，否则容易出问题。
+
+
+agent_metrics.py：
+
+RULES 与硬编码数字重复
+改规则时要同步改 metrics 和 price_allowed 里的数字，否则返回的 rules 与实际计算不一致。
+
+price_allowed 中 new != old 与四舍五入
+5% 步长在低价商品上可能四舍五入后等于原价。例如 old=1，(1*105+50)//100 = 1，new == old，会被 price_allowed 拒绝。这是合理的，但模型可能看到“有方向但被拒”。
+
+cover_days 用 used 而不是 q
+补货和库存覆盖看实际消耗，包含套餐；销量和增长率看单品销售。这是有意的口径区分，但解释时要清楚。
+
+growth_percent 上期为 0 返回 None
+不会出现“无限增长”，但模型需要理解 None 表示“无法计算”，不是 0。
+
+调价候选要求 date_to == 昨天
+指标查询可以查历史 30 天，但调价候选只认最新完整窗口。这是为了避免用过期数据生成调价建议。
+
+tool_result 最多 50 条
+超过会截断并标记 truncated。模型看到的是前 50 条，排序规则决定了哪些进入前 50：
+
+补货按补货量降序；
+
+调价候选按 SQL 的门店/商品顺序（因为 price_candidates 没有额外排序）；
+
+SKU 销量按销量降序。
+
+observed_at = now() 是数据库时间
+冷却期比较用的是数据库 now() 和 last_price_changed_at，两者都来自数据库，避免应用服务器时钟偏差。
+
+
+其他：
+
+库存和商品价格调整也可以交给agent
+
+当前经营任务的主要数据来源是结构化 PostgreSQL 数据，而不是非结构化知识库，所以暂不引入 RAG、向量数据库、Multi-Agent、MCP Server 等额外组件。
+‮‭

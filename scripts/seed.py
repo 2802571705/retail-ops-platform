@@ -116,4 +116,6 @@ with Session(engine) as db:
     db.commit()
 
 print("门店、商品、库存、套餐及三个角色账号已写入数据库。重复执行不会重置库存或覆盖业务数据。")
-print("角色邮箱：demo.consumer@example.com / demo.store@example.com / demo.hq@example.com")
+print("角色邮箱：" + " / ".join(
+    email for email, _, _ in identities
+))

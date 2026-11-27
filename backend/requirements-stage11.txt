@@ -1,0 +1,2 @@
+# Explicit graph orchestration; langchain-core is installed transitively.
+langgraph>=1.0,<2

@@ -9,6 +9,18 @@ from fastapi import Depends
 from sqlalchemy import create_engine
 from sqlalchemy.orm import Session
 
+"""
+FastAPI 请求
+   ↓
+get_db() 依赖
+   ↓
+Session(engine)  ← engine 用 QueuePool(pool_size=5, max_overflow=10, timeout=30s)
+   ↓
+业务查询/提交
+   ↓
+with 块结束自动关闭，连接归还池
+"""
+
 load_dotenv(Path(__file__).resolve().parents[3] / ".env")
 
 url = os.getenv("DATABASE_URL")
