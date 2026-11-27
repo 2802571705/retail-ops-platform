@@ -1,0 +1,849 @@
+INFO:     Started server process [5624]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+INFO:     Uvicorn running on http://127.0.0.1:8001 (Press CTRL+C to quit)
+INFO:     127.0.0.1:50537 - "GET /openapi.json HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52995 - "POST /auth/login HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52999 - "POST /auth/login HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53001 - "GET /stores/1/catalog HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53873 - "POST /auth/register HTTP/1.1" 201 Created
+INFO:     127.0.0.1:53875 - "POST /auth/login HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53877 - "POST /auth/register HTTP/1.1" 201 Created
+INFO:     127.0.0.1:53879 - "POST /auth/login HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53880 - "POST /auth/register HTTP/1.1" 201 Created
+INFO:     127.0.0.1:53881 - "POST /auth/login HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53882 - "POST /auth/register HTTP/1.1" 201 Created
+INFO:     127.0.0.1:53883 - "POST /auth/login HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53884 - "POST /auth/register HTTP/1.1" 201 Created
+INFO:     127.0.0.1:53885 - "POST /auth/login HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53886 - "POST /auth/register HTTP/1.1" 201 Created
+INFO:     127.0.0.1:53887 - "POST /auth/login HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53888 - "POST /auth/register HTTP/1.1" 201 Created
+INFO:     127.0.0.1:53889 - "POST /auth/login HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53890 - "POST /auth/register HTTP/1.1" 201 Created
+INFO:     127.0.0.1:53891 - "POST /auth/login HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53892 - "POST /auth/register HTTP/1.1" 201 Created
+INFO:     127.0.0.1:53893 - "POST /auth/login HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53894 - "POST /auth/register HTTP/1.1" 201 Created
+INFO:     127.0.0.1:53895 - "POST /auth/login HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53996 - "POST /auth/register HTTP/1.1" 201 Created
+INFO:     127.0.0.1:53997 - "POST /auth/login HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54003 - "POST /auth/register HTTP/1.1" 201 Created
+INFO:     127.0.0.1:54006 - "POST /auth/login HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54007 - "POST /auth/register HTTP/1.1" 201 Created
+INFO:     127.0.0.1:54008 - "POST /auth/login HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54009 - "POST /auth/register HTTP/1.1" 201 Created
+INFO:     127.0.0.1:54010 - "POST /auth/login HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54011 - "POST /auth/register HTTP/1.1" 201 Created
+INFO:     127.0.0.1:54012 - "POST /auth/login HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54013 - "POST /auth/register HTTP/1.1" 201 Created
+INFO:     127.0.0.1:54014 - "POST /auth/login HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54015 - "POST /auth/register HTTP/1.1" 201 Created
+INFO:     127.0.0.1:54016 - "POST /auth/login HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54017 - "POST /auth/register HTTP/1.1" 201 Created
+INFO:     127.0.0.1:54018 - "POST /auth/login HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54019 - "POST /auth/register HTTP/1.1" 201 Created
+INFO:     127.0.0.1:54020 - "POST /auth/login HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54021 - "POST /auth/register HTTP/1.1" 201 Created
+INFO:     127.0.0.1:54022 - "POST /auth/login HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54023 - "POST /auth/register HTTP/1.1" 201 Created
+INFO:     127.0.0.1:54024 - "POST /auth/login HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54025 - "POST /auth/register HTTP/1.1" 201 Created
+INFO:     127.0.0.1:54026 - "POST /auth/login HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54027 - "POST /auth/register HTTP/1.1" 201 Created
+INFO:     127.0.0.1:54028 - "POST /auth/login HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54029 - "POST /auth/register HTTP/1.1" 201 Created
+INFO:     127.0.0.1:54030 - "POST /auth/login HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54031 - "POST /auth/register HTTP/1.1" 201 Created
+INFO:     127.0.0.1:54032 - "POST /auth/login HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54033 - "POST /auth/register HTTP/1.1" 201 Created
+INFO:     127.0.0.1:54034 - "POST /auth/login HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54035 - "POST /auth/register HTTP/1.1" 201 Created
+INFO:     127.0.0.1:54036 - "POST /auth/login HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54037 - "POST /auth/register HTTP/1.1" 201 Created
+INFO:     127.0.0.1:54038 - "POST /auth/login HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54039 - "POST /auth/register HTTP/1.1" 201 Created
+INFO:     127.0.0.1:54040 - "POST /auth/login HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54041 - "POST /auth/register HTTP/1.1" 201 Created
+INFO:     127.0.0.1:54042 - "POST /auth/login HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54043 - "POST /auth/register HTTP/1.1" 201 Created
+INFO:     127.0.0.1:54044 - "POST /auth/login HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54045 - "POST /auth/register HTTP/1.1" 201 Created
+INFO:     127.0.0.1:54046 - "POST /auth/login HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54047 - "POST /auth/register HTTP/1.1" 201 Created
+INFO:     127.0.0.1:54048 - "POST /auth/login HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54049 - "POST /auth/register HTTP/1.1" 201 Created
+INFO:     127.0.0.1:54050 - "POST /auth/login HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54051 - "POST /auth/register HTTP/1.1" 201 Created
+INFO:     127.0.0.1:54052 - "POST /auth/login HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54053 - "POST /auth/register HTTP/1.1" 201 Created
+INFO:     127.0.0.1:54054 - "POST /auth/login HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54055 - "POST /auth/register HTTP/1.1" 201 Created
+INFO:     127.0.0.1:54056 - "POST /auth/login HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54057 - "POST /auth/register HTTP/1.1" 201 Created
+INFO:     127.0.0.1:54058 - "POST /auth/login HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54059 - "POST /auth/register HTTP/1.1" 201 Created
+INFO:     127.0.0.1:54060 - "POST /auth/login HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54061 - "POST /auth/register HTTP/1.1" 201 Created
+INFO:     127.0.0.1:54062 - "POST /auth/login HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54063 - "POST /auth/register HTTP/1.1" 201 Created
+INFO:     127.0.0.1:54065 - "POST /auth/login HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54066 - "POST /auth/register HTTP/1.1" 201 Created
+INFO:     127.0.0.1:54067 - "POST /auth/login HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54068 - "POST /auth/register HTTP/1.1" 201 Created
+INFO:     127.0.0.1:50572 - "POST /auth/login HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50573 - "POST /auth/register HTTP/1.1" 201 Created
+INFO:     127.0.0.1:50574 - "POST /auth/login HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50575 - "POST /auth/register HTTP/1.1" 201 Created
+INFO:     127.0.0.1:61576 - "POST /auth/login HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61577 - "POST /auth/register HTTP/1.1" 201 Created
+INFO:     127.0.0.1:61578 - "POST /auth/login HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61579 - "POST /auth/register HTTP/1.1" 201 Created
+INFO:     127.0.0.1:61580 - "POST /auth/login HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61581 - "POST /auth/register HTTP/1.1" 201 Created
+INFO:     127.0.0.1:61582 - "POST /auth/login HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61583 - "POST /auth/register HTTP/1.1" 201 Created
+INFO:     127.0.0.1:61585 - "POST /auth/login HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61586 - "POST /auth/register HTTP/1.1" 201 Created
+INFO:     127.0.0.1:61587 - "POST /auth/login HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61588 - "POST /auth/register HTTP/1.1" 201 Created
+INFO:     127.0.0.1:61589 - "POST /auth/login HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61590 - "POST /auth/register HTTP/1.1" 201 Created
+INFO:     127.0.0.1:61591 - "POST /auth/login HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61592 - "POST /auth/register HTTP/1.1" 201 Created
+INFO:     127.0.0.1:61593 - "POST /auth/login HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61594 - "POST /auth/register HTTP/1.1" 201 Created
+INFO:     127.0.0.1:61595 - "POST /auth/login HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61596 - "POST /auth/register HTTP/1.1" 201 Created
+INFO:     127.0.0.1:61597 - "POST /auth/login HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61598 - "POST /auth/register HTTP/1.1" 201 Created
+INFO:     127.0.0.1:61599 - "POST /auth/login HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61600 - "POST /auth/register HTTP/1.1" 201 Created
+INFO:     127.0.0.1:61601 - "POST /auth/login HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61602 - "POST /auth/register HTTP/1.1" 201 Created
+INFO:     127.0.0.1:61603 - "POST /auth/login HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61604 - "POST /auth/register HTTP/1.1" 201 Created
+INFO:     127.0.0.1:61605 - "POST /auth/login HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61606 - "POST /auth/register HTTP/1.1" 201 Created
+INFO:     127.0.0.1:61607 - "POST /auth/login HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61608 - "POST /auth/register HTTP/1.1" 201 Created
+INFO:     127.0.0.1:61609 - "POST /auth/login HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61610 - "POST /auth/register HTTP/1.1" 201 Created
+INFO:     127.0.0.1:61611 - "POST /auth/login HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61612 - "POST /auth/register HTTP/1.1" 201 Created
+INFO:     127.0.0.1:61613 - "POST /auth/login HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61614 - "POST /auth/register HTTP/1.1" 201 Created
+INFO:     127.0.0.1:61615 - "POST /auth/login HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61616 - "POST /auth/register HTTP/1.1" 201 Created
+INFO:     127.0.0.1:61617 - "POST /auth/login HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61618 - "POST /auth/register HTTP/1.1" 201 Created
+INFO:     127.0.0.1:61619 - "POST /auth/login HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61620 - "POST /auth/register HTTP/1.1" 201 Created
+INFO:     127.0.0.1:61621 - "POST /auth/login HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61622 - "POST /auth/register HTTP/1.1" 201 Created
+INFO:     127.0.0.1:61623 - "POST /auth/login HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61624 - "POST /auth/register HTTP/1.1" 201 Created
+INFO:     127.0.0.1:61625 - "POST /auth/login HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61626 - "POST /auth/register HTTP/1.1" 201 Created
+INFO:     127.0.0.1:61627 - "POST /auth/login HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61628 - "POST /auth/register HTTP/1.1" 201 Created
+INFO:     127.0.0.1:61629 - "POST /auth/login HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61630 - "POST /auth/register HTTP/1.1" 201 Created
+INFO:     127.0.0.1:61631 - "POST /auth/login HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61632 - "POST /auth/register HTTP/1.1" 201 Created
+INFO:     127.0.0.1:61633 - "POST /auth/login HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61634 - "POST /auth/register HTTP/1.1" 201 Created
+INFO:     127.0.0.1:61635 - "POST /auth/login HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61636 - "POST /auth/register HTTP/1.1" 201 Created
+INFO:     127.0.0.1:61637 - "POST /auth/login HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61638 - "POST /auth/register HTTP/1.1" 201 Created
+INFO:     127.0.0.1:61639 - "POST /auth/login HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61640 - "POST /auth/register HTTP/1.1" 201 Created
+INFO:     127.0.0.1:61641 - "POST /auth/login HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61642 - "POST /auth/register HTTP/1.1" 201 Created
+INFO:     127.0.0.1:61643 - "POST /auth/login HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61644 - "POST /auth/register HTTP/1.1" 201 Created
+INFO:     127.0.0.1:61645 - "POST /auth/login HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61646 - "POST /auth/register HTTP/1.1" 201 Created
+INFO:     127.0.0.1:61647 - "POST /auth/login HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61648 - "POST /auth/register HTTP/1.1" 201 Created
+INFO:     127.0.0.1:61649 - "POST /auth/login HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61650 - "POST /auth/register HTTP/1.1" 201 Created
+INFO:     127.0.0.1:61651 - "POST /auth/login HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61652 - "POST /auth/register HTTP/1.1" 201 Created
+INFO:     127.0.0.1:61653 - "POST /auth/login HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61654 - "POST /auth/register HTTP/1.1" 201 Created
+INFO:     127.0.0.1:61655 - "POST /auth/login HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61656 - "POST /auth/register HTTP/1.1" 201 Created
+INFO:     127.0.0.1:61658 - "POST /auth/login HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61659 - "POST /auth/register HTTP/1.1" 201 Created
+INFO:     127.0.0.1:61660 - "POST /auth/login HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61662 - "POST /auth/register HTTP/1.1" 201 Created
+INFO:     127.0.0.1:59135 - "POST /auth/login HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59136 - "POST /auth/register HTTP/1.1" 201 Created
+INFO:     127.0.0.1:59137 - "POST /auth/login HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59967 - "POST /auth/register HTTP/1.1" 201 Created
+INFO:     127.0.0.1:59968 - "POST /auth/login HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59969 - "POST /auth/register HTTP/1.1" 201 Created
+INFO:     127.0.0.1:59970 - "POST /auth/login HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59971 - "POST /auth/register HTTP/1.1" 201 Created
+INFO:     127.0.0.1:59972 - "POST /auth/login HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59973 - "POST /auth/register HTTP/1.1" 201 Created
+INFO:     127.0.0.1:59974 - "POST /auth/login HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59975 - "POST /auth/register HTTP/1.1" 201 Created
+INFO:     127.0.0.1:59976 - "POST /auth/login HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59977 - "POST /auth/register HTTP/1.1" 201 Created
+INFO:     127.0.0.1:59978 - "POST /auth/login HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59979 - "POST /auth/register HTTP/1.1" 201 Created
+INFO:     127.0.0.1:59980 - "POST /auth/login HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59981 - "POST /auth/register HTTP/1.1" 201 Created
+INFO:     127.0.0.1:59982 - "POST /auth/login HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59983 - "POST /auth/register HTTP/1.1" 201 Created
+INFO:     127.0.0.1:59984 - "POST /auth/login HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59985 - "POST /auth/register HTTP/1.1" 201 Created
+INFO:     127.0.0.1:59986 - "POST /auth/login HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59987 - "POST /auth/register HTTP/1.1" 201 Created
+INFO:     127.0.0.1:59988 - "POST /auth/login HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59989 - "POST /auth/register HTTP/1.1" 201 Created
+INFO:     127.0.0.1:59990 - "POST /auth/login HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59991 - "POST /admin/stores/1/stock-adjustments HTTP/1.1" 201 Created
+INFO:     127.0.0.1:59993 - "POST /orders HTTP/1.1" 201 Created
+INFO:     127.0.0.1:59994 - "POST /orders HTTP/1.1" 201 Created
+INFO:     127.0.0.1:59995 - "POST /orders HTTP/1.1" 201 Created
+INFO:     127.0.0.1:59996 - "POST /orders HTTP/1.1" 201 Created
+INFO:     127.0.0.1:59997 - "POST /orders HTTP/1.1" 201 Created
+INFO:     127.0.0.1:59998 - "POST /orders HTTP/1.1" 201 Created
+INFO:     127.0.0.1:59999 - "POST /orders HTTP/1.1" 201 Created
+INFO:     127.0.0.1:60000 - "POST /orders HTTP/1.1" 201 Created
+INFO:     127.0.0.1:60001 - "POST /orders HTTP/1.1" 201 Created
+INFO:     127.0.0.1:60002 - "POST /orders HTTP/1.1" 201 Created
+INFO:     127.0.0.1:60003 - "POST /orders HTTP/1.1" 201 Created
+INFO:     127.0.0.1:60004 - "POST /orders HTTP/1.1" 201 Created
+INFO:     127.0.0.1:60005 - "POST /orders HTTP/1.1" 201 Created
+INFO:     127.0.0.1:60006 - "POST /orders HTTP/1.1" 201 Created
+INFO:     127.0.0.1:60007 - "POST /orders HTTP/1.1" 201 Created
+INFO:     127.0.0.1:60008 - "POST /orders HTTP/1.1" 201 Created
+INFO:     127.0.0.1:60009 - "POST /orders HTTP/1.1" 201 Created
+INFO:     127.0.0.1:60010 - "POST /orders HTTP/1.1" 201 Created
+INFO:     127.0.0.1:60011 - "POST /orders HTTP/1.1" 201 Created
+INFO:     127.0.0.1:60012 - "POST /orders HTTP/1.1" 201 Created
+INFO:     127.0.0.1:60013 - "POST /orders HTTP/1.1" 201 Created
+INFO:     127.0.0.1:60014 - "POST /orders HTTP/1.1" 201 Created
+INFO:     127.0.0.1:60015 - "POST /orders HTTP/1.1" 201 Created
+INFO:     127.0.0.1:60016 - "POST /orders HTTP/1.1" 201 Created
+INFO:     127.0.0.1:60017 - "POST /orders HTTP/1.1" 201 Created
+INFO:     127.0.0.1:60018 - "POST /orders HTTP/1.1" 201 Created
+INFO:     127.0.0.1:60019 - "POST /orders HTTP/1.1" 201 Created
+INFO:     127.0.0.1:60020 - "POST /orders HTTP/1.1" 201 Created
+INFO:     127.0.0.1:60021 - "POST /orders HTTP/1.1" 201 Created
+INFO:     127.0.0.1:60022 - "POST /orders HTTP/1.1" 201 Created
+INFO:     127.0.0.1:60023 - "POST /orders HTTP/1.1" 201 Created
+INFO:     127.0.0.1:60024 - "POST /orders HTTP/1.1" 201 Created
+INFO:     127.0.0.1:60025 - "POST /orders HTTP/1.1" 201 Created
+INFO:     127.0.0.1:60026 - "POST /orders HTTP/1.1" 201 Created
+INFO:     127.0.0.1:60027 - "POST /orders HTTP/1.1" 201 Created
+INFO:     127.0.0.1:60028 - "POST /orders HTTP/1.1" 201 Created
+INFO:     127.0.0.1:60029 - "POST /orders HTTP/1.1" 201 Created
+INFO:     127.0.0.1:60030 - "POST /orders HTTP/1.1" 201 Created
+INFO:     127.0.0.1:60031 - "POST /orders HTTP/1.1" 201 Created
+INFO:     127.0.0.1:60032 - "POST /orders HTTP/1.1" 201 Created
+INFO:     127.0.0.1:60033 - "POST /orders HTTP/1.1" 201 Created
+INFO:     127.0.0.1:60034 - "POST /orders HTTP/1.1" 201 Created
+INFO:     127.0.0.1:60035 - "POST /orders HTTP/1.1" 201 Created
+INFO:     127.0.0.1:60036 - "POST /orders HTTP/1.1" 201 Created
+INFO:     127.0.0.1:60037 - "POST /orders HTTP/1.1" 201 Created
+INFO:     127.0.0.1:60038 - "POST /orders HTTP/1.1" 201 Created
+INFO:     127.0.0.1:60039 - "POST /orders HTTP/1.1" 201 Created
+INFO:     127.0.0.1:60040 - "POST /orders HTTP/1.1" 201 Created
+INFO:     127.0.0.1:60041 - "POST /orders HTTP/1.1" 201 Created
+INFO:     127.0.0.1:60042 - "POST /orders HTTP/1.1" 201 Created
+INFO:     127.0.0.1:60043 - "POST /orders HTTP/1.1" 201 Created
+INFO:     127.0.0.1:60044 - "POST /orders HTTP/1.1" 201 Created
+INFO:     127.0.0.1:60045 - "POST /orders HTTP/1.1" 201 Created
+INFO:     127.0.0.1:60046 - "POST /orders HTTP/1.1" 201 Created
+INFO:     127.0.0.1:60047 - "POST /orders HTTP/1.1" 201 Created
+INFO:     127.0.0.1:60048 - "POST /orders HTTP/1.1" 201 Created
+INFO:     127.0.0.1:60050 - "POST /orders HTTP/1.1" 201 Created
+INFO:     127.0.0.1:60051 - "POST /orders HTTP/1.1" 201 Created
+INFO:     127.0.0.1:60052 - "POST /orders HTTP/1.1" 201 Created
+INFO:     127.0.0.1:60053 - "POST /orders HTTP/1.1" 201 Created
+INFO:     127.0.0.1:60054 - "POST /orders HTTP/1.1" 201 Created
+INFO:     127.0.0.1:60055 - "POST /orders HTTP/1.1" 201 Created
+INFO:     127.0.0.1:60056 - "POST /orders HTTP/1.1" 201 Created
+INFO:     127.0.0.1:60057 - "POST /orders HTTP/1.1" 201 Created
+INFO:     127.0.0.1:60058 - "POST /orders HTTP/1.1" 201 Created
+INFO:     127.0.0.1:60059 - "POST /orders HTTP/1.1" 201 Created
+INFO:     127.0.0.1:60060 - "POST /orders HTTP/1.1" 201 Created
+INFO:     127.0.0.1:60061 - "POST /orders HTTP/1.1" 201 Created
+INFO:     127.0.0.1:60062 - "POST /orders HTTP/1.1" 201 Created
+INFO:     127.0.0.1:60063 - "POST /orders HTTP/1.1" 201 Created
+INFO:     127.0.0.1:60064 - "POST /orders HTTP/1.1" 201 Created
+INFO:     127.0.0.1:60065 - "POST /orders HTTP/1.1" 201 Created
+INFO:     127.0.0.1:60066 - "POST /orders HTTP/1.1" 201 Created
+INFO:     127.0.0.1:60067 - "POST /orders HTTP/1.1" 201 Created
+INFO:     127.0.0.1:60068 - "POST /orders HTTP/1.1" 201 Created
+INFO:     127.0.0.1:60069 - "POST /orders HTTP/1.1" 201 Created
+INFO:     127.0.0.1:60070 - "POST /orders HTTP/1.1" 201 Created
+INFO:     127.0.0.1:60071 - "POST /orders HTTP/1.1" 201 Created
+INFO:     127.0.0.1:60072 - "POST /orders HTTP/1.1" 201 Created
+INFO:     127.0.0.1:60073 - "POST /orders HTTP/1.1" 201 Created
+INFO:     127.0.0.1:60074 - "POST /orders HTTP/1.1" 201 Created
+INFO:     127.0.0.1:59456 - "POST /orders HTTP/1.1" 201 Created
+INFO:     127.0.0.1:59457 - "POST /orders HTTP/1.1" 201 Created
+INFO:     127.0.0.1:59458 - "POST /orders HTTP/1.1" 201 Created
+INFO:     127.0.0.1:59459 - "POST /orders HTTP/1.1" 201 Created
+INFO:     127.0.0.1:59460 - "POST /orders HTTP/1.1" 201 Created
+INFO:     127.0.0.1:59461 - "POST /orders HTTP/1.1" 201 Created
+INFO:     127.0.0.1:59462 - "POST /orders HTTP/1.1" 201 Created
+INFO:     127.0.0.1:59463 - "POST /orders HTTP/1.1" 201 Created
+INFO:     127.0.0.1:51010 - "POST /orders HTTP/1.1" 201 Created
+INFO:     127.0.0.1:51011 - "POST /orders HTTP/1.1" 201 Created
+INFO:     127.0.0.1:51012 - "POST /orders HTTP/1.1" 201 Created
+INFO:     127.0.0.1:51013 - "POST /orders HTTP/1.1" 201 Created
+INFO:     127.0.0.1:51014 - "POST /orders HTTP/1.1" 201 Created
+INFO:     127.0.0.1:51015 - "POST /orders HTTP/1.1" 201 Created
+INFO:     127.0.0.1:51016 - "POST /orders HTTP/1.1" 201 Created
+INFO:     127.0.0.1:51017 - "POST /orders HTTP/1.1" 201 Created
+INFO:     127.0.0.1:51018 - "POST /orders HTTP/1.1" 201 Created
+INFO:     127.0.0.1:51019 - "POST /orders HTTP/1.1" 201 Created
+INFO:     127.0.0.1:51020 - "POST /orders HTTP/1.1" 201 Created
+INFO:     127.0.0.1:51025 - "POST /orders/100/pay HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51032 - "POST /orders/8/pay HTTP/1.1" 409 Conflict
+INFO:     127.0.0.1:51046 - "POST /orders/72/pay HTTP/1.1" 409 Conflict
+INFO:     127.0.0.1:51044 - "POST /orders/16/pay HTTP/1.1" 409 Conflict
+INFO:     127.0.0.1:51026 - "POST /orders/34/pay HTTP/1.1" 409 Conflict
+INFO:     127.0.0.1:51030 - "POST /orders/25/pay HTTP/1.1" 409 Conflict
+INFO:     127.0.0.1:51024 - "POST /orders/4/pay HTTP/1.1" 409 Conflict
+INFO:     127.0.0.1:51048 - "POST /orders/41/pay HTTP/1.1" 409 Conflict
+INFO:     127.0.0.1:51028 - "POST /orders/90/pay HTTP/1.1" 409 Conflict
+INFO:     127.0.0.1:51033 - "POST /orders/87/pay HTTP/1.1" 409 Conflict
+INFO:     127.0.0.1:51037 - "POST /orders/66/pay HTTP/1.1" 409 Conflict
+INFO:     127.0.0.1:51034 - "POST /orders/94/pay HTTP/1.1" 409 Conflict
+INFO:     127.0.0.1:51040 - "POST /orders/36/pay HTTP/1.1" 409 Conflict
+INFO:     127.0.0.1:51021 - "POST /orders/58/pay HTTP/1.1" 409 Conflict
+INFO:     127.0.0.1:51029 - "POST /orders/49/pay HTTP/1.1" 409 Conflict
+INFO:     127.0.0.1:51035 - "POST /orders/79/pay HTTP/1.1" 409 Conflict
+INFO:     127.0.0.1:51039 - "POST /orders/47/pay HTTP/1.1" 409 Conflict
+INFO:     127.0.0.1:51036 - "POST /orders/80/pay HTTP/1.1" 409 Conflict
+INFO:     127.0.0.1:51043 - "POST /orders/31/pay HTTP/1.1" 409 Conflict
+INFO:     127.0.0.1:51023 - "POST /orders/3/pay HTTP/1.1" 409 Conflict
+INFO:     127.0.0.1:51041 - "POST /orders/51/pay HTTP/1.1" 409 Conflict
+INFO:     127.0.0.1:51045 - "POST /orders/88/pay HTTP/1.1" 409 Conflict
+INFO:     127.0.0.1:51027 - "POST /orders/7/pay HTTP/1.1" 409 Conflict
+INFO:     127.0.0.1:51049 - "POST /orders/44/pay HTTP/1.1" 409 Conflict
+INFO:     127.0.0.1:51047 - "POST /orders/57/pay HTTP/1.1" 409 Conflict
+INFO:     127.0.0.1:51038 - "POST /orders/65/pay HTTP/1.1" 409 Conflict
+INFO:     127.0.0.1:51031 - "POST /orders/15/pay HTTP/1.1" 409 Conflict
+INFO:     127.0.0.1:51042 - "POST /orders/33/pay HTTP/1.1" 409 Conflict
+INFO:     127.0.0.1:51022 - "POST /orders/50/pay HTTP/1.1" 409 Conflict
+INFO:     127.0.0.1:51050 - "POST /orders/28/pay HTTP/1.1" 409 Conflict
+INFO:     127.0.0.1:51051 - "POST /orders/77/pay HTTP/1.1" 409 Conflict
+INFO:     127.0.0.1:51053 - "POST /orders/9/pay HTTP/1.1" 409 Conflict
+INFO:     127.0.0.1:51055 - "POST /orders/12/pay HTTP/1.1" 409 Conflict
+INFO:     127.0.0.1:51058 - "POST /orders/53/pay HTTP/1.1" 409 Conflict
+INFO:     127.0.0.1:51054 - "POST /orders/10/pay HTTP/1.1" 409 Conflict
+INFO:     127.0.0.1:51057 - "POST /orders/6/pay HTTP/1.1" 409 Conflict
+INFO:     127.0.0.1:51052 - "POST /orders/23/pay HTTP/1.1" 409 Conflict
+INFO:     127.0.0.1:51061 - "POST /orders/17/pay HTTP/1.1" 409 Conflict
+INFO:     127.0.0.1:51059 - "POST /orders/48/pay HTTP/1.1" 409 Conflict
+INFO:     127.0.0.1:51060 - "POST /orders/52/pay HTTP/1.1" 409 Conflict
+INFO:     127.0.0.1:51056 - "POST /orders/1/pay HTTP/1.1" 409 Conflict
+INFO:     127.0.0.1:51062 - "POST /orders/70/pay HTTP/1.1" 409 Conflict
+INFO:     127.0.0.1:51064 - "POST /orders/54/pay HTTP/1.1" 409 Conflict
+INFO:     127.0.0.1:51063 - "POST /orders/59/pay HTTP/1.1" 409 Conflict
+INFO:     127.0.0.1:51065 - "POST /orders/45/pay HTTP/1.1" 409 Conflict
+INFO:     127.0.0.1:51068 - "POST /orders/26/pay HTTP/1.1" 409 Conflict
+INFO:     127.0.0.1:51066 - "POST /orders/42/pay HTTP/1.1" 409 Conflict
+INFO:     127.0.0.1:51067 - "POST /orders/73/pay HTTP/1.1" 409 Conflict
+INFO:     127.0.0.1:51069 - "POST /orders/89/pay HTTP/1.1" 409 Conflict
+INFO:     127.0.0.1:51070 - "POST /orders/5/pay HTTP/1.1" 409 Conflict
+INFO:     127.0.0.1:51072 - "POST /orders/38/pay HTTP/1.1" 409 Conflict
+INFO:     127.0.0.1:51073 - "POST /orders/98/pay HTTP/1.1" 409 Conflict
+INFO:     127.0.0.1:51071 - "POST /orders/13/pay HTTP/1.1" 409 Conflict
+INFO:     127.0.0.1:51075 - "POST /orders/82/pay HTTP/1.1" 409 Conflict
+INFO:     127.0.0.1:51074 - "POST /orders/83/pay HTTP/1.1" 409 Conflict
+INFO:     127.0.0.1:51077 - "POST /orders/68/pay HTTP/1.1" 409 Conflict
+INFO:     127.0.0.1:51080 - "POST /orders/35/pay HTTP/1.1" 409 Conflict
+INFO:     127.0.0.1:51078 - "POST /orders/78/pay HTTP/1.1" 409 Conflict
+INFO:     127.0.0.1:51079 - "POST /orders/63/pay HTTP/1.1" 409 Conflict
+INFO:     127.0.0.1:51076 - "POST /orders/84/pay HTTP/1.1" 409 Conflict
+INFO:     127.0.0.1:51081 - "POST /orders/18/pay HTTP/1.1" 409 Conflict
+INFO:     127.0.0.1:51082 - "POST /orders/20/pay HTTP/1.1" 409 Conflict
+INFO:     127.0.0.1:51084 - "POST /orders/86/pay HTTP/1.1" 409 Conflict
+INFO:     127.0.0.1:51083 - "POST /orders/56/pay HTTP/1.1" 409 Conflict
+INFO:     127.0.0.1:51086 - "POST /orders/61/pay HTTP/1.1" 409 Conflict
+INFO:     127.0.0.1:51088 - "POST /orders/71/pay HTTP/1.1" 409 Conflict
+INFO:     127.0.0.1:51089 - "POST /orders/40/pay HTTP/1.1" 409 Conflict
+INFO:     127.0.0.1:51085 - "POST /orders/60/pay HTTP/1.1" 409 Conflict
+INFO:     127.0.0.1:51090 - "POST /orders/75/pay HTTP/1.1" 409 Conflict
+INFO:     127.0.0.1:51092 - "POST /orders/24/pay HTTP/1.1" 409 Conflict
+INFO:     127.0.0.1:51094 - "POST /orders/81/pay HTTP/1.1" 409 Conflict
+INFO:     127.0.0.1:51091 - "POST /orders/29/pay HTTP/1.1" 409 Conflict
+INFO:     127.0.0.1:51093 - "POST /orders/96/pay HTTP/1.1" 409 Conflict
+INFO:     127.0.0.1:51087 - "POST /orders/92/pay HTTP/1.1" 409 Conflict
+INFO:     127.0.0.1:51099 - "POST /orders/97/pay HTTP/1.1" 409 Conflict
+INFO:     127.0.0.1:51095 - "POST /orders/39/pay HTTP/1.1" 409 Conflict
+INFO:     127.0.0.1:51098 - "POST /orders/99/pay HTTP/1.1" 409 Conflict
+INFO:     127.0.0.1:51097 - "POST /orders/76/pay HTTP/1.1" 409 Conflict
+INFO:     127.0.0.1:51096 - "POST /orders/2/pay HTTP/1.1" 409 Conflict
+INFO:     127.0.0.1:51100 - "POST /orders/67/pay HTTP/1.1" 409 Conflict
+INFO:     127.0.0.1:51101 - "POST /orders/69/pay HTTP/1.1" 409 Conflict
+INFO:     127.0.0.1:51103 - "POST /orders/64/pay HTTP/1.1" 409 Conflict
+INFO:     127.0.0.1:51102 - "POST /orders/21/pay HTTP/1.1" 409 Conflict
+INFO:     127.0.0.1:51105 - "POST /orders/22/pay HTTP/1.1" 409 Conflict
+INFO:     127.0.0.1:51104 - "POST /orders/14/pay HTTP/1.1" 409 Conflict
+INFO:     127.0.0.1:51106 - "POST /orders/11/pay HTTP/1.1" 409 Conflict
+INFO:     127.0.0.1:51108 - "POST /orders/32/pay HTTP/1.1" 409 Conflict
+INFO:     127.0.0.1:51109 - "POST /orders/55/pay HTTP/1.1" 409 Conflict
+INFO:     127.0.0.1:51107 - "POST /orders/19/pay HTTP/1.1" 409 Conflict
+INFO:     127.0.0.1:51112 - "POST /orders/85/pay HTTP/1.1" 409 Conflict
+INFO:     127.0.0.1:51114 - "POST /orders/62/pay HTTP/1.1" 409 Conflict
+INFO:     127.0.0.1:51110 - "POST /orders/43/pay HTTP/1.1" 409 Conflict
+INFO:     127.0.0.1:51111 - "POST /orders/74/pay HTTP/1.1" 409 Conflict
+INFO:     127.0.0.1:51115 - "POST /orders/93/pay HTTP/1.1" 409 Conflict
+INFO:     127.0.0.1:51113 - "POST /orders/95/pay HTTP/1.1" 409 Conflict
+INFO:     127.0.0.1:51116 - "POST /orders/91/pay HTTP/1.1" 409 Conflict
+INFO:     127.0.0.1:51117 - "POST /orders/37/pay HTTP/1.1" 409 Conflict
+INFO:     127.0.0.1:51118 - "POST /orders/30/pay HTTP/1.1" 409 Conflict
+INFO:     127.0.0.1:51119 - "POST /orders/27/pay HTTP/1.1" 409 Conflict
+INFO:     127.0.0.1:51120 - "POST /orders/46/pay HTTP/1.1" 409 Conflict
+INFO:     127.0.0.1:51157 - "POST /admin/stores/1/stock-adjustments HTTP/1.1" 201 Created
+INFO:     127.0.0.1:51158 - "POST /orders HTTP/1.1" 201 Created
+INFO:     127.0.0.1:51159 - "POST /orders HTTP/1.1" 201 Created
+INFO:     127.0.0.1:51160 - "POST /orders HTTP/1.1" 201 Created
+INFO:     127.0.0.1:51161 - "POST /orders HTTP/1.1" 201 Created
+INFO:     127.0.0.1:51162 - "POST /orders HTTP/1.1" 201 Created
+INFO:     127.0.0.1:51163 - "POST /orders HTTP/1.1" 201 Created
+INFO:     127.0.0.1:51164 - "POST /orders HTTP/1.1" 201 Created
+INFO:     127.0.0.1:51165 - "POST /orders HTTP/1.1" 201 Created
+INFO:     127.0.0.1:51166 - "POST /orders HTTP/1.1" 201 Created
+INFO:     127.0.0.1:51167 - "POST /orders HTTP/1.1" 201 Created
+INFO:     127.0.0.1:51168 - "POST /orders HTTP/1.1" 201 Created
+INFO:     127.0.0.1:51169 - "POST /orders HTTP/1.1" 201 Created
+INFO:     127.0.0.1:51170 - "POST /orders HTTP/1.1" 201 Created
+INFO:     127.0.0.1:51171 - "POST /orders HTTP/1.1" 201 Created
+INFO:     127.0.0.1:51173 - "POST /orders HTTP/1.1" 201 Created
+INFO:     127.0.0.1:51174 - "POST /orders HTTP/1.1" 201 Created
+INFO:     127.0.0.1:51175 - "POST /orders HTTP/1.1" 201 Created
+INFO:     127.0.0.1:51176 - "POST /orders HTTP/1.1" 201 Created
+INFO:     127.0.0.1:51177 - "POST /orders HTTP/1.1" 201 Created
+INFO:     127.0.0.1:51178 - "POST /orders HTTP/1.1" 201 Created
+INFO:     127.0.0.1:51179 - "POST /orders HTTP/1.1" 201 Created
+INFO:     127.0.0.1:51180 - "POST /orders HTTP/1.1" 201 Created
+INFO:     127.0.0.1:51181 - "POST /orders HTTP/1.1" 201 Created
+INFO:     127.0.0.1:51182 - "POST /orders HTTP/1.1" 201 Created
+INFO:     127.0.0.1:51183 - "POST /orders HTTP/1.1" 201 Created
+INFO:     127.0.0.1:51184 - "POST /orders HTTP/1.1" 201 Created
+INFO:     127.0.0.1:51185 - "POST /orders HTTP/1.1" 201 Created
+INFO:     127.0.0.1:51186 - "POST /orders HTTP/1.1" 201 Created
+INFO:     127.0.0.1:51187 - "POST /orders HTTP/1.1" 201 Created
+INFO:     127.0.0.1:51188 - "POST /orders HTTP/1.1" 201 Created
+INFO:     127.0.0.1:51189 - "POST /orders HTTP/1.1" 201 Created
+INFO:     127.0.0.1:61041 - "POST /orders HTTP/1.1" 201 Created
+INFO:     127.0.0.1:61042 - "POST /orders HTTP/1.1" 201 Created
+INFO:     127.0.0.1:61043 - "POST /orders HTTP/1.1" 201 Created
+INFO:     127.0.0.1:61044 - "POST /orders HTTP/1.1" 201 Created
+INFO:     127.0.0.1:61045 - "POST /orders HTTP/1.1" 201 Created
+INFO:     127.0.0.1:61046 - "POST /orders HTTP/1.1" 201 Created
+INFO:     127.0.0.1:61048 - "POST /orders HTTP/1.1" 201 Created
+INFO:     127.0.0.1:61049 - "POST /orders HTTP/1.1" 201 Created
+INFO:     127.0.0.1:61050 - "POST /orders HTTP/1.1" 201 Created
+INFO:     127.0.0.1:61051 - "POST /orders HTTP/1.1" 201 Created
+INFO:     127.0.0.1:61052 - "POST /orders HTTP/1.1" 201 Created
+INFO:     127.0.0.1:61053 - "POST /orders HTTP/1.1" 201 Created
+INFO:     127.0.0.1:61054 - "POST /orders HTTP/1.1" 201 Created
+INFO:     127.0.0.1:61055 - "POST /orders HTTP/1.1" 201 Created
+INFO:     127.0.0.1:61056 - "POST /orders HTTP/1.1" 201 Created
+INFO:     127.0.0.1:61057 - "POST /orders HTTP/1.1" 201 Created
+INFO:     127.0.0.1:61058 - "POST /orders HTTP/1.1" 201 Created
+INFO:     127.0.0.1:61059 - "POST /orders HTTP/1.1" 201 Created
+INFO:     127.0.0.1:61060 - "POST /orders HTTP/1.1" 201 Created
+INFO:     127.0.0.1:61061 - "POST /orders HTTP/1.1" 201 Created
+INFO:     127.0.0.1:61062 - "POST /orders HTTP/1.1" 201 Created
+INFO:     127.0.0.1:61063 - "POST /orders HTTP/1.1" 201 Created
+INFO:     127.0.0.1:61064 - "POST /orders HTTP/1.1" 201 Created
+INFO:     127.0.0.1:61065 - "POST /orders HTTP/1.1" 201 Created
+INFO:     127.0.0.1:61066 - "POST /orders HTTP/1.1" 201 Created
+INFO:     127.0.0.1:61067 - "POST /orders HTTP/1.1" 201 Created
+INFO:     127.0.0.1:61068 - "POST /orders HTTP/1.1" 201 Created
+INFO:     127.0.0.1:61069 - "POST /orders HTTP/1.1" 201 Created
+INFO:     127.0.0.1:61070 - "POST /orders HTTP/1.1" 201 Created
+INFO:     127.0.0.1:61071 - "POST /orders HTTP/1.1" 201 Created
+INFO:     127.0.0.1:61072 - "POST /orders HTTP/1.1" 201 Created
+INFO:     127.0.0.1:61073 - "POST /orders HTTP/1.1" 201 Created
+INFO:     127.0.0.1:61074 - "POST /orders HTTP/1.1" 201 Created
+INFO:     127.0.0.1:61075 - "POST /orders HTTP/1.1" 201 Created
+INFO:     127.0.0.1:61076 - "POST /orders HTTP/1.1" 201 Created
+INFO:     127.0.0.1:61077 - "POST /orders HTTP/1.1" 201 Created
+INFO:     127.0.0.1:61078 - "POST /orders HTTP/1.1" 201 Created
+INFO:     127.0.0.1:61079 - "POST /orders HTTP/1.1" 201 Created
+INFO:     127.0.0.1:61080 - "POST /orders HTTP/1.1" 201 Created
+INFO:     127.0.0.1:61081 - "POST /orders HTTP/1.1" 201 Created
+INFO:     127.0.0.1:61082 - "POST /orders HTTP/1.1" 201 Created
+INFO:     127.0.0.1:61083 - "POST /orders HTTP/1.1" 201 Created
+INFO:     127.0.0.1:61084 - "POST /orders HTTP/1.1" 201 Created
+INFO:     127.0.0.1:61085 - "POST /orders HTTP/1.1" 201 Created
+INFO:     127.0.0.1:61086 - "POST /orders HTTP/1.1" 201 Created
+INFO:     127.0.0.1:61087 - "POST /orders HTTP/1.1" 201 Created
+INFO:     127.0.0.1:61088 - "POST /orders HTTP/1.1" 201 Created
+INFO:     127.0.0.1:61089 - "POST /orders HTTP/1.1" 201 Created
+INFO:     127.0.0.1:61090 - "POST /orders HTTP/1.1" 201 Created
+INFO:     127.0.0.1:61091 - "POST /orders HTTP/1.1" 201 Created
+INFO:     127.0.0.1:61092 - "POST /orders HTTP/1.1" 201 Created
+INFO:     127.0.0.1:61093 - "POST /orders HTTP/1.1" 201 Created
+INFO:     127.0.0.1:61094 - "POST /orders HTTP/1.1" 201 Created
+INFO:     127.0.0.1:61095 - "POST /orders HTTP/1.1" 201 Created
+INFO:     127.0.0.1:61096 - "POST /orders HTTP/1.1" 201 Created
+INFO:     127.0.0.1:61097 - "POST /orders HTTP/1.1" 201 Created
+INFO:     127.0.0.1:61098 - "POST /orders HTTP/1.1" 201 Created
+INFO:     127.0.0.1:61099 - "POST /orders HTTP/1.1" 201 Created
+INFO:     127.0.0.1:61100 - "POST /orders HTTP/1.1" 201 Created
+INFO:     127.0.0.1:61101 - "POST /orders HTTP/1.1" 201 Created
+INFO:     127.0.0.1:61102 - "POST /orders HTTP/1.1" 201 Created
+INFO:     127.0.0.1:49966 - "POST /orders HTTP/1.1" 201 Created
+INFO:     127.0.0.1:49967 - "POST /orders HTTP/1.1" 201 Created
+INFO:     127.0.0.1:49968 - "POST /orders HTTP/1.1" 201 Created
+INFO:     127.0.0.1:49969 - "POST /orders HTTP/1.1" 201 Created
+INFO:     127.0.0.1:49970 - "POST /orders HTTP/1.1" 201 Created
+INFO:     127.0.0.1:49971 - "POST /orders HTTP/1.1" 201 Created
+INFO:     127.0.0.1:49972 - "POST /orders HTTP/1.1" 201 Created
+INFO:     127.0.0.1:63506 - "POST /orders HTTP/1.1" 201 Created
+INFO:     127.0.0.1:63512 - "POST /orders/164/pay HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63515 - "POST /orders/104/pay HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63527 - "POST /orders/185/pay HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63517 - "POST /orders/110/pay HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63533 - "POST /orders/150/pay HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63511 - "POST /orders/156/pay HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63513 - "POST /orders/178/pay HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63523 - "POST /orders/102/pay HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63514 - "POST /orders/193/pay HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63516 - "POST /orders/105/pay HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63507 - "POST /orders/127/pay HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63508 - "POST /orders/126/pay HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63531 - "POST /orders/133/pay HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63537 - "POST /orders/114/pay HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63510 - "POST /orders/144/pay HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63521 - "POST /orders/124/pay HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63525 - "POST /orders/195/pay HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63520 - "POST /orders/121/pay HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63538 - "POST /orders/101/pay HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63519 - "POST /orders/186/pay HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63509 - "POST /orders/135/pay HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63535 - "POST /orders/113/pay HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63518 - "POST /orders/117/pay HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63528 - "POST /orders/169/pay HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63532 - "POST /orders/129/pay HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63529 - "POST /orders/171/pay HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63539 - "POST /orders/103/pay HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63526 - "POST /orders/167/pay HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63534 - "POST /orders/147/pay HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63544 - "POST /orders/180/pay HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63522 - "POST /orders/122/pay HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63540 - "POST /orders/108/pay HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63541 - "POST /orders/188/pay HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63547 - "POST /orders/139/pay HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63536 - "POST /orders/116/pay HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63545 - "POST /orders/168/pay HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63542 - "POST /orders/106/pay HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63552 - "POST /orders/148/pay HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63550 - "POST /orders/136/pay HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63558 - "POST /orders/200/pay HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63548 - "POST /orders/137/pay HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63549 - "POST /orders/155/pay HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63555 - "POST /orders/107/pay HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63553 - "POST /orders/115/pay HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63554 - "POST /orders/112/pay HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63556 - "POST /orders/118/pay HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63543 - "POST /orders/199/pay HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63560 - "POST /orders/184/pay HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63559 - "POST /orders/109/pay HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63562 - "POST /orders/130/pay HTTP/1.1" 409 Conflict
+INFO:     127.0.0.1:63551 - "POST /orders/183/pay HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63561 - "POST /orders/163/pay HTTP/1.1" 409 Conflict
+INFO:     127.0.0.1:63563 - "POST /orders/179/pay HTTP/1.1" 409 Conflict
+INFO:     127.0.0.1:63546 - "POST /orders/140/pay HTTP/1.1" 409 Conflict
+INFO:     127.0.0.1:63566 - "POST /orders/120/pay HTTP/1.1" 409 Conflict
+INFO:     127.0.0.1:63564 - "POST /orders/173/pay HTTP/1.1" 409 Conflict
+INFO:     127.0.0.1:63524 - "POST /orders/189/pay HTTP/1.1" 409 Conflict
+INFO:     127.0.0.1:63557 - "POST /orders/111/pay HTTP/1.1" 409 Conflict
+INFO:     127.0.0.1:63530 - "POST /orders/141/pay HTTP/1.1" 409 Conflict
+INFO:     127.0.0.1:63565 - "POST /orders/182/pay HTTP/1.1" 409 Conflict
+INFO:     127.0.0.1:63567 - "POST /orders/161/pay HTTP/1.1" 409 Conflict
+INFO:     127.0.0.1:63569 - "POST /orders/158/pay HTTP/1.1" 409 Conflict
+INFO:     127.0.0.1:63568 - "POST /orders/128/pay HTTP/1.1" 409 Conflict
+INFO:     127.0.0.1:63571 - "POST /orders/152/pay HTTP/1.1" 409 Conflict
+INFO:     127.0.0.1:63572 - "POST /orders/151/pay HTTP/1.1" 409 Conflict
+INFO:     127.0.0.1:63570 - "POST /orders/162/pay HTTP/1.1" 409 Conflict
+INFO:     127.0.0.1:63573 - "POST /orders/154/pay HTTP/1.1" 409 Conflict
+INFO:     127.0.0.1:63574 - "POST /orders/187/pay HTTP/1.1" 409 Conflict
+INFO:     127.0.0.1:63575 - "POST /orders/196/pay HTTP/1.1" 409 Conflict
+INFO:     127.0.0.1:63578 - "POST /orders/191/pay HTTP/1.1" 409 Conflict
+INFO:     127.0.0.1:63577 - "POST /orders/142/pay HTTP/1.1" 409 Conflict
+INFO:     127.0.0.1:63576 - "POST /orders/153/pay HTTP/1.1" 409 Conflict
+INFO:     127.0.0.1:63579 - "POST /orders/132/pay HTTP/1.1" 409 Conflict
+INFO:     127.0.0.1:63581 - "POST /orders/197/pay HTTP/1.1" 409 Conflict
+INFO:     127.0.0.1:63582 - "POST /orders/192/pay HTTP/1.1" 409 Conflict
+INFO:     127.0.0.1:63580 - "POST /orders/125/pay HTTP/1.1" 409 Conflict
+INFO:     127.0.0.1:63583 - "POST /orders/172/pay HTTP/1.1" 409 Conflict
+INFO:     127.0.0.1:63584 - "POST /orders/170/pay HTTP/1.1" 409 Conflict
+INFO:     127.0.0.1:63588 - "POST /orders/149/pay HTTP/1.1" 409 Conflict
+INFO:     127.0.0.1:63585 - "POST /orders/145/pay HTTP/1.1" 409 Conflict
+INFO:     127.0.0.1:63589 - "POST /orders/190/pay HTTP/1.1" 409 Conflict
+INFO:     127.0.0.1:63587 - "POST /orders/119/pay HTTP/1.1" 409 Conflict
+INFO:     127.0.0.1:63590 - "POST /orders/177/pay HTTP/1.1" 409 Conflict
+INFO:     127.0.0.1:63586 - "POST /orders/131/pay HTTP/1.1" 409 Conflict
+INFO:     127.0.0.1:63592 - "POST /orders/138/pay HTTP/1.1" 409 Conflict
+INFO:     127.0.0.1:63594 - "POST /orders/160/pay HTTP/1.1" 409 Conflict
+INFO:     127.0.0.1:63591 - "POST /orders/165/pay HTTP/1.1" 409 Conflict
+INFO:     127.0.0.1:63593 - "POST /orders/157/pay HTTP/1.1" 409 Conflict
+INFO:     127.0.0.1:63596 - "POST /orders/159/pay HTTP/1.1" 409 Conflict
+INFO:     127.0.0.1:63595 - "POST /orders/146/pay HTTP/1.1" 409 Conflict
+INFO:     127.0.0.1:63597 - "POST /orders/181/pay HTTP/1.1" 409 Conflict
+INFO:     127.0.0.1:63598 - "POST /orders/176/pay HTTP/1.1" 409 Conflict
+INFO:     127.0.0.1:63599 - "POST /orders/175/pay HTTP/1.1" 409 Conflict
+INFO:     127.0.0.1:63601 - "POST /orders/143/pay HTTP/1.1" 409 Conflict
+INFO:     127.0.0.1:63600 - "POST /orders/198/pay HTTP/1.1" 409 Conflict
+INFO:     127.0.0.1:63602 - "POST /orders/174/pay HTTP/1.1" 409 Conflict
+INFO:     127.0.0.1:63604 - "POST /orders/166/pay HTTP/1.1" 409 Conflict
+INFO:     127.0.0.1:63603 - "POST /orders/123/pay HTTP/1.1" 409 Conflict
+INFO:     127.0.0.1:63606 - "POST /orders/194/pay HTTP/1.1" 409 Conflict
+INFO:     127.0.0.1:63605 - "POST /orders/134/pay HTTP/1.1" 409 Conflict
+INFO:     127.0.0.1:63621 - "POST /admin/stores/1/stock-adjustments HTTP/1.1" 201 Created
+INFO:     127.0.0.1:63622 - "POST /orders HTTP/1.1" 201 Created
+INFO:     127.0.0.1:63623 - "POST /orders/201/pay HTTP/1.1" 500 Internal Server Error
+ERROR:    Exception in ASGI application
+Traceback (most recent call last):
+  File "E:\retail-ops-platform\.venv\Lib\site-packages\sqlalchemy\engine\base.py", line 1185, in _commit_impl
+    self.engine.dialect.do_commit(self.connection)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "E:\retail-ops-platform\.venv\Lib\site-packages\sqlalchemy\engine\default.py", line 727, in do_commit
+    dbapi_connection.commit()
+    ~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "E:\retail-ops-platform\.venv\Lib\site-packages\psycopg\connection.py", line 309, in commit
+    self.wait(self._commit_gen())
+    ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^
+  File "E:\retail-ops-platform\.venv\Lib\site-packages\psycopg\connection.py", line 495, in wait
+    return waiting.wait(
+           ~~~~~~~~~~~~^
+        gen, self.pgconn.socket, interval=interval, timeout=timeout
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "psycopg_binary/_psycopg/waiting.pyx", line 360, in psycopg_binary._psycopg.wait_c
+  File "E:\retail-ops-platform\.venv\Lib\site-packages\psycopg\_connection_base.py", line 592, in _commit_gen
+    yield from self._exec_command(b"COMMIT")
+  File "E:\retail-ops-platform\.venv\Lib\site-packages\psycopg\_connection_base.py", line 487, in _exec_command
+    raise e.error_from_result(result, encoding=self.pgconn._encoding)
+psycopg.errors.RaiseException: STAGE10_COMMIT_FAILURE
+CONTEXT:  PL/pgSQL function acceptance_abort_payment() line 1 at RAISE
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "E:\retail-ops-platform\.venv\Lib\site-packages\uvicorn\protocols\http\httptools_impl.py", line 422, in run_asgi
+    result = await app(  # type: ignore[func-returns-value]
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        self.scope, self.receive, self.send
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "E:\retail-ops-platform\.venv\Lib\site-packages\uvicorn\middleware\proxy_headers.py", line 63, in __call__
+    return await self.app(scope, receive, send)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\retail-ops-platform\.venv\Lib\site-packages\fastapi\applications.py", line 1194, in __call__
+    await super().__call__(scope, receive, send)
+  File "E:\retail-ops-platform\.venv\Lib\site-packages\starlette\applications.py", line 96, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "E:\retail-ops-platform\.venv\Lib\site-packages\starlette\middleware\errors.py", line 186, in __call__
+    raise exc
+  File "E:\retail-ops-platform\.venv\Lib\site-packages\starlette\middleware\errors.py", line 164, in __call__
+    await self.app(scope, receive, _send)
+  File "E:\retail-ops-platform\.venv\Lib\site-packages\fastapi\telemetry\_asgi.py", line 151, in __call__
+    await self.app(scope, receive, send)
+  File "E:\retail-ops-platform\.venv\Lib\site-packages\starlette\middleware\base.py", line 203, in __call__
+    response = await self.dispatch_func(request, call_next)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\retail-ops-platform\backend\app\main.py", line 26, in add_request_id
+    response = await call_next(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\retail-ops-platform\.venv\Lib\site-packages\starlette\middleware\base.py", line 179, in call_next
+    raise app_exc from app_exc.__cause__ or app_exc.__context__
+  File "E:\retail-ops-platform\.venv\Lib\site-packages\starlette\middleware\base.py", line 149, in coro
+    await self.app(scope, receive_or_disconnect, send_no_error)
+  File "E:\retail-ops-platform\.venv\Lib\site-packages\starlette\middleware\exceptions.py", line 63, in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+  File "E:\retail-ops-platform\.venv\Lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "E:\retail-ops-platform\.venv\Lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "E:\retail-ops-platform\.venv\Lib\site-packages\fastapi\middleware\asyncexitstack.py", line 18, in __call__
+    await self.app(scope, receive, send)
+  File "E:\retail-ops-platform\.venv\Lib\site-packages\starlette\routing.py", line 683, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "E:\retail-ops-platform\.venv\Lib\site-packages\fastapi\routing.py", line 2811, in app
+    await route.handle(scope, receive, send)
+  File "E:\retail-ops-platform\.venv\Lib\site-packages\fastapi\routing.py", line 1839, in handle
+    await self.original_router.handle(scope, receive, send)
+  File "E:\retail-ops-platform\.venv\Lib\site-packages\fastapi\routing.py", line 2894, in handle
+    await included_router._handle_selected(scope, receive, send)
+  File "E:\retail-ops-platform\.venv\Lib\site-packages\fastapi\routing.py", line 1865, in _handle_selected
+    await original_route.handle(scope, receive, send)
+  File "E:\retail-ops-platform\.venv\Lib\site-packages\fastapi\routing.py", line 1328, in handle
+    await effective_context.app(scope, receive, send)
+  File "E:\retail-ops-platform\.venv\Lib\site-packages\fastapi\routing.py", line 166, in app
+    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+  File "E:\retail-ops-platform\.venv\Lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "E:\retail-ops-platform\.venv\Lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "E:\retail-ops-platform\.venv\Lib\site-packages\fastapi\routing.py", line 152, in app
+    response = await f(request)
+               ^^^^^^^^^^^^^^^^
+  File "E:\retail-ops-platform\.venv\Lib\site-packages\fastapi\routing.py", line 745, in app
+    raw_response = await run_endpoint_function(
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<3 lines>...
+    )
+    ^
+  File "E:\retail-ops-platform\.venv\Lib\site-packages\fastapi\routing.py", line 374, in run_endpoint_function
+    return await run_in_threadpool(
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+        _run_sync_endpoint, function=dependant.call, arguments=values
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "E:\retail-ops-platform\.venv\Lib\site-packages\starlette\concurrency.py", line 34, in run_in_threadpool
+    return await anyio.to_thread.run_sync(func)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\retail-ops-platform\.venv\Lib\site-packages\anyio\to_thread.py", line 65, in run_sync
+    return await get_async_backend().run_sync_in_worker_thread(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        func, args, abandon_on_cancel=abandon_on_cancel, limiter=limiter
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "E:\retail-ops-platform\.venv\Lib\site-packages\anyio\_backends\_asyncio.py", line 2779, in run_sync_in_worker_thread
+    return await future
+           ^^^^^^^^^^^^
+  File "E:\retail-ops-platform\.venv\Lib\site-packages\anyio\_backends\_asyncio.py", line 1124, in run
+    result = context.run(func, *args)
+  File "E:\retail-ops-platform\.venv\Lib\site-packages\fastapi\telemetry\_api.py", line 244, in _run_sync_endpoint
+    return function(**arguments)
+  File "E:\retail-ops-platform\backend\app\api\orders.py", line 386, in pay_order
+    db.commit()  # 订单、库存、券、积分、支付流水只在这里统一提交
+    ~~~~~~~~~^^
+  File "E:\retail-ops-platform\.venv\Lib\site-packages\sqlalchemy\orm\session.py", line 2035, in commit
+    trans.commit(_to_root=True)
+    ~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "<string>", line 2, in commit
+  File "E:\retail-ops-platform\.venv\Lib\site-packages\sqlalchemy\orm\state_changes.py", line 137, in _go
+    ret_value = fn(self, *arg, **kw)
+  File "E:\retail-ops-platform\.venv\Lib\site-packages\sqlalchemy\orm\session.py", line 1323, in commit
+    trans.commit()
+    ~~~~~~~~~~~~^^
+  File "E:\retail-ops-platform\.venv\Lib\site-packages\sqlalchemy\engine\base.py", line 2658, in commit
+    self._do_commit()
+    ~~~~~~~~~~~~~~~^^
+  File "E:\retail-ops-platform\.venv\Lib\site-packages\sqlalchemy\engine\base.py", line 2763, in _do_commit
+    self._connection_commit_impl()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "E:\retail-ops-platform\.venv\Lib\site-packages\sqlalchemy\engine\base.py", line 2734, in _connection_commit_impl
+    self.connection._commit_impl()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "E:\retail-ops-platform\.venv\Lib\site-packages\sqlalchemy\engine\base.py", line 1187, in _commit_impl
+    self._handle_dbapi_exception(e, None, None, None, None)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\retail-ops-platform\.venv\Lib\site-packages\sqlalchemy\engine\base.py", line 2381, in _handle_dbapi_exception
+    raise sqlalchemy_exception.with_traceback(exc_info[2]) from e
+  File "E:\retail-ops-platform\.venv\Lib\site-packages\sqlalchemy\engine\base.py", line 1185, in _commit_impl
+    self.engine.dialect.do_commit(self.connection)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "E:\retail-ops-platform\.venv\Lib\site-packages\sqlalchemy\engine\default.py", line 727, in do_commit
+    dbapi_connection.commit()
+    ~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "E:\retail-ops-platform\.venv\Lib\site-packages\psycopg\connection.py", line 309, in commit
+    self.wait(self._commit_gen())
+    ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^
+  File "E:\retail-ops-platform\.venv\Lib\site-packages\psycopg\connection.py", line 495, in wait
+    return waiting.wait(
+           ~~~~~~~~~~~~^
+        gen, self.pgconn.socket, interval=interval, timeout=timeout
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "psycopg_binary/_psycopg/waiting.pyx", line 360, in psycopg_binary._psycopg.wait_c
+  File "E:\retail-ops-platform\.venv\Lib\site-packages\psycopg\_connection_base.py", line 592, in _commit_gen
+    yield from self._exec_command(b"COMMIT")
+  File "E:\retail-ops-platform\.venv\Lib\site-packages\psycopg\_connection_base.py", line 487, in _exec_command
+    raise e.error_from_result(result, encoding=self.pgconn._encoding)
+sqlalchemy.exc.ProgrammingError: (psycopg.errors.RaiseException) STAGE10_COMMIT_FAILURE
+CONTEXT:  PL/pgSQL function acceptance_abort_payment() line 1 at RAISE
+(Background on this error at: https://sqlalche.me/e/20/f405)
+INFO:     127.0.0.1:63624 - "POST /orders/201/pay HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63625 - "POST /admin/stores/1/stock-adjustments HTTP/1.1" 201 Created
+INFO:     127.0.0.1:63626 - "POST /orders HTTP/1.1" 201 Created
+INFO:     127.0.0.1:63627 - "POST /orders/202/cancel HTTP/1.1" 409 Conflict
+INFO:     127.0.0.1:63628 - "POST /orders/202/pay HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63629 - "POST /admin/stores/1/stock-adjustments HTTP/1.1" 201 Created
+INFO:     127.0.0.1:63639 - "POST /orders HTTP/1.1" 201 Created
+INFO:     127.0.0.1:63633 - "POST /orders HTTP/1.1" 201 Created
+INFO:     127.0.0.1:63631 - "POST /orders HTTP/1.1" 201 Created
+INFO:     127.0.0.1:63632 - "POST /orders HTTP/1.1" 201 Created
+INFO:     127.0.0.1:63630 - "POST /orders HTTP/1.1" 201 Created
+INFO:     127.0.0.1:63638 - "POST /orders HTTP/1.1" 201 Created
+INFO:     127.0.0.1:63634 - "POST /orders HTTP/1.1" 201 Created
+INFO:     127.0.0.1:63636 - "POST /orders HTTP/1.1" 201 Created
+INFO:     127.0.0.1:63635 - "POST /orders HTTP/1.1" 201 Created
+INFO:     127.0.0.1:63637 - "POST /orders HTTP/1.1" 201 Created
+INFO:     127.0.0.1:63645 - "POST /orders HTTP/1.1" 409 Conflict
+INFO:     127.0.0.1:63648 - "POST /orders/203/pay HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63650 - "POST /orders/203/pay HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63654 - "POST /orders/203/pay HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63646 - "POST /orders/203/pay HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63647 - "POST /orders/203/pay HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63652 - "POST /orders/203/pay HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63651 - "POST /orders/203/pay HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63655 - "POST /orders/203/pay HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63649 - "POST /orders/203/pay HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63653 - "POST /orders/203/pay HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63661 - "POST /orders/203/pay HTTP/1.1" 409 Conflict
+INFO:     127.0.0.1:63663 - "GET /hq/analytics/sales-trend?date_from=2026-10-29&date_to=2026-11-27 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63664 - "GET /analytics/sales-detail?date_from=2026-10-29&date_to=2026-11-27 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63665 - "GET /hq/analytics/sales-trend?date_from=2026-10-29&date_to=2026-11-27 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63666 - "GET /analytics/sales-detail?date_from=2026-10-29&date_to=2026-11-27 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63667 - "GET /hq/analytics/sales-trend?date_from=2026-10-29&date_to=2026-11-27 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63668 - "GET /analytics/sales-detail?date_from=2026-10-29&date_to=2026-11-27 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63669 - "GET /hq/analytics/sales-trend?date_from=2026-10-29&date_to=2026-11-27 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63670 - "GET /analytics/sales-detail?date_from=2026-10-29&date_to=2026-11-27 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63671 - "GET /hq/analytics/sales-trend?date_from=2026-10-29&date_to=2026-11-27 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63672 - "GET /analytics/sales-detail?date_from=2026-10-29&date_to=2026-11-27 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63673 - "GET /hq/analytics/sales-trend?date_from=2026-10-29&date_to=2026-11-27 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63674 - "GET /analytics/sales-detail?date_from=2026-10-29&date_to=2026-11-27 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63675 - "GET /hq/analytics/sales-trend?date_from=2026-10-29&date_to=2026-11-27 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63676 - "GET /analytics/sales-detail?date_from=2026-10-29&date_to=2026-11-27 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63677 - "GET /hq/analytics/sales-trend?date_from=2026-10-29&date_to=2026-11-27 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63678 - "GET /analytics/sales-detail?date_from=2026-10-29&date_to=2026-11-27 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63679 - "GET /hq/analytics/sales-trend?date_from=2026-10-29&date_to=2026-11-27 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63680 - "GET /analytics/sales-detail?date_from=2026-10-29&date_to=2026-11-27 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63681 - "GET /hq/analytics/sales-trend?date_from=2026-10-29&date_to=2026-11-27 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63682 - "GET /analytics/sales-detail?date_from=2026-10-29&date_to=2026-11-27 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63683 - "GET /hq/analytics/sales-trend?date_from=2026-10-29&date_to=2026-11-27 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63684 - "GET /analytics/sales-detail?date_from=2026-10-29&date_to=2026-11-27 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63685 - "GET /hq/analytics/sales-trend?date_from=2026-10-29&date_to=2026-11-27 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63686 - "GET /analytics/sales-detail?date_from=2026-10-29&date_to=2026-11-27 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63687 - "GET /hq/analytics/sales-trend?date_from=2026-10-29&date_to=2026-11-27 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63688 - "GET /analytics/sales-detail?date_from=2026-10-29&date_to=2026-11-27 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63689 - "GET /hq/analytics/sales-trend?date_from=2026-10-29&date_to=2026-11-27 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63690 - "GET /analytics/sales-detail?date_from=2026-10-29&date_to=2026-11-27 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63691 - "GET /hq/analytics/sales-trend?date_from=2026-10-29&date_to=2026-11-27 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63692 - "GET /analytics/sales-detail?date_from=2026-10-29&date_to=2026-11-27 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63693 - "GET /hq/analytics/sales-trend?date_from=2026-10-29&date_to=2026-11-27 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63694 - "GET /analytics/sales-detail?date_from=2026-10-29&date_to=2026-11-27 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63695 - "GET /hq/analytics/sales-trend?date_from=2026-10-29&date_to=2026-11-27 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63696 - "GET /analytics/sales-detail?date_from=2026-10-29&date_to=2026-11-27 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63697 - "GET /hq/analytics/sales-trend?date_from=2026-10-29&date_to=2026-11-27 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63698 - "GET /analytics/sales-detail?date_from=2026-10-29&date_to=2026-11-27 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63699 - "GET /hq/analytics/sales-trend?date_from=2026-10-29&date_to=2026-11-27 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63700 - "GET /analytics/sales-detail?date_from=2026-10-29&date_to=2026-11-27 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63701 - "GET /hq/analytics/sales-trend?date_from=2026-10-29&date_to=2026-11-27 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63702 - "GET /analytics/sales-detail?date_from=2026-10-29&date_to=2026-11-27 HTTP/1.1" 200 OK

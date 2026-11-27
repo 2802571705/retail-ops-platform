@@ -215,7 +215,7 @@ try:
     evidence['environment']={'database':name,'store_id':store,'product_id':product['product_id'],
         'product_name':product['name'],'platform':platform.platform(),'cpu':platform.processor(),
         'logical_cpus':os.cpu_count(),'python':sys.version,'postgres':query('SELECT version(),current_setting(\'transaction_isolation\') AS isolation,current_setting(\'max_connections\') AS max_connections')[0],
-        'http_workers':1,'submitted_concurrency':100,'pool':'沿用现有 SQLAlchemy 默认连接池与 Uvicorn/AnyIO 线程限制'}
+        'http_workers':1,'submitted_concurrency':100,'pool': 'pool_size=5, max_overflow=10, pool_timeout=30, async_semaphore=12'}
     c1=contention('C01',1);c2=contention('C02',50)
     # A paid consumer already has enough earned points. Issue a valid one-cent coupon as a fixture only in this database.
     winner=next(i for i,r in enumerate(facts(c2)) if r['status']=='PAID')

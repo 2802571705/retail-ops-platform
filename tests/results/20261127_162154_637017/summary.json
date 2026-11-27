@@ -1,0 +1,3937 @@
+{
+  "completed": true,
+  "cases": [
+    {
+      "case": "C01",
+      "passed": true,
+      "duration_seconds": 1.277,
+      "orders": 100,
+      "stock_before": 1,
+      "stock_after": 0
+    },
+    {
+      "case": "C02",
+      "passed": true,
+      "duration_seconds": 1.457,
+      "orders": 100,
+      "stock_before": 50,
+      "stock_after": 0
+    },
+    {
+      "case": "C03",
+      "passed": true,
+      "orders": 1,
+      "stock_before": 1,
+      "stock_after_failed_commit": 1,
+      "stock_after_retry": 0
+    },
+    {
+      "case": "C04",
+      "passed": true,
+      "duration_seconds": 0.042,
+      "orders": 1,
+      "stock_before": 1,
+      "stock_after": 0
+    },
+    {
+      "case": "C05",
+      "passed": true,
+      "duration_seconds": 0.23,
+      "orders": 1,
+      "stock_before": 1,
+      "stock_after": 0
+    }
+  ],
+  "metrics": {
+    "C01": {
+      "n": 100,
+      "p50_ms": 802.685,
+      "p95_ms": 1212.842,
+      "status_codes": {
+        "200:OK": 1,
+        "409:OUT_OF_STOCK": 99
+      },
+      "http_error_rate": 0.99,
+      "transport_or_5xx_rate": 0.0
+    },
+    "C01_create": {
+      "n": 100,
+      "p50_ms": 45.22,
+      "p95_ms": 67.775,
+      "status_codes": {
+        "201:OK": 100
+      },
+      "http_error_rate": 0.0,
+      "transport_or_5xx_rate": 0.0
+    },
+    "C02": {
+      "n": 100,
+      "p50_ms": 1003.765,
+      "p95_ms": 1407.857,
+      "status_codes": {
+        "200:OK": 50,
+        "409:OUT_OF_STOCK": 50
+      },
+      "http_error_rate": 0.5,
+      "transport_or_5xx_rate": 0.0
+    },
+    "C02_create": {
+      "n": 100,
+      "p50_ms": 40.227,
+      "p95_ms": 63.914,
+      "status_codes": {
+        "201:OK": 100
+      },
+      "http_error_rate": 0.0,
+      "transport_or_5xx_rate": 0.0
+    },
+    "C03": {
+      "n": 1,
+      "p50_ms": 203.349,
+      "p95_ms": 203.349,
+      "status_codes": {
+        "500:HTTP_500": 1
+      },
+      "http_error_rate": 1.0,
+      "transport_or_5xx_rate": 1.0
+    },
+    "C03_create": {
+      "n": 1,
+      "p50_ms": 50.823,
+      "p95_ms": 50.823,
+      "status_codes": {
+        "201:OK": 1
+      },
+      "http_error_rate": 0.0,
+      "transport_or_5xx_rate": 0.0
+    },
+    "C03_retry": {
+      "n": 1,
+      "p50_ms": 48.327,
+      "p95_ms": 48.327,
+      "status_codes": {
+        "200:OK": 1
+      },
+      "http_error_rate": 0.0,
+      "transport_or_5xx_rate": 0.0
+    },
+    "C04": {
+      "n": 2,
+      "p50_ms": 39.735,
+      "p95_ms": 41.081,
+      "status_codes": {
+        "409:ORDER_STATE_CONFLICT": 1,
+        "200:OK": 1
+      },
+      "http_error_rate": 0.5,
+      "transport_or_5xx_rate": 0.0
+    },
+    "C04_create": {
+      "n": 1,
+      "p50_ms": 27.074,
+      "p95_ms": 27.074,
+      "status_codes": {
+        "201:OK": 1
+      },
+      "http_error_rate": 0.0,
+      "transport_or_5xx_rate": 0.0
+    },
+    "C05_create": {
+      "n": 10,
+      "p50_ms": 86.478,
+      "p95_ms": 92.382,
+      "status_codes": {
+        "201:OK": 10
+      },
+      "http_error_rate": 0.0,
+      "transport_or_5xx_rate": 0.0
+    },
+    "C05_new_key": {
+      "n": 1,
+      "p50_ms": 11.991,
+      "p95_ms": 11.991,
+      "status_codes": {
+        "409:ORDER_STATE_CONFLICT": 1
+      },
+      "http_error_rate": 1.0,
+      "transport_or_5xx_rate": 0.0
+    },
+    "C05_pay": {
+      "n": 10,
+      "p50_ms": 83.25,
+      "p95_ms": 128.567,
+      "status_codes": {
+        "200:OK": 10
+      },
+      "http_error_rate": 0.0,
+      "transport_or_5xx_rate": 0.0
+    },
+    "C05_payload_conflict": {
+      "n": 1,
+      "p50_ms": 38.945,
+      "p95_ms": 38.945,
+      "status_codes": {
+        "409:IDEMPOTENCY_CONFLICT": 1
+      },
+      "http_error_rate": 1.0,
+      "transport_or_5xx_rate": 0.0
+    },
+    "detail_after": {
+      "n": 10,
+      "p50_ms": 12.811,
+      "p95_ms": 33.767,
+      "status_codes": {
+        "200:OK": 10
+      },
+      "http_error_rate": 0.0,
+      "transport_or_5xx_rate": 0.0
+    },
+    "detail_before": {
+      "n": 10,
+      "p50_ms": 11.929,
+      "p95_ms": 34.511,
+      "status_codes": {
+        "200:OK": 10
+      },
+      "http_error_rate": 0.0,
+      "transport_or_5xx_rate": 0.0
+    },
+    "setup": {
+      "n": 208,
+      "p50_ms": 68.096,
+      "p95_ms": 88.838,
+      "status_codes": {
+        "200:OK": 103,
+        "201:OK": 105
+      },
+      "http_error_rate": 0.0,
+      "transport_or_5xx_rate": 0.0
+    },
+    "trend_after": {
+      "n": 10,
+      "p50_ms": 13.817,
+      "p95_ms": 31.716,
+      "status_codes": {
+        "200:OK": 10
+      },
+      "http_error_rate": 0.0,
+      "transport_or_5xx_rate": 0.0
+    },
+    "trend_before": {
+      "n": 10,
+      "p50_ms": 9.896,
+      "p95_ms": 25.631,
+      "status_codes": {
+        "200:OK": 10
+      },
+      "http_error_rate": 0.0,
+      "transport_or_5xx_rate": 0.0
+    }
+  },
+  "evidence": {
+    "environment": {
+      "database": "retailops_accept_20261127_162154_637017",
+      "store_id": 1,
+      "product_id": 1,
+      "product_name": "茉莉奶绿",
+      "platform": "Windows-11-10.0.26300-SP0",
+      "cpu": "Intel64 Family 6 Model 154 Stepping 3, GenuineIntel",
+      "logical_cpus": 16,
+      "python": "3.13.6 (tags/v3.13.6:4e66535, Aug  6 2025, 14:36:00) [MSC v.1944 64 bit (AMD64)]",
+      "postgres": {
+        "version": "PostgreSQL 18.7 (Debian 18.7-1.pgdg13+2) on x86_64-pc-linux-gnu, compiled by gcc (Debian 14.2.0-19) 14.2.0, 64-bit",
+        "isolation": "read committed",
+        "max_connections": "100"
+      },
+      "http_workers": 1,
+      "submitted_concurrency": 100,
+      "pool": "pool_size=5, max_overflow=10, pool_timeout=30, async_semaphore=12"
+    },
+    "C01": {
+      "orders": [
+        {
+          "id": 1,
+          "status": "PENDING_PAYMENT",
+          "payable_cents": 1500,
+          "points_used": 0,
+          "user_coupon_id": null,
+          "payments": 0,
+          "payment_cents": "0",
+          "stock_rows": 0,
+          "stock_delta": 0,
+          "point_rows": 0,
+          "point_delta": "0",
+          "redeemed_coupons": 0
+        },
+        {
+          "id": 2,
+          "status": "PENDING_PAYMENT",
+          "payable_cents": 1500,
+          "points_used": 0,
+          "user_coupon_id": null,
+          "payments": 0,
+          "payment_cents": "0",
+          "stock_rows": 0,
+          "stock_delta": 0,
+          "point_rows": 0,
+          "point_delta": "0",
+          "redeemed_coupons": 0
+        },
+        {
+          "id": 3,
+          "status": "PENDING_PAYMENT",
+          "payable_cents": 1500,
+          "points_used": 0,
+          "user_coupon_id": null,
+          "payments": 0,
+          "payment_cents": "0",
+          "stock_rows": 0,
+          "stock_delta": 0,
+          "point_rows": 0,
+          "point_delta": "0",
+          "redeemed_coupons": 0
+        },
+        {
+          "id": 4,
+          "status": "PENDING_PAYMENT",
+          "payable_cents": 1500,
+          "points_used": 0,
+          "user_coupon_id": null,
+          "payments": 0,
+          "payment_cents": "0",
+          "stock_rows": 0,
+          "stock_delta": 0,
+          "point_rows": 0,
+          "point_delta": "0",
+          "redeemed_coupons": 0
+        },
+        {
+          "id": 5,
+          "status": "PENDING_PAYMENT",
+          "payable_cents": 1500,
+          "points_used": 0,
+          "user_coupon_id": null,
+          "payments": 0,
+          "payment_cents": "0",
+          "stock_rows": 0,
+          "stock_delta": 0,
+          "point_rows": 0,
+          "point_delta": "0",
+          "redeemed_coupons": 0
+        },
+        {
+          "id": 6,
+          "status": "PENDING_PAYMENT",
+          "payable_cents": 1500,
+          "points_used": 0,
+          "user_coupon_id": null,
+          "payments": 0,
+          "payment_cents": "0",
+          "stock_rows": 0,
+          "stock_delta": 0,
+          "point_rows": 0,
+          "point_delta": "0",
+          "redeemed_coupons": 0
+        },
+        {
+          "id": 7,
+          "status": "PENDING_PAYMENT",
+          "payable_cents": 1500,
+          "points_used": 0,
+          "user_coupon_id": null,
+          "payments": 0,
+          "payment_cents": "0",
+          "stock_rows": 0,
+          "stock_delta": 0,
+          "point_rows": 0,
+          "point_delta": "0",
+          "redeemed_coupons": 0
+        },
+        {
+          "id": 8,
+          "status": "PENDING_PAYMENT",
+          "payable_cents": 1500,
+          "points_used": 0,
+          "user_coupon_id": null,
+          "payments": 0,
+          "payment_cents": "0",
+          "stock_rows": 0,
+          "stock_delta": 0,
+          "point_rows": 0,
+          "point_delta": "0",
+          "redeemed_coupons": 0
+        },
+        {
+          "id": 9,
+          "status": "PENDING_PAYMENT",
+          "payable_cents": 1500,
+          "points_used": 0,
+          "user_coupon_id": null,
+          "payments": 0,
+          "payment_cents": "0",
+          "stock_rows": 0,
+          "stock_delta": 0,
+          "point_rows": 0,
+          "point_delta": "0",
+          "redeemed_coupons": 0
+        },
+        {
+          "id": 10,
+          "status": "PENDING_PAYMENT",
+          "payable_cents": 1500,
+          "points_used": 0,
+          "user_coupon_id": null,
+          "payments": 0,
+          "payment_cents": "0",
+          "stock_rows": 0,
+          "stock_delta": 0,
+          "point_rows": 0,
+          "point_delta": "0",
+          "redeemed_coupons": 0
+        },
+        {
+          "id": 11,
+          "status": "PENDING_PAYMENT",
+          "payable_cents": 1500,
+          "points_used": 0,
+          "user_coupon_id": null,
+          "payments": 0,
+          "payment_cents": "0",
+          "stock_rows": 0,
+          "stock_delta": 0,
+          "point_rows": 0,
+          "point_delta": "0",
+          "redeemed_coupons": 0
+        },
+        {
+          "id": 12,
+          "status": "PENDING_PAYMENT",
+          "payable_cents": 1500,
+          "points_used": 0,
+          "user_coupon_id": null,
+          "payments": 0,
+          "payment_cents": "0",
+          "stock_rows": 0,
+          "stock_delta": 0,
+          "point_rows": 0,
+          "point_delta": "0",
+          "redeemed_coupons": 0
+        },
+        {
+          "id": 13,
+          "status": "PENDING_PAYMENT",
+          "payable_cents": 1500,
+          "points_used": 0,
+          "user_coupon_id": null,
+          "payments": 0,
+          "payment_cents": "0",
+          "stock_rows": 0,
+          "stock_delta": 0,
+          "point_rows": 0,
+          "point_delta": "0",
+          "redeemed_coupons": 0
+        },
+        {
+          "id": 14,
+          "status": "PENDING_PAYMENT",
+          "payable_cents": 1500,
+          "points_used": 0,
+          "user_coupon_id": null,
+          "payments": 0,
+          "payment_cents": "0",
+          "stock_rows": 0,
+          "stock_delta": 0,
+          "point_rows": 0,
+          "point_delta": "0",
+          "redeemed_coupons": 0
+        },
+        {
+          "id": 15,
+          "status": "PENDING_PAYMENT",
+          "payable_cents": 1500,
+          "points_used": 0,
+          "user_coupon_id": null,
+          "payments": 0,
+          "payment_cents": "0",
+          "stock_rows": 0,
+          "stock_delta": 0,
+          "point_rows": 0,
+          "point_delta": "0",
+          "redeemed_coupons": 0
+        },
+        {
+          "id": 16,
+          "status": "PENDING_PAYMENT",
+          "payable_cents": 1500,
+          "points_used": 0,
+          "user_coupon_id": null,
+          "payments": 0,
+          "payment_cents": "0",
+          "stock_rows": 0,
+          "stock_delta": 0,
+          "point_rows": 0,
+          "point_delta": "0",
+          "redeemed_coupons": 0
+        },
+        {
+          "id": 17,
+          "status": "PENDING_PAYMENT",
+          "payable_cents": 1500,
+          "points_used": 0,
+          "user_coupon_id": null,
+          "payments": 0,
+          "payment_cents": "0",
+          "stock_rows": 0,
+          "stock_delta": 0,
+          "point_rows": 0,
+          "point_delta": "0",
+          "redeemed_coupons": 0
+        },
+        {
+          "id": 18,
+          "status": "PENDING_PAYMENT",
+          "payable_cents": 1500,
+          "points_used": 0,
+          "user_coupon_id": null,
+          "payments": 0,
+          "payment_cents": "0",
+          "stock_rows": 0,
+          "stock_delta": 0,
+          "point_rows": 0,
+          "point_delta": "0",
+          "redeemed_coupons": 0
+        },
+        {
+          "id": 19,
+          "status": "PENDING_PAYMENT",
+          "payable_cents": 1500,
+          "points_used": 0,
+          "user_coupon_id": null,
+          "payments": 0,
+          "payment_cents": "0",
+          "stock_rows": 0,
+          "stock_delta": 0,
+          "point_rows": 0,
+          "point_delta": "0",
+          "redeemed_coupons": 0
+        },
+        {
+          "id": 20,
+          "status": "PENDING_PAYMENT",
+          "payable_cents": 1500,
+          "points_used": 0,
+          "user_coupon_id": null,
+          "payments": 0,
+          "payment_cents": "0",
+          "stock_rows": 0,
+          "stock_delta": 0,
+          "point_rows": 0,
+          "point_delta": "0",
+          "redeemed_coupons": 0
+        },
+        {
+          "id": 21,
+          "status": "PENDING_PAYMENT",
+          "payable_cents": 1500,
+          "points_used": 0,
+          "user_coupon_id": null,
+          "payments": 0,
+          "payment_cents": "0",
+          "stock_rows": 0,
+          "stock_delta": 0,
+          "point_rows": 0,
+          "point_delta": "0",
+          "redeemed_coupons": 0
+        },
+        {
+          "id": 22,
+          "status": "PENDING_PAYMENT",
+          "payable_cents": 1500,
+          "points_used": 0,
+          "user_coupon_id": null,
+          "payments": 0,
+          "payment_cents": "0",
+          "stock_rows": 0,
+          "stock_delta": 0,
+          "point_rows": 0,
+          "point_delta": "0",
+          "redeemed_coupons": 0
+        },
+        {
+          "id": 23,
+          "status": "PENDING_PAYMENT",
+          "payable_cents": 1500,
+          "points_used": 0,
+          "user_coupon_id": null,
+          "payments": 0,
+          "payment_cents": "0",
+          "stock_rows": 0,
+          "stock_delta": 0,
+          "point_rows": 0,
+          "point_delta": "0",
+          "redeemed_coupons": 0
+        },
+        {
+          "id": 24,
+          "status": "PENDING_PAYMENT",
+          "payable_cents": 1500,
+          "points_used": 0,
+          "user_coupon_id": null,
+          "payments": 0,
+          "payment_cents": "0",
+          "stock_rows": 0,
+          "stock_delta": 0,
+          "point_rows": 0,
+          "point_delta": "0",
+          "redeemed_coupons": 0
+        },
+        {
+          "id": 25,
+          "status": "PENDING_PAYMENT",
+          "payable_cents": 1500,
+          "points_used": 0,
+          "user_coupon_id": null,
+          "payments": 0,
+          "payment_cents": "0",
+          "stock_rows": 0,
+          "stock_delta": 0,
+          "point_rows": 0,
+          "point_delta": "0",
+          "redeemed_coupons": 0
+        },
+        {
+          "id": 26,
+          "status": "PENDING_PAYMENT",
+          "payable_cents": 1500,
+          "points_used": 0,
+          "user_coupon_id": null,
+          "payments": 0,
+          "payment_cents": "0",
+          "stock_rows": 0,
+          "stock_delta": 0,
+          "point_rows": 0,
+          "point_delta": "0",
+          "redeemed_coupons": 0
+        },
+        {
+          "id": 27,
+          "status": "PENDING_PAYMENT",
+          "payable_cents": 1500,
+          "points_used": 0,
+          "user_coupon_id": null,
+          "payments": 0,
+          "payment_cents": "0",
+          "stock_rows": 0,
+          "stock_delta": 0,
+          "point_rows": 0,
+          "point_delta": "0",
+          "redeemed_coupons": 0
+        },
+        {
+          "id": 28,
+          "status": "PENDING_PAYMENT",
+          "payable_cents": 1500,
+          "points_used": 0,
+          "user_coupon_id": null,
+          "payments": 0,
+          "payment_cents": "0",
+          "stock_rows": 0,
+          "stock_delta": 0,
+          "point_rows": 0,
+          "point_delta": "0",
+          "redeemed_coupons": 0
+        },
+        {
+          "id": 29,
+          "status": "PENDING_PAYMENT",
+          "payable_cents": 1500,
+          "points_used": 0,
+          "user_coupon_id": null,
+          "payments": 0,
+          "payment_cents": "0",
+          "stock_rows": 0,
+          "stock_delta": 0,
+          "point_rows": 0,
+          "point_delta": "0",
+          "redeemed_coupons": 0
+        },
+        {
+          "id": 30,
+          "status": "PENDING_PAYMENT",
+          "payable_cents": 1500,
+          "points_used": 0,
+          "user_coupon_id": null,
+          "payments": 0,
+          "payment_cents": "0",
+          "stock_rows": 0,
+          "stock_delta": 0,
+          "point_rows": 0,
+          "point_delta": "0",
+          "redeemed_coupons": 0
+        },
+        {
+          "id": 31,
+          "status": "PENDING_PAYMENT",
+          "payable_cents": 1500,
+          "points_used": 0,
+          "user_coupon_id": null,
+          "payments": 0,
+          "payment_cents": "0",
+          "stock_rows": 0,
+          "stock_delta": 0,
+          "point_rows": 0,
+          "point_delta": "0",
+          "redeemed_coupons": 0
+        },
+        {
+          "id": 32,
+          "status": "PENDING_PAYMENT",
+          "payable_cents": 1500,
+          "points_used": 0,
+          "user_coupon_id": null,
+          "payments": 0,
+          "payment_cents": "0",
+          "stock_rows": 0,
+          "stock_delta": 0,
+          "point_rows": 0,
+          "point_delta": "0",
+          "redeemed_coupons": 0
+        },
+        {
+          "id": 33,
+          "status": "PENDING_PAYMENT",
+          "payable_cents": 1500,
+          "points_used": 0,
+          "user_coupon_id": null,
+          "payments": 0,
+          "payment_cents": "0",
+          "stock_rows": 0,
+          "stock_delta": 0,
+          "point_rows": 0,
+          "point_delta": "0",
+          "redeemed_coupons": 0
+        },
+        {
+          "id": 34,
+          "status": "PENDING_PAYMENT",
+          "payable_cents": 1500,
+          "points_used": 0,
+          "user_coupon_id": null,
+          "payments": 0,
+          "payment_cents": "0",
+          "stock_rows": 0,
+          "stock_delta": 0,
+          "point_rows": 0,
+          "point_delta": "0",
+          "redeemed_coupons": 0
+        },
+        {
+          "id": 35,
+          "status": "PENDING_PAYMENT",
+          "payable_cents": 1500,
+          "points_used": 0,
+          "user_coupon_id": null,
+          "payments": 0,
+          "payment_cents": "0",
+          "stock_rows": 0,
+          "stock_delta": 0,
+          "point_rows": 0,
+          "point_delta": "0",
+          "redeemed_coupons": 0
+        },
+        {
+          "id": 36,
+          "status": "PENDING_PAYMENT",
+          "payable_cents": 1500,
+          "points_used": 0,
+          "user_coupon_id": null,
+          "payments": 0,
+          "payment_cents": "0",
+          "stock_rows": 0,
+          "stock_delta": 0,
+          "point_rows": 0,
+          "point_delta": "0",
+          "redeemed_coupons": 0
+        },
+        {
+          "id": 37,
+          "status": "PENDING_PAYMENT",
+          "payable_cents": 1500,
+          "points_used": 0,
+          "user_coupon_id": null,
+          "payments": 0,
+          "payment_cents": "0",
+          "stock_rows": 0,
+          "stock_delta": 0,
+          "point_rows": 0,
+          "point_delta": "0",
+          "redeemed_coupons": 0
+        },
+        {
+          "id": 38,
+          "status": "PENDING_PAYMENT",
+          "payable_cents": 1500,
+          "points_used": 0,
+          "user_coupon_id": null,
+          "payments": 0,
+          "payment_cents": "0",
+          "stock_rows": 0,
+          "stock_delta": 0,
+          "point_rows": 0,
+          "point_delta": "0",
+          "redeemed_coupons": 0
+        },
+        {
+          "id": 39,
+          "status": "PENDING_PAYMENT",
+          "payable_cents": 1500,
+          "points_used": 0,
+          "user_coupon_id": null,
+          "payments": 0,
+          "payment_cents": "0",
+          "stock_rows": 0,
+          "stock_delta": 0,
+          "point_rows": 0,
+          "point_delta": "0",
+          "redeemed_coupons": 0
+        },
+        {
+          "id": 40,
+          "status": "PENDING_PAYMENT",
+          "payable_cents": 1500,
+          "points_used": 0,
+          "user_coupon_id": null,
+          "payments": 0,
+          "payment_cents": "0",
+          "stock_rows": 0,
+          "stock_delta": 0,
+          "point_rows": 0,
+          "point_delta": "0",
+          "redeemed_coupons": 0
+        },
+        {
+          "id": 41,
+          "status": "PENDING_PAYMENT",
+          "payable_cents": 1500,
+          "points_used": 0,
+          "user_coupon_id": null,
+          "payments": 0,
+          "payment_cents": "0",
+          "stock_rows": 0,
+          "stock_delta": 0,
+          "point_rows": 0,
+          "point_delta": "0",
+          "redeemed_coupons": 0
+        },
+        {
+          "id": 42,
+          "status": "PENDING_PAYMENT",
+          "payable_cents": 1500,
+          "points_used": 0,
+          "user_coupon_id": null,
+          "payments": 0,
+          "payment_cents": "0",
+          "stock_rows": 0,
+          "stock_delta": 0,
+          "point_rows": 0,
+          "point_delta": "0",
+          "redeemed_coupons": 0
+        },
+        {
+          "id": 43,
+          "status": "PENDING_PAYMENT",
+          "payable_cents": 1500,
+          "points_used": 0,
+          "user_coupon_id": null,
+          "payments": 0,
+          "payment_cents": "0",
+          "stock_rows": 0,
+          "stock_delta": 0,
+          "point_rows": 0,
+          "point_delta": "0",
+          "redeemed_coupons": 0
+        },
+        {
+          "id": 44,
+          "status": "PENDING_PAYMENT",
+          "payable_cents": 1500,
+          "points_used": 0,
+          "user_coupon_id": null,
+          "payments": 0,
+          "payment_cents": "0",
+          "stock_rows": 0,
+          "stock_delta": 0,
+          "point_rows": 0,
+          "point_delta": "0",
+          "redeemed_coupons": 0
+        },
+        {
+          "id": 45,
+          "status": "PENDING_PAYMENT",
+          "payable_cents": 1500,
+          "points_used": 0,
+          "user_coupon_id": null,
+          "payments": 0,
+          "payment_cents": "0",
+          "stock_rows": 0,
+          "stock_delta": 0,
+          "point_rows": 0,
+          "point_delta": "0",
+          "redeemed_coupons": 0
+        },
+        {
+          "id": 46,
+          "status": "PENDING_PAYMENT",
+          "payable_cents": 1500,
+          "points_used": 0,
+          "user_coupon_id": null,
+          "payments": 0,
+          "payment_cents": "0",
+          "stock_rows": 0,
+          "stock_delta": 0,
+          "point_rows": 0,
+          "point_delta": "0",
+          "redeemed_coupons": 0
+        },
+        {
+          "id": 47,
+          "status": "PENDING_PAYMENT",
+          "payable_cents": 1500,
+          "points_used": 0,
+          "user_coupon_id": null,
+          "payments": 0,
+          "payment_cents": "0",
+          "stock_rows": 0,
+          "stock_delta": 0,
+          "point_rows": 0,
+          "point_delta": "0",
+          "redeemed_coupons": 0
+        },
+        {
+          "id": 48,
+          "status": "PENDING_PAYMENT",
+          "payable_cents": 1500,
+          "points_used": 0,
+          "user_coupon_id": null,
+          "payments": 0,
+          "payment_cents": "0",
+          "stock_rows": 0,
+          "stock_delta": 0,
+          "point_rows": 0,
+          "point_delta": "0",
+          "redeemed_coupons": 0
+        },
+        {
+          "id": 49,
+          "status": "PENDING_PAYMENT",
+          "payable_cents": 1500,
+          "points_used": 0,
+          "user_coupon_id": null,
+          "payments": 0,
+          "payment_cents": "0",
+          "stock_rows": 0,
+          "stock_delta": 0,
+          "point_rows": 0,
+          "point_delta": "0",
+          "redeemed_coupons": 0
+        },
+        {
+          "id": 50,
+          "status": "PENDING_PAYMENT",
+          "payable_cents": 1500,
+          "points_used": 0,
+          "user_coupon_id": null,
+          "payments": 0,
+          "payment_cents": "0",
+          "stock_rows": 0,
+          "stock_delta": 0,
+          "point_rows": 0,
+          "point_delta": "0",
+          "redeemed_coupons": 0
+        },
+        {
+          "id": 51,
+          "status": "PENDING_PAYMENT",
+          "payable_cents": 1500,
+          "points_used": 0,
+          "user_coupon_id": null,
+          "payments": 0,
+          "payment_cents": "0",
+          "stock_rows": 0,
+          "stock_delta": 0,
+          "point_rows": 0,
+          "point_delta": "0",
+          "redeemed_coupons": 0
+        },
+        {
+          "id": 52,
+          "status": "PENDING_PAYMENT",
+          "payable_cents": 1500,
+          "points_used": 0,
+          "user_coupon_id": null,
+          "payments": 0,
+          "payment_cents": "0",
+          "stock_rows": 0,
+          "stock_delta": 0,
+          "point_rows": 0,
+          "point_delta": "0",
+          "redeemed_coupons": 0
+        },
+        {
+          "id": 53,
+          "status": "PENDING_PAYMENT",
+          "payable_cents": 1500,
+          "points_used": 0,
+          "user_coupon_id": null,
+          "payments": 0,
+          "payment_cents": "0",
+          "stock_rows": 0,
+          "stock_delta": 0,
+          "point_rows": 0,
+          "point_delta": "0",
+          "redeemed_coupons": 0
+        },
+        {
+          "id": 54,
+          "status": "PENDING_PAYMENT",
+          "payable_cents": 1500,
+          "points_used": 0,
+          "user_coupon_id": null,
+          "payments": 0,
+          "payment_cents": "0",
+          "stock_rows": 0,
+          "stock_delta": 0,
+          "point_rows": 0,
+          "point_delta": "0",
+          "redeemed_coupons": 0
+        },
+        {
+          "id": 55,
+          "status": "PENDING_PAYMENT",
+          "payable_cents": 1500,
+          "points_used": 0,
+          "user_coupon_id": null,
+          "payments": 0,
+          "payment_cents": "0",
+          "stock_rows": 0,
+          "stock_delta": 0,
+          "point_rows": 0,
+          "point_delta": "0",
+          "redeemed_coupons": 0
+        },
+        {
+          "id": 56,
+          "status": "PENDING_PAYMENT",
+          "payable_cents": 1500,
+          "points_used": 0,
+          "user_coupon_id": null,
+          "payments": 0,
+          "payment_cents": "0",
+          "stock_rows": 0,
+          "stock_delta": 0,
+          "point_rows": 0,
+          "point_delta": "0",
+          "redeemed_coupons": 0
+        },
+        {
+          "id": 57,
+          "status": "PENDING_PAYMENT",
+          "payable_cents": 1500,
+          "points_used": 0,
+          "user_coupon_id": null,
+          "payments": 0,
+          "payment_cents": "0",
+          "stock_rows": 0,
+          "stock_delta": 0,
+          "point_rows": 0,
+          "point_delta": "0",
+          "redeemed_coupons": 0
+        },
+        {
+          "id": 58,
+          "status": "PENDING_PAYMENT",
+          "payable_cents": 1500,
+          "points_used": 0,
+          "user_coupon_id": null,
+          "payments": 0,
+          "payment_cents": "0",
+          "stock_rows": 0,
+          "stock_delta": 0,
+          "point_rows": 0,
+          "point_delta": "0",
+          "redeemed_coupons": 0
+        },
+        {
+          "id": 59,
+          "status": "PENDING_PAYMENT",
+          "payable_cents": 1500,
+          "points_used": 0,
+          "user_coupon_id": null,
+          "payments": 0,
+          "payment_cents": "0",
+          "stock_rows": 0,
+          "stock_delta": 0,
+          "point_rows": 0,
+          "point_delta": "0",
+          "redeemed_coupons": 0
+        },
+        {
+          "id": 60,
+          "status": "PENDING_PAYMENT",
+          "payable_cents": 1500,
+          "points_used": 0,
+          "user_coupon_id": null,
+          "payments": 0,
+          "payment_cents": "0",
+          "stock_rows": 0,
+          "stock_delta": 0,
+          "point_rows": 0,
+          "point_delta": "0",
+          "redeemed_coupons": 0
+        },
+        {
+          "id": 61,
+          "status": "PENDING_PAYMENT",
+          "payable_cents": 1500,
+          "points_used": 0,
+          "user_coupon_id": null,
+          "payments": 0,
+          "payment_cents": "0",
+          "stock_rows": 0,
+          "stock_delta": 0,
+          "point_rows": 0,
+          "point_delta": "0",
+          "redeemed_coupons": 0
+        },
+        {
+          "id": 62,
+          "status": "PENDING_PAYMENT",
+          "payable_cents": 1500,
+          "points_used": 0,
+          "user_coupon_id": null,
+          "payments": 0,
+          "payment_cents": "0",
+          "stock_rows": 0,
+          "stock_delta": 0,
+          "point_rows": 0,
+          "point_delta": "0",
+          "redeemed_coupons": 0
+        },
+        {
+          "id": 63,
+          "status": "PENDING_PAYMENT",
+          "payable_cents": 1500,
+          "points_used": 0,
+          "user_coupon_id": null,
+          "payments": 0,
+          "payment_cents": "0",
+          "stock_rows": 0,
+          "stock_delta": 0,
+          "point_rows": 0,
+          "point_delta": "0",
+          "redeemed_coupons": 0
+        },
+        {
+          "id": 64,
+          "status": "PENDING_PAYMENT",
+          "payable_cents": 1500,
+          "points_used": 0,
+          "user_coupon_id": null,
+          "payments": 0,
+          "payment_cents": "0",
+          "stock_rows": 0,
+          "stock_delta": 0,
+          "point_rows": 0,
+          "point_delta": "0",
+          "redeemed_coupons": 0
+        },
+        {
+          "id": 65,
+          "status": "PENDING_PAYMENT",
+          "payable_cents": 1500,
+          "points_used": 0,
+          "user_coupon_id": null,
+          "payments": 0,
+          "payment_cents": "0",
+          "stock_rows": 0,
+          "stock_delta": 0,
+          "point_rows": 0,
+          "point_delta": "0",
+          "redeemed_coupons": 0
+        },
+        {
+          "id": 66,
+          "status": "PENDING_PAYMENT",
+          "payable_cents": 1500,
+          "points_used": 0,
+          "user_coupon_id": null,
+          "payments": 0,
+          "payment_cents": "0",
+          "stock_rows": 0,
+          "stock_delta": 0,
+          "point_rows": 0,
+          "point_delta": "0",
+          "redeemed_coupons": 0
+        },
+        {
+          "id": 67,
+          "status": "PENDING_PAYMENT",
+          "payable_cents": 1500,
+          "points_used": 0,
+          "user_coupon_id": null,
+          "payments": 0,
+          "payment_cents": "0",
+          "stock_rows": 0,
+          "stock_delta": 0,
+          "point_rows": 0,
+          "point_delta": "0",
+          "redeemed_coupons": 0
+        },
+        {
+          "id": 68,
+          "status": "PENDING_PAYMENT",
+          "payable_cents": 1500,
+          "points_used": 0,
+          "user_coupon_id": null,
+          "payments": 0,
+          "payment_cents": "0",
+          "stock_rows": 0,
+          "stock_delta": 0,
+          "point_rows": 0,
+          "point_delta": "0",
+          "redeemed_coupons": 0
+        },
+        {
+          "id": 69,
+          "status": "PENDING_PAYMENT",
+          "payable_cents": 1500,
+          "points_used": 0,
+          "user_coupon_id": null,
+          "payments": 0,
+          "payment_cents": "0",
+          "stock_rows": 0,
+          "stock_delta": 0,
+          "point_rows": 0,
+          "point_delta": "0",
+          "redeemed_coupons": 0
+        },
+        {
+          "id": 70,
+          "status": "PENDING_PAYMENT",
+          "payable_cents": 1500,
+          "points_used": 0,
+          "user_coupon_id": null,
+          "payments": 0,
+          "payment_cents": "0",
+          "stock_rows": 0,
+          "stock_delta": 0,
+          "point_rows": 0,
+          "point_delta": "0",
+          "redeemed_coupons": 0
+        },
+        {
+          "id": 71,
+          "status": "PENDING_PAYMENT",
+          "payable_cents": 1500,
+          "points_used": 0,
+          "user_coupon_id": null,
+          "payments": 0,
+          "payment_cents": "0",
+          "stock_rows": 0,
+          "stock_delta": 0,
+          "point_rows": 0,
+          "point_delta": "0",
+          "redeemed_coupons": 0
+        },
+        {
+          "id": 72,
+          "status": "PENDING_PAYMENT",
+          "payable_cents": 1500,
+          "points_used": 0,
+          "user_coupon_id": null,
+          "payments": 0,
+          "payment_cents": "0",
+          "stock_rows": 0,
+          "stock_delta": 0,
+          "point_rows": 0,
+          "point_delta": "0",
+          "redeemed_coupons": 0
+        },
+        {
+          "id": 73,
+          "status": "PENDING_PAYMENT",
+          "payable_cents": 1500,
+          "points_used": 0,
+          "user_coupon_id": null,
+          "payments": 0,
+          "payment_cents": "0",
+          "stock_rows": 0,
+          "stock_delta": 0,
+          "point_rows": 0,
+          "point_delta": "0",
+          "redeemed_coupons": 0
+        },
+        {
+          "id": 74,
+          "status": "PENDING_PAYMENT",
+          "payable_cents": 1500,
+          "points_used": 0,
+          "user_coupon_id": null,
+          "payments": 0,
+          "payment_cents": "0",
+          "stock_rows": 0,
+          "stock_delta": 0,
+          "point_rows": 0,
+          "point_delta": "0",
+          "redeemed_coupons": 0
+        },
+        {
+          "id": 75,
+          "status": "PENDING_PAYMENT",
+          "payable_cents": 1500,
+          "points_used": 0,
+          "user_coupon_id": null,
+          "payments": 0,
+          "payment_cents": "0",
+          "stock_rows": 0,
+          "stock_delta": 0,
+          "point_rows": 0,
+          "point_delta": "0",
+          "redeemed_coupons": 0
+        },
+        {
+          "id": 76,
+          "status": "PENDING_PAYMENT",
+          "payable_cents": 1500,
+          "points_used": 0,
+          "user_coupon_id": null,
+          "payments": 0,
+          "payment_cents": "0",
+          "stock_rows": 0,
+          "stock_delta": 0,
+          "point_rows": 0,
+          "point_delta": "0",
+          "redeemed_coupons": 0
+        },
+        {
+          "id": 77,
+          "status": "PENDING_PAYMENT",
+          "payable_cents": 1500,
+          "points_used": 0,
+          "user_coupon_id": null,
+          "payments": 0,
+          "payment_cents": "0",
+          "stock_rows": 0,
+          "stock_delta": 0,
+          "point_rows": 0,
+          "point_delta": "0",
+          "redeemed_coupons": 0
+        },
+        {
+          "id": 78,
+          "status": "PENDING_PAYMENT",
+          "payable_cents": 1500,
+          "points_used": 0,
+          "user_coupon_id": null,
+          "payments": 0,
+          "payment_cents": "0",
+          "stock_rows": 0,
+          "stock_delta": 0,
+          "point_rows": 0,
+          "point_delta": "0",
+          "redeemed_coupons": 0
+        },
+        {
+          "id": 79,
+          "status": "PENDING_PAYMENT",
+          "payable_cents": 1500,
+          "points_used": 0,
+          "user_coupon_id": null,
+          "payments": 0,
+          "payment_cents": "0",
+          "stock_rows": 0,
+          "stock_delta": 0,
+          "point_rows": 0,
+          "point_delta": "0",
+          "redeemed_coupons": 0
+        },
+        {
+          "id": 80,
+          "status": "PENDING_PAYMENT",
+          "payable_cents": 1500,
+          "points_used": 0,
+          "user_coupon_id": null,
+          "payments": 0,
+          "payment_cents": "0",
+          "stock_rows": 0,
+          "stock_delta": 0,
+          "point_rows": 0,
+          "point_delta": "0",
+          "redeemed_coupons": 0
+        },
+        {
+          "id": 81,
+          "status": "PENDING_PAYMENT",
+          "payable_cents": 1500,
+          "points_used": 0,
+          "user_coupon_id": null,
+          "payments": 0,
+          "payment_cents": "0",
+          "stock_rows": 0,
+          "stock_delta": 0,
+          "point_rows": 0,
+          "point_delta": "0",
+          "redeemed_coupons": 0
+        },
+        {
+          "id": 82,
+          "status": "PENDING_PAYMENT",
+          "payable_cents": 1500,
+          "points_used": 0,
+          "user_coupon_id": null,
+          "payments": 0,
+          "payment_cents": "0",
+          "stock_rows": 0,
+          "stock_delta": 0,
+          "point_rows": 0,
+          "point_delta": "0",
+          "redeemed_coupons": 0
+        },
+        {
+          "id": 83,
+          "status": "PENDING_PAYMENT",
+          "payable_cents": 1500,
+          "points_used": 0,
+          "user_coupon_id": null,
+          "payments": 0,
+          "payment_cents": "0",
+          "stock_rows": 0,
+          "stock_delta": 0,
+          "point_rows": 0,
+          "point_delta": "0",
+          "redeemed_coupons": 0
+        },
+        {
+          "id": 84,
+          "status": "PENDING_PAYMENT",
+          "payable_cents": 1500,
+          "points_used": 0,
+          "user_coupon_id": null,
+          "payments": 0,
+          "payment_cents": "0",
+          "stock_rows": 0,
+          "stock_delta": 0,
+          "point_rows": 0,
+          "point_delta": "0",
+          "redeemed_coupons": 0
+        },
+        {
+          "id": 85,
+          "status": "PENDING_PAYMENT",
+          "payable_cents": 1500,
+          "points_used": 0,
+          "user_coupon_id": null,
+          "payments": 0,
+          "payment_cents": "0",
+          "stock_rows": 0,
+          "stock_delta": 0,
+          "point_rows": 0,
+          "point_delta": "0",
+          "redeemed_coupons": 0
+        },
+        {
+          "id": 86,
+          "status": "PENDING_PAYMENT",
+          "payable_cents": 1500,
+          "points_used": 0,
+          "user_coupon_id": null,
+          "payments": 0,
+          "payment_cents": "0",
+          "stock_rows": 0,
+          "stock_delta": 0,
+          "point_rows": 0,
+          "point_delta": "0",
+          "redeemed_coupons": 0
+        },
+        {
+          "id": 87,
+          "status": "PENDING_PAYMENT",
+          "payable_cents": 1500,
+          "points_used": 0,
+          "user_coupon_id": null,
+          "payments": 0,
+          "payment_cents": "0",
+          "stock_rows": 0,
+          "stock_delta": 0,
+          "point_rows": 0,
+          "point_delta": "0",
+          "redeemed_coupons": 0
+        },
+        {
+          "id": 88,
+          "status": "PENDING_PAYMENT",
+          "payable_cents": 1500,
+          "points_used": 0,
+          "user_coupon_id": null,
+          "payments": 0,
+          "payment_cents": "0",
+          "stock_rows": 0,
+          "stock_delta": 0,
+          "point_rows": 0,
+          "point_delta": "0",
+          "redeemed_coupons": 0
+        },
+        {
+          "id": 89,
+          "status": "PENDING_PAYMENT",
+          "payable_cents": 1500,
+          "points_used": 0,
+          "user_coupon_id": null,
+          "payments": 0,
+          "payment_cents": "0",
+          "stock_rows": 0,
+          "stock_delta": 0,
+          "point_rows": 0,
+          "point_delta": "0",
+          "redeemed_coupons": 0
+        },
+        {
+          "id": 90,
+          "status": "PENDING_PAYMENT",
+          "payable_cents": 1500,
+          "points_used": 0,
+          "user_coupon_id": null,
+          "payments": 0,
+          "payment_cents": "0",
+          "stock_rows": 0,
+          "stock_delta": 0,
+          "point_rows": 0,
+          "point_delta": "0",
+          "redeemed_coupons": 0
+        },
+        {
+          "id": 91,
+          "status": "PENDING_PAYMENT",
+          "payable_cents": 1500,
+          "points_used": 0,
+          "user_coupon_id": null,
+          "payments": 0,
+          "payment_cents": "0",
+          "stock_rows": 0,
+          "stock_delta": 0,
+          "point_rows": 0,
+          "point_delta": "0",
+          "redeemed_coupons": 0
+        },
+        {
+          "id": 92,
+          "status": "PENDING_PAYMENT",
+          "payable_cents": 1500,
+          "points_used": 0,
+          "user_coupon_id": null,
+          "payments": 0,
+          "payment_cents": "0",
+          "stock_rows": 0,
+          "stock_delta": 0,
+          "point_rows": 0,
+          "point_delta": "0",
+          "redeemed_coupons": 0
+        },
+        {
+          "id": 93,
+          "status": "PENDING_PAYMENT",
+          "payable_cents": 1500,
+          "points_used": 0,
+          "user_coupon_id": null,
+          "payments": 0,
+          "payment_cents": "0",
+          "stock_rows": 0,
+          "stock_delta": 0,
+          "point_rows": 0,
+          "point_delta": "0",
+          "redeemed_coupons": 0
+        },
+        {
+          "id": 94,
+          "status": "PENDING_PAYMENT",
+          "payable_cents": 1500,
+          "points_used": 0,
+          "user_coupon_id": null,
+          "payments": 0,
+          "payment_cents": "0",
+          "stock_rows": 0,
+          "stock_delta": 0,
+          "point_rows": 0,
+          "point_delta": "0",
+          "redeemed_coupons": 0
+        },
+        {
+          "id": 95,
+          "status": "PENDING_PAYMENT",
+          "payable_cents": 1500,
+          "points_used": 0,
+          "user_coupon_id": null,
+          "payments": 0,
+          "payment_cents": "0",
+          "stock_rows": 0,
+          "stock_delta": 0,
+          "point_rows": 0,
+          "point_delta": "0",
+          "redeemed_coupons": 0
+        },
+        {
+          "id": 96,
+          "status": "PENDING_PAYMENT",
+          "payable_cents": 1500,
+          "points_used": 0,
+          "user_coupon_id": null,
+          "payments": 0,
+          "payment_cents": "0",
+          "stock_rows": 0,
+          "stock_delta": 0,
+          "point_rows": 0,
+          "point_delta": "0",
+          "redeemed_coupons": 0
+        },
+        {
+          "id": 97,
+          "status": "PENDING_PAYMENT",
+          "payable_cents": 1500,
+          "points_used": 0,
+          "user_coupon_id": null,
+          "payments": 0,
+          "payment_cents": "0",
+          "stock_rows": 0,
+          "stock_delta": 0,
+          "point_rows": 0,
+          "point_delta": "0",
+          "redeemed_coupons": 0
+        },
+        {
+          "id": 98,
+          "status": "PENDING_PAYMENT",
+          "payable_cents": 1500,
+          "points_used": 0,
+          "user_coupon_id": null,
+          "payments": 0,
+          "payment_cents": "0",
+          "stock_rows": 0,
+          "stock_delta": 0,
+          "point_rows": 0,
+          "point_delta": "0",
+          "redeemed_coupons": 0
+        },
+        {
+          "id": 99,
+          "status": "PENDING_PAYMENT",
+          "payable_cents": 1500,
+          "points_used": 0,
+          "user_coupon_id": null,
+          "payments": 0,
+          "payment_cents": "0",
+          "stock_rows": 0,
+          "stock_delta": 0,
+          "point_rows": 0,
+          "point_delta": "0",
+          "redeemed_coupons": 0
+        },
+        {
+          "id": 100,
+          "status": "PAID",
+          "payable_cents": 1500,
+          "points_used": 0,
+          "user_coupon_id": null,
+          "payments": 1,
+          "payment_cents": "1500",
+          "stock_rows": 1,
+          "stock_delta": -1,
+          "point_rows": 1,
+          "point_delta": "15",
+          "redeemed_coupons": 0
+        }
+      ],
+      "stock_before": 1,
+      "stock_after": 0
+    },
+    "C02": {
+      "orders": [
+        {
+          "id": 101,
+          "status": "PAID",
+          "payable_cents": 1500,
+          "points_used": 0,
+          "user_coupon_id": null,
+          "payments": 1,
+          "payment_cents": "1500",
+          "stock_rows": 1,
+          "stock_delta": -1,
+          "point_rows": 1,
+          "point_delta": "15",
+          "redeemed_coupons": 0
+        },
+        {
+          "id": 102,
+          "status": "PAID",
+          "payable_cents": 1500,
+          "points_used": 0,
+          "user_coupon_id": null,
+          "payments": 1,
+          "payment_cents": "1500",
+          "stock_rows": 1,
+          "stock_delta": -1,
+          "point_rows": 1,
+          "point_delta": "15",
+          "redeemed_coupons": 0
+        },
+        {
+          "id": 103,
+          "status": "PAID",
+          "payable_cents": 1500,
+          "points_used": 0,
+          "user_coupon_id": null,
+          "payments": 1,
+          "payment_cents": "1500",
+          "stock_rows": 1,
+          "stock_delta": -1,
+          "point_rows": 1,
+          "point_delta": "15",
+          "redeemed_coupons": 0
+        },
+        {
+          "id": 104,
+          "status": "PAID",
+          "payable_cents": 1500,
+          "points_used": 0,
+          "user_coupon_id": null,
+          "payments": 1,
+          "payment_cents": "1500",
+          "stock_rows": 1,
+          "stock_delta": -1,
+          "point_rows": 1,
+          "point_delta": "15",
+          "redeemed_coupons": 0
+        },
+        {
+          "id": 105,
+          "status": "PAID",
+          "payable_cents": 1500,
+          "points_used": 0,
+          "user_coupon_id": null,
+          "payments": 1,
+          "payment_cents": "1500",
+          "stock_rows": 1,
+          "stock_delta": -1,
+          "point_rows": 1,
+          "point_delta": "15",
+          "redeemed_coupons": 0
+        },
+        {
+          "id": 106,
+          "status": "PAID",
+          "payable_cents": 1500,
+          "points_used": 0,
+          "user_coupon_id": null,
+          "payments": 1,
+          "payment_cents": "1500",
+          "stock_rows": 1,
+          "stock_delta": -1,
+          "point_rows": 1,
+          "point_delta": "15",
+          "redeemed_coupons": 0
+        },
+        {
+          "id": 107,
+          "status": "PAID",
+          "payable_cents": 1500,
+          "points_used": 0,
+          "user_coupon_id": null,
+          "payments": 1,
+          "payment_cents": "1500",
+          "stock_rows": 1,
+          "stock_delta": -1,
+          "point_rows": 1,
+          "point_delta": "15",
+          "redeemed_coupons": 0
+        },
+        {
+          "id": 108,
+          "status": "PAID",
+          "payable_cents": 1500,
+          "points_used": 0,
+          "user_coupon_id": null,
+          "payments": 1,
+          "payment_cents": "1500",
+          "stock_rows": 1,
+          "stock_delta": -1,
+          "point_rows": 1,
+          "point_delta": "15",
+          "redeemed_coupons": 0
+        },
+        {
+          "id": 109,
+          "status": "PAID",
+          "payable_cents": 1500,
+          "points_used": 0,
+          "user_coupon_id": null,
+          "payments": 1,
+          "payment_cents": "1500",
+          "stock_rows": 1,
+          "stock_delta": -1,
+          "point_rows": 1,
+          "point_delta": "15",
+          "redeemed_coupons": 0
+        },
+        {
+          "id": 110,
+          "status": "PAID",
+          "payable_cents": 1500,
+          "points_used": 0,
+          "user_coupon_id": null,
+          "payments": 1,
+          "payment_cents": "1500",
+          "stock_rows": 1,
+          "stock_delta": -1,
+          "point_rows": 1,
+          "point_delta": "15",
+          "redeemed_coupons": 0
+        },
+        {
+          "id": 111,
+          "status": "PENDING_PAYMENT",
+          "payable_cents": 1500,
+          "points_used": 0,
+          "user_coupon_id": null,
+          "payments": 0,
+          "payment_cents": "0",
+          "stock_rows": 0,
+          "stock_delta": 0,
+          "point_rows": 0,
+          "point_delta": "0",
+          "redeemed_coupons": 0
+        },
+        {
+          "id": 112,
+          "status": "PAID",
+          "payable_cents": 1500,
+          "points_used": 0,
+          "user_coupon_id": null,
+          "payments": 1,
+          "payment_cents": "1500",
+          "stock_rows": 1,
+          "stock_delta": -1,
+          "point_rows": 1,
+          "point_delta": "15",
+          "redeemed_coupons": 0
+        },
+        {
+          "id": 113,
+          "status": "PAID",
+          "payable_cents": 1500,
+          "points_used": 0,
+          "user_coupon_id": null,
+          "payments": 1,
+          "payment_cents": "1500",
+          "stock_rows": 1,
+          "stock_delta": -1,
+          "point_rows": 1,
+          "point_delta": "15",
+          "redeemed_coupons": 0
+        },
+        {
+          "id": 114,
+          "status": "PAID",
+          "payable_cents": 1500,
+          "points_used": 0,
+          "user_coupon_id": null,
+          "payments": 1,
+          "payment_cents": "1500",
+          "stock_rows": 1,
+          "stock_delta": -1,
+          "point_rows": 1,
+          "point_delta": "15",
+          "redeemed_coupons": 0
+        },
+        {
+          "id": 115,
+          "status": "PAID",
+          "payable_cents": 1500,
+          "points_used": 0,
+          "user_coupon_id": null,
+          "payments": 1,
+          "payment_cents": "1500",
+          "stock_rows": 1,
+          "stock_delta": -1,
+          "point_rows": 1,
+          "point_delta": "15",
+          "redeemed_coupons": 0
+        },
+        {
+          "id": 116,
+          "status": "PAID",
+          "payable_cents": 1500,
+          "points_used": 0,
+          "user_coupon_id": null,
+          "payments": 1,
+          "payment_cents": "1500",
+          "stock_rows": 1,
+          "stock_delta": -1,
+          "point_rows": 1,
+          "point_delta": "15",
+          "redeemed_coupons": 0
+        },
+        {
+          "id": 117,
+          "status": "PAID",
+          "payable_cents": 1500,
+          "points_used": 0,
+          "user_coupon_id": null,
+          "payments": 1,
+          "payment_cents": "1500",
+          "stock_rows": 1,
+          "stock_delta": -1,
+          "point_rows": 1,
+          "point_delta": "15",
+          "redeemed_coupons": 0
+        },
+        {
+          "id": 118,
+          "status": "PAID",
+          "payable_cents": 1500,
+          "points_used": 0,
+          "user_coupon_id": null,
+          "payments": 1,
+          "payment_cents": "1500",
+          "stock_rows": 1,
+          "stock_delta": -1,
+          "point_rows": 1,
+          "point_delta": "15",
+          "redeemed_coupons": 0
+        },
+        {
+          "id": 119,
+          "status": "PENDING_PAYMENT",
+          "payable_cents": 1500,
+          "points_used": 0,
+          "user_coupon_id": null,
+          "payments": 0,
+          "payment_cents": "0",
+          "stock_rows": 0,
+          "stock_delta": 0,
+          "point_rows": 0,
+          "point_delta": "0",
+          "redeemed_coupons": 0
+        },
+        {
+          "id": 120,
+          "status": "PENDING_PAYMENT",
+          "payable_cents": 1500,
+          "points_used": 0,
+          "user_coupon_id": null,
+          "payments": 0,
+          "payment_cents": "0",
+          "stock_rows": 0,
+          "stock_delta": 0,
+          "point_rows": 0,
+          "point_delta": "0",
+          "redeemed_coupons": 0
+        },
+        {
+          "id": 121,
+          "status": "PAID",
+          "payable_cents": 1500,
+          "points_used": 0,
+          "user_coupon_id": null,
+          "payments": 1,
+          "payment_cents": "1500",
+          "stock_rows": 1,
+          "stock_delta": -1,
+          "point_rows": 1,
+          "point_delta": "15",
+          "redeemed_coupons": 0
+        },
+        {
+          "id": 122,
+          "status": "PAID",
+          "payable_cents": 1500,
+          "points_used": 0,
+          "user_coupon_id": null,
+          "payments": 1,
+          "payment_cents": "1500",
+          "stock_rows": 1,
+          "stock_delta": -1,
+          "point_rows": 1,
+          "point_delta": "15",
+          "redeemed_coupons": 0
+        },
+        {
+          "id": 123,
+          "status": "PENDING_PAYMENT",
+          "payable_cents": 1500,
+          "points_used": 0,
+          "user_coupon_id": null,
+          "payments": 0,
+          "payment_cents": "0",
+          "stock_rows": 0,
+          "stock_delta": 0,
+          "point_rows": 0,
+          "point_delta": "0",
+          "redeemed_coupons": 0
+        },
+        {
+          "id": 124,
+          "status": "PAID",
+          "payable_cents": 1500,
+          "points_used": 0,
+          "user_coupon_id": null,
+          "payments": 1,
+          "payment_cents": "1500",
+          "stock_rows": 1,
+          "stock_delta": -1,
+          "point_rows": 1,
+          "point_delta": "15",
+          "redeemed_coupons": 0
+        },
+        {
+          "id": 125,
+          "status": "PENDING_PAYMENT",
+          "payable_cents": 1500,
+          "points_used": 0,
+          "user_coupon_id": null,
+          "payments": 0,
+          "payment_cents": "0",
+          "stock_rows": 0,
+          "stock_delta": 0,
+          "point_rows": 0,
+          "point_delta": "0",
+          "redeemed_coupons": 0
+        },
+        {
+          "id": 126,
+          "status": "PAID",
+          "payable_cents": 1500,
+          "points_used": 0,
+          "user_coupon_id": null,
+          "payments": 1,
+          "payment_cents": "1500",
+          "stock_rows": 1,
+          "stock_delta": -1,
+          "point_rows": 1,
+          "point_delta": "15",
+          "redeemed_coupons": 0
+        },
+        {
+          "id": 127,
+          "status": "PAID",
+          "payable_cents": 1500,
+          "points_used": 0,
+          "user_coupon_id": null,
+          "payments": 1,
+          "payment_cents": "1500",
+          "stock_rows": 1,
+          "stock_delta": -1,
+          "point_rows": 1,
+          "point_delta": "15",
+          "redeemed_coupons": 0
+        },
+        {
+          "id": 128,
+          "status": "PENDING_PAYMENT",
+          "payable_cents": 1500,
+          "points_used": 0,
+          "user_coupon_id": null,
+          "payments": 0,
+          "payment_cents": "0",
+          "stock_rows": 0,
+          "stock_delta": 0,
+          "point_rows": 0,
+          "point_delta": "0",
+          "redeemed_coupons": 0
+        },
+        {
+          "id": 129,
+          "status": "PAID",
+          "payable_cents": 1500,
+          "points_used": 0,
+          "user_coupon_id": null,
+          "payments": 1,
+          "payment_cents": "1500",
+          "stock_rows": 1,
+          "stock_delta": -1,
+          "point_rows": 1,
+          "point_delta": "15",
+          "redeemed_coupons": 0
+        },
+        {
+          "id": 130,
+          "status": "PENDING_PAYMENT",
+          "payable_cents": 1500,
+          "points_used": 0,
+          "user_coupon_id": null,
+          "payments": 0,
+          "payment_cents": "0",
+          "stock_rows": 0,
+          "stock_delta": 0,
+          "point_rows": 0,
+          "point_delta": "0",
+          "redeemed_coupons": 0
+        },
+        {
+          "id": 131,
+          "status": "PENDING_PAYMENT",
+          "payable_cents": 1500,
+          "points_used": 0,
+          "user_coupon_id": null,
+          "payments": 0,
+          "payment_cents": "0",
+          "stock_rows": 0,
+          "stock_delta": 0,
+          "point_rows": 0,
+          "point_delta": "0",
+          "redeemed_coupons": 0
+        },
+        {
+          "id": 132,
+          "status": "PENDING_PAYMENT",
+          "payable_cents": 1500,
+          "points_used": 0,
+          "user_coupon_id": null,
+          "payments": 0,
+          "payment_cents": "0",
+          "stock_rows": 0,
+          "stock_delta": 0,
+          "point_rows": 0,
+          "point_delta": "0",
+          "redeemed_coupons": 0
+        },
+        {
+          "id": 133,
+          "status": "PAID",
+          "payable_cents": 1500,
+          "points_used": 0,
+          "user_coupon_id": null,
+          "payments": 1,
+          "payment_cents": "1500",
+          "stock_rows": 1,
+          "stock_delta": -1,
+          "point_rows": 1,
+          "point_delta": "15",
+          "redeemed_coupons": 0
+        },
+        {
+          "id": 134,
+          "status": "PENDING_PAYMENT",
+          "payable_cents": 1500,
+          "points_used": 0,
+          "user_coupon_id": null,
+          "payments": 0,
+          "payment_cents": "0",
+          "stock_rows": 0,
+          "stock_delta": 0,
+          "point_rows": 0,
+          "point_delta": "0",
+          "redeemed_coupons": 0
+        },
+        {
+          "id": 135,
+          "status": "PAID",
+          "payable_cents": 1500,
+          "points_used": 0,
+          "user_coupon_id": null,
+          "payments": 1,
+          "payment_cents": "1500",
+          "stock_rows": 1,
+          "stock_delta": -1,
+          "point_rows": 1,
+          "point_delta": "15",
+          "redeemed_coupons": 0
+        },
+        {
+          "id": 136,
+          "status": "PAID",
+          "payable_cents": 1500,
+          "points_used": 0,
+          "user_coupon_id": null,
+          "payments": 1,
+          "payment_cents": "1500",
+          "stock_rows": 1,
+          "stock_delta": -1,
+          "point_rows": 1,
+          "point_delta": "15",
+          "redeemed_coupons": 0
+        },
+        {
+          "id": 137,
+          "status": "PAID",
+          "payable_cents": 1500,
+          "points_used": 0,
+          "user_coupon_id": null,
+          "payments": 1,
+          "payment_cents": "1500",
+          "stock_rows": 1,
+          "stock_delta": -1,
+          "point_rows": 1,
+          "point_delta": "15",
+          "redeemed_coupons": 0
+        },
+        {
+          "id": 138,
+          "status": "PENDING_PAYMENT",
+          "payable_cents": 1500,
+          "points_used": 0,
+          "user_coupon_id": null,
+          "payments": 0,
+          "payment_cents": "0",
+          "stock_rows": 0,
+          "stock_delta": 0,
+          "point_rows": 0,
+          "point_delta": "0",
+          "redeemed_coupons": 0
+        },
+        {
+          "id": 139,
+          "status": "PAID",
+          "payable_cents": 1500,
+          "points_used": 0,
+          "user_coupon_id": null,
+          "payments": 1,
+          "payment_cents": "1500",
+          "stock_rows": 1,
+          "stock_delta": -1,
+          "point_rows": 1,
+          "point_delta": "15",
+          "redeemed_coupons": 0
+        },
+        {
+          "id": 140,
+          "status": "PENDING_PAYMENT",
+          "payable_cents": 1500,
+          "points_used": 0,
+          "user_coupon_id": null,
+          "payments": 0,
+          "payment_cents": "0",
+          "stock_rows": 0,
+          "stock_delta": 0,
+          "point_rows": 0,
+          "point_delta": "0",
+          "redeemed_coupons": 0
+        },
+        {
+          "id": 141,
+          "status": "PENDING_PAYMENT",
+          "payable_cents": 1500,
+          "points_used": 0,
+          "user_coupon_id": null,
+          "payments": 0,
+          "payment_cents": "0",
+          "stock_rows": 0,
+          "stock_delta": 0,
+          "point_rows": 0,
+          "point_delta": "0",
+          "redeemed_coupons": 0
+        },
+        {
+          "id": 142,
+          "status": "PENDING_PAYMENT",
+          "payable_cents": 1500,
+          "points_used": 0,
+          "user_coupon_id": null,
+          "payments": 0,
+          "payment_cents": "0",
+          "stock_rows": 0,
+          "stock_delta": 0,
+          "point_rows": 0,
+          "point_delta": "0",
+          "redeemed_coupons": 0
+        },
+        {
+          "id": 143,
+          "status": "PENDING_PAYMENT",
+          "payable_cents": 1500,
+          "points_used": 0,
+          "user_coupon_id": null,
+          "payments": 0,
+          "payment_cents": "0",
+          "stock_rows": 0,
+          "stock_delta": 0,
+          "point_rows": 0,
+          "point_delta": "0",
+          "redeemed_coupons": 0
+        },
+        {
+          "id": 144,
+          "status": "PAID",
+          "payable_cents": 1500,
+          "points_used": 0,
+          "user_coupon_id": null,
+          "payments": 1,
+          "payment_cents": "1500",
+          "stock_rows": 1,
+          "stock_delta": -1,
+          "point_rows": 1,
+          "point_delta": "15",
+          "redeemed_coupons": 0
+        },
+        {
+          "id": 145,
+          "status": "PENDING_PAYMENT",
+          "payable_cents": 1500,
+          "points_used": 0,
+          "user_coupon_id": null,
+          "payments": 0,
+          "payment_cents": "0",
+          "stock_rows": 0,
+          "stock_delta": 0,
+          "point_rows": 0,
+          "point_delta": "0",
+          "redeemed_coupons": 0
+        },
+        {
+          "id": 146,
+          "status": "PENDING_PAYMENT",
+          "payable_cents": 1500,
+          "points_used": 0,
+          "user_coupon_id": null,
+          "payments": 0,
+          "payment_cents": "0",
+          "stock_rows": 0,
+          "stock_delta": 0,
+          "point_rows": 0,
+          "point_delta": "0",
+          "redeemed_coupons": 0
+        },
+        {
+          "id": 147,
+          "status": "PAID",
+          "payable_cents": 1500,
+          "points_used": 0,
+          "user_coupon_id": null,
+          "payments": 1,
+          "payment_cents": "1500",
+          "stock_rows": 1,
+          "stock_delta": -1,
+          "point_rows": 1,
+          "point_delta": "15",
+          "redeemed_coupons": 0
+        },
+        {
+          "id": 148,
+          "status": "PAID",
+          "payable_cents": 1500,
+          "points_used": 0,
+          "user_coupon_id": null,
+          "payments": 1,
+          "payment_cents": "1500",
+          "stock_rows": 1,
+          "stock_delta": -1,
+          "point_rows": 1,
+          "point_delta": "15",
+          "redeemed_coupons": 0
+        },
+        {
+          "id": 149,
+          "status": "PENDING_PAYMENT",
+          "payable_cents": 1500,
+          "points_used": 0,
+          "user_coupon_id": null,
+          "payments": 0,
+          "payment_cents": "0",
+          "stock_rows": 0,
+          "stock_delta": 0,
+          "point_rows": 0,
+          "point_delta": "0",
+          "redeemed_coupons": 0
+        },
+        {
+          "id": 150,
+          "status": "PAID",
+          "payable_cents": 1500,
+          "points_used": 0,
+          "user_coupon_id": null,
+          "payments": 1,
+          "payment_cents": "1500",
+          "stock_rows": 1,
+          "stock_delta": -1,
+          "point_rows": 1,
+          "point_delta": "15",
+          "redeemed_coupons": 0
+        },
+        {
+          "id": 151,
+          "status": "PENDING_PAYMENT",
+          "payable_cents": 1500,
+          "points_used": 0,
+          "user_coupon_id": null,
+          "payments": 0,
+          "payment_cents": "0",
+          "stock_rows": 0,
+          "stock_delta": 0,
+          "point_rows": 0,
+          "point_delta": "0",
+          "redeemed_coupons": 0
+        },
+        {
+          "id": 152,
+          "status": "PENDING_PAYMENT",
+          "payable_cents": 1500,
+          "points_used": 0,
+          "user_coupon_id": null,
+          "payments": 0,
+          "payment_cents": "0",
+          "stock_rows": 0,
+          "stock_delta": 0,
+          "point_rows": 0,
+          "point_delta": "0",
+          "redeemed_coupons": 0
+        },
+        {
+          "id": 153,
+          "status": "PENDING_PAYMENT",
+          "payable_cents": 1500,
+          "points_used": 0,
+          "user_coupon_id": null,
+          "payments": 0,
+          "payment_cents": "0",
+          "stock_rows": 0,
+          "stock_delta": 0,
+          "point_rows": 0,
+          "point_delta": "0",
+          "redeemed_coupons": 0
+        },
+        {
+          "id": 154,
+          "status": "PENDING_PAYMENT",
+          "payable_cents": 1500,
+          "points_used": 0,
+          "user_coupon_id": null,
+          "payments": 0,
+          "payment_cents": "0",
+          "stock_rows": 0,
+          "stock_delta": 0,
+          "point_rows": 0,
+          "point_delta": "0",
+          "redeemed_coupons": 0
+        },
+        {
+          "id": 155,
+          "status": "PAID",
+          "payable_cents": 1500,
+          "points_used": 0,
+          "user_coupon_id": null,
+          "payments": 1,
+          "payment_cents": "1500",
+          "stock_rows": 1,
+          "stock_delta": -1,
+          "point_rows": 1,
+          "point_delta": "15",
+          "redeemed_coupons": 0
+        },
+        {
+          "id": 156,
+          "status": "PAID",
+          "payable_cents": 1500,
+          "points_used": 0,
+          "user_coupon_id": null,
+          "payments": 1,
+          "payment_cents": "1500",
+          "stock_rows": 1,
+          "stock_delta": -1,
+          "point_rows": 1,
+          "point_delta": "15",
+          "redeemed_coupons": 0
+        },
+        {
+          "id": 157,
+          "status": "PENDING_PAYMENT",
+          "payable_cents": 1500,
+          "points_used": 0,
+          "user_coupon_id": null,
+          "payments": 0,
+          "payment_cents": "0",
+          "stock_rows": 0,
+          "stock_delta": 0,
+          "point_rows": 0,
+          "point_delta": "0",
+          "redeemed_coupons": 0
+        },
+        {
+          "id": 158,
+          "status": "PENDING_PAYMENT",
+          "payable_cents": 1500,
+          "points_used": 0,
+          "user_coupon_id": null,
+          "payments": 0,
+          "payment_cents": "0",
+          "stock_rows": 0,
+          "stock_delta": 0,
+          "point_rows": 0,
+          "point_delta": "0",
+          "redeemed_coupons": 0
+        },
+        {
+          "id": 159,
+          "status": "PENDING_PAYMENT",
+          "payable_cents": 1500,
+          "points_used": 0,
+          "user_coupon_id": null,
+          "payments": 0,
+          "payment_cents": "0",
+          "stock_rows": 0,
+          "stock_delta": 0,
+          "point_rows": 0,
+          "point_delta": "0",
+          "redeemed_coupons": 0
+        },
+        {
+          "id": 160,
+          "status": "PENDING_PAYMENT",
+          "payable_cents": 1500,
+          "points_used": 0,
+          "user_coupon_id": null,
+          "payments": 0,
+          "payment_cents": "0",
+          "stock_rows": 0,
+          "stock_delta": 0,
+          "point_rows": 0,
+          "point_delta": "0",
+          "redeemed_coupons": 0
+        },
+        {
+          "id": 161,
+          "status": "PENDING_PAYMENT",
+          "payable_cents": 1500,
+          "points_used": 0,
+          "user_coupon_id": null,
+          "payments": 0,
+          "payment_cents": "0",
+          "stock_rows": 0,
+          "stock_delta": 0,
+          "point_rows": 0,
+          "point_delta": "0",
+          "redeemed_coupons": 0
+        },
+        {
+          "id": 162,
+          "status": "PENDING_PAYMENT",
+          "payable_cents": 1500,
+          "points_used": 0,
+          "user_coupon_id": null,
+          "payments": 0,
+          "payment_cents": "0",
+          "stock_rows": 0,
+          "stock_delta": 0,
+          "point_rows": 0,
+          "point_delta": "0",
+          "redeemed_coupons": 0
+        },
+        {
+          "id": 163,
+          "status": "PENDING_PAYMENT",
+          "payable_cents": 1500,
+          "points_used": 0,
+          "user_coupon_id": null,
+          "payments": 0,
+          "payment_cents": "0",
+          "stock_rows": 0,
+          "stock_delta": 0,
+          "point_rows": 0,
+          "point_delta": "0",
+          "redeemed_coupons": 0
+        },
+        {
+          "id": 164,
+          "status": "PAID",
+          "payable_cents": 1500,
+          "points_used": 0,
+          "user_coupon_id": null,
+          "payments": 1,
+          "payment_cents": "1500",
+          "stock_rows": 1,
+          "stock_delta": -1,
+          "point_rows": 1,
+          "point_delta": "15",
+          "redeemed_coupons": 0
+        },
+        {
+          "id": 165,
+          "status": "PENDING_PAYMENT",
+          "payable_cents": 1500,
+          "points_used": 0,
+          "user_coupon_id": null,
+          "payments": 0,
+          "payment_cents": "0",
+          "stock_rows": 0,
+          "stock_delta": 0,
+          "point_rows": 0,
+          "point_delta": "0",
+          "redeemed_coupons": 0
+        },
+        {
+          "id": 166,
+          "status": "PENDING_PAYMENT",
+          "payable_cents": 1500,
+          "points_used": 0,
+          "user_coupon_id": null,
+          "payments": 0,
+          "payment_cents": "0",
+          "stock_rows": 0,
+          "stock_delta": 0,
+          "point_rows": 0,
+          "point_delta": "0",
+          "redeemed_coupons": 0
+        },
+        {
+          "id": 167,
+          "status": "PAID",
+          "payable_cents": 1500,
+          "points_used": 0,
+          "user_coupon_id": null,
+          "payments": 1,
+          "payment_cents": "1500",
+          "stock_rows": 1,
+          "stock_delta": -1,
+          "point_rows": 1,
+          "point_delta": "15",
+          "redeemed_coupons": 0
+        },
+        {
+          "id": 168,
+          "status": "PAID",
+          "payable_cents": 1500,
+          "points_used": 0,
+          "user_coupon_id": null,
+          "payments": 1,
+          "payment_cents": "1500",
+          "stock_rows": 1,
+          "stock_delta": -1,
+          "point_rows": 1,
+          "point_delta": "15",
+          "redeemed_coupons": 0
+        },
+        {
+          "id": 169,
+          "status": "PAID",
+          "payable_cents": 1500,
+          "points_used": 0,
+          "user_coupon_id": null,
+          "payments": 1,
+          "payment_cents": "1500",
+          "stock_rows": 1,
+          "stock_delta": -1,
+          "point_rows": 1,
+          "point_delta": "15",
+          "redeemed_coupons": 0
+        },
+        {
+          "id": 170,
+          "status": "PENDING_PAYMENT",
+          "payable_cents": 1500,
+          "points_used": 0,
+          "user_coupon_id": null,
+          "payments": 0,
+          "payment_cents": "0",
+          "stock_rows": 0,
+          "stock_delta": 0,
+          "point_rows": 0,
+          "point_delta": "0",
+          "redeemed_coupons": 0
+        },
+        {
+          "id": 171,
+          "status": "PAID",
+          "payable_cents": 1500,
+          "points_used": 0,
+          "user_coupon_id": null,
+          "payments": 1,
+          "payment_cents": "1500",
+          "stock_rows": 1,
+          "stock_delta": -1,
+          "point_rows": 1,
+          "point_delta": "15",
+          "redeemed_coupons": 0
+        },
+        {
+          "id": 172,
+          "status": "PENDING_PAYMENT",
+          "payable_cents": 1500,
+          "points_used": 0,
+          "user_coupon_id": null,
+          "payments": 0,
+          "payment_cents": "0",
+          "stock_rows": 0,
+          "stock_delta": 0,
+          "point_rows": 0,
+          "point_delta": "0",
+          "redeemed_coupons": 0
+        },
+        {
+          "id": 173,
+          "status": "PENDING_PAYMENT",
+          "payable_cents": 1500,
+          "points_used": 0,
+          "user_coupon_id": null,
+          "payments": 0,
+          "payment_cents": "0",
+          "stock_rows": 0,
+          "stock_delta": 0,
+          "point_rows": 0,
+          "point_delta": "0",
+          "redeemed_coupons": 0
+        },
+        {
+          "id": 174,
+          "status": "PENDING_PAYMENT",
+          "payable_cents": 1500,
+          "points_used": 0,
+          "user_coupon_id": null,
+          "payments": 0,
+          "payment_cents": "0",
+          "stock_rows": 0,
+          "stock_delta": 0,
+          "point_rows": 0,
+          "point_delta": "0",
+          "redeemed_coupons": 0
+        },
+        {
+          "id": 175,
+          "status": "PENDING_PAYMENT",
+          "payable_cents": 1500,
+          "points_used": 0,
+          "user_coupon_id": null,
+          "payments": 0,
+          "payment_cents": "0",
+          "stock_rows": 0,
+          "stock_delta": 0,
+          "point_rows": 0,
+          "point_delta": "0",
+          "redeemed_coupons": 0
+        },
+        {
+          "id": 176,
+          "status": "PENDING_PAYMENT",
+          "payable_cents": 1500,
+          "points_used": 0,
+          "user_coupon_id": null,
+          "payments": 0,
+          "payment_cents": "0",
+          "stock_rows": 0,
+          "stock_delta": 0,
+          "point_rows": 0,
+          "point_delta": "0",
+          "redeemed_coupons": 0
+        },
+        {
+          "id": 177,
+          "status": "PENDING_PAYMENT",
+          "payable_cents": 1500,
+          "points_used": 0,
+          "user_coupon_id": null,
+          "payments": 0,
+          "payment_cents": "0",
+          "stock_rows": 0,
+          "stock_delta": 0,
+          "point_rows": 0,
+          "point_delta": "0",
+          "redeemed_coupons": 0
+        },
+        {
+          "id": 178,
+          "status": "PAID",
+          "payable_cents": 1500,
+          "points_used": 0,
+          "user_coupon_id": null,
+          "payments": 1,
+          "payment_cents": "1500",
+          "stock_rows": 1,
+          "stock_delta": -1,
+          "point_rows": 1,
+          "point_delta": "15",
+          "redeemed_coupons": 0
+        },
+        {
+          "id": 179,
+          "status": "PENDING_PAYMENT",
+          "payable_cents": 1500,
+          "points_used": 0,
+          "user_coupon_id": null,
+          "payments": 0,
+          "payment_cents": "0",
+          "stock_rows": 0,
+          "stock_delta": 0,
+          "point_rows": 0,
+          "point_delta": "0",
+          "redeemed_coupons": 0
+        },
+        {
+          "id": 180,
+          "status": "PAID",
+          "payable_cents": 1500,
+          "points_used": 0,
+          "user_coupon_id": null,
+          "payments": 1,
+          "payment_cents": "1500",
+          "stock_rows": 1,
+          "stock_delta": -1,
+          "point_rows": 1,
+          "point_delta": "15",
+          "redeemed_coupons": 0
+        },
+        {
+          "id": 181,
+          "status": "PENDING_PAYMENT",
+          "payable_cents": 1500,
+          "points_used": 0,
+          "user_coupon_id": null,
+          "payments": 0,
+          "payment_cents": "0",
+          "stock_rows": 0,
+          "stock_delta": 0,
+          "point_rows": 0,
+          "point_delta": "0",
+          "redeemed_coupons": 0
+        },
+        {
+          "id": 182,
+          "status": "PENDING_PAYMENT",
+          "payable_cents": 1500,
+          "points_used": 0,
+          "user_coupon_id": null,
+          "payments": 0,
+          "payment_cents": "0",
+          "stock_rows": 0,
+          "stock_delta": 0,
+          "point_rows": 0,
+          "point_delta": "0",
+          "redeemed_coupons": 0
+        },
+        {
+          "id": 183,
+          "status": "PAID",
+          "payable_cents": 1500,
+          "points_used": 0,
+          "user_coupon_id": null,
+          "payments": 1,
+          "payment_cents": "1500",
+          "stock_rows": 1,
+          "stock_delta": -1,
+          "point_rows": 1,
+          "point_delta": "15",
+          "redeemed_coupons": 0
+        },
+        {
+          "id": 184,
+          "status": "PAID",
+          "payable_cents": 1500,
+          "points_used": 0,
+          "user_coupon_id": null,
+          "payments": 1,
+          "payment_cents": "1500",
+          "stock_rows": 1,
+          "stock_delta": -1,
+          "point_rows": 1,
+          "point_delta": "15",
+          "redeemed_coupons": 0
+        },
+        {
+          "id": 185,
+          "status": "PAID",
+          "payable_cents": 1500,
+          "points_used": 0,
+          "user_coupon_id": null,
+          "payments": 1,
+          "payment_cents": "1500",
+          "stock_rows": 1,
+          "stock_delta": -1,
+          "point_rows": 1,
+          "point_delta": "15",
+          "redeemed_coupons": 0
+        },
+        {
+          "id": 186,
+          "status": "PAID",
+          "payable_cents": 1500,
+          "points_used": 0,
+          "user_coupon_id": null,
+          "payments": 1,
+          "payment_cents": "1500",
+          "stock_rows": 1,
+          "stock_delta": -1,
+          "point_rows": 1,
+          "point_delta": "15",
+          "redeemed_coupons": 0
+        },
+        {
+          "id": 187,
+          "status": "PENDING_PAYMENT",
+          "payable_cents": 1500,
+          "points_used": 0,
+          "user_coupon_id": null,
+          "payments": 0,
+          "payment_cents": "0",
+          "stock_rows": 0,
+          "stock_delta": 0,
+          "point_rows": 0,
+          "point_delta": "0",
+          "redeemed_coupons": 0
+        },
+        {
+          "id": 188,
+          "status": "PAID",
+          "payable_cents": 1500,
+          "points_used": 0,
+          "user_coupon_id": null,
+          "payments": 1,
+          "payment_cents": "1500",
+          "stock_rows": 1,
+          "stock_delta": -1,
+          "point_rows": 1,
+          "point_delta": "15",
+          "redeemed_coupons": 0
+        },
+        {
+          "id": 189,
+          "status": "PENDING_PAYMENT",
+          "payable_cents": 1500,
+          "points_used": 0,
+          "user_coupon_id": null,
+          "payments": 0,
+          "payment_cents": "0",
+          "stock_rows": 0,
+          "stock_delta": 0,
+          "point_rows": 0,
+          "point_delta": "0",
+          "redeemed_coupons": 0
+        },
+        {
+          "id": 190,
+          "status": "PENDING_PAYMENT",
+          "payable_cents": 1500,
+          "points_used": 0,
+          "user_coupon_id": null,
+          "payments": 0,
+          "payment_cents": "0",
+          "stock_rows": 0,
+          "stock_delta": 0,
+          "point_rows": 0,
+          "point_delta": "0",
+          "redeemed_coupons": 0
+        },
+        {
+          "id": 191,
+          "status": "PENDING_PAYMENT",
+          "payable_cents": 1500,
+          "points_used": 0,
+          "user_coupon_id": null,
+          "payments": 0,
+          "payment_cents": "0",
+          "stock_rows": 0,
+          "stock_delta": 0,
+          "point_rows": 0,
+          "point_delta": "0",
+          "redeemed_coupons": 0
+        },
+        {
+          "id": 192,
+          "status": "PENDING_PAYMENT",
+          "payable_cents": 1500,
+          "points_used": 0,
+          "user_coupon_id": null,
+          "payments": 0,
+          "payment_cents": "0",
+          "stock_rows": 0,
+          "stock_delta": 0,
+          "point_rows": 0,
+          "point_delta": "0",
+          "redeemed_coupons": 0
+        },
+        {
+          "id": 193,
+          "status": "PAID",
+          "payable_cents": 1500,
+          "points_used": 0,
+          "user_coupon_id": null,
+          "payments": 1,
+          "payment_cents": "1500",
+          "stock_rows": 1,
+          "stock_delta": -1,
+          "point_rows": 1,
+          "point_delta": "15",
+          "redeemed_coupons": 0
+        },
+        {
+          "id": 194,
+          "status": "PENDING_PAYMENT",
+          "payable_cents": 1500,
+          "points_used": 0,
+          "user_coupon_id": null,
+          "payments": 0,
+          "payment_cents": "0",
+          "stock_rows": 0,
+          "stock_delta": 0,
+          "point_rows": 0,
+          "point_delta": "0",
+          "redeemed_coupons": 0
+        },
+        {
+          "id": 195,
+          "status": "PAID",
+          "payable_cents": 1500,
+          "points_used": 0,
+          "user_coupon_id": null,
+          "payments": 1,
+          "payment_cents": "1500",
+          "stock_rows": 1,
+          "stock_delta": -1,
+          "point_rows": 1,
+          "point_delta": "15",
+          "redeemed_coupons": 0
+        },
+        {
+          "id": 196,
+          "status": "PENDING_PAYMENT",
+          "payable_cents": 1500,
+          "points_used": 0,
+          "user_coupon_id": null,
+          "payments": 0,
+          "payment_cents": "0",
+          "stock_rows": 0,
+          "stock_delta": 0,
+          "point_rows": 0,
+          "point_delta": "0",
+          "redeemed_coupons": 0
+        },
+        {
+          "id": 197,
+          "status": "PENDING_PAYMENT",
+          "payable_cents": 1500,
+          "points_used": 0,
+          "user_coupon_id": null,
+          "payments": 0,
+          "payment_cents": "0",
+          "stock_rows": 0,
+          "stock_delta": 0,
+          "point_rows": 0,
+          "point_delta": "0",
+          "redeemed_coupons": 0
+        },
+        {
+          "id": 198,
+          "status": "PENDING_PAYMENT",
+          "payable_cents": 1500,
+          "points_used": 0,
+          "user_coupon_id": null,
+          "payments": 0,
+          "payment_cents": "0",
+          "stock_rows": 0,
+          "stock_delta": 0,
+          "point_rows": 0,
+          "point_delta": "0",
+          "redeemed_coupons": 0
+        },
+        {
+          "id": 199,
+          "status": "PAID",
+          "payable_cents": 1500,
+          "points_used": 0,
+          "user_coupon_id": null,
+          "payments": 1,
+          "payment_cents": "1500",
+          "stock_rows": 1,
+          "stock_delta": -1,
+          "point_rows": 1,
+          "point_delta": "15",
+          "redeemed_coupons": 0
+        },
+        {
+          "id": 200,
+          "status": "PAID",
+          "payable_cents": 1500,
+          "points_used": 0,
+          "user_coupon_id": null,
+          "payments": 1,
+          "payment_cents": "1500",
+          "stock_rows": 1,
+          "stock_delta": -1,
+          "point_rows": 1,
+          "point_delta": "15",
+          "redeemed_coupons": 0
+        }
+      ],
+      "stock_before": 50,
+      "stock_after": 0
+    },
+    "C03": {
+      "before": {
+        "inventory": [
+          {
+            "id": 1,
+            "store_id": 1,
+            "product_id": 1,
+            "available_qty": 1,
+            "updated_at": "2026-11-27 08:22:24.904669+00:00"
+          }
+        ],
+        "wallet": [
+          {
+            "id": 2,
+            "user_id": 4,
+            "points_balance": 15,
+            "updated_at": "2026-11-27 08:22:24.727705+00:00"
+          }
+        ],
+        "coupon": [
+          {
+            "id": 2,
+            "user_id": 4,
+            "template_id": 2,
+            "status": "AVAILABLE",
+            "redeemed_order_id": null,
+            "issued_at": "2026-11-27 08:22:24.935840+00:00",
+            "redeemed_at": null
+          }
+        ],
+        "order": [
+          {
+            "id": 201,
+            "user_id": 4,
+            "store_id": 1,
+            "employee_id": null,
+            "order_source": "ONLINE",
+            "status": "PENDING_PAYMENT",
+            "gross_cents": 1500,
+            "coupon_discount_cents": 1,
+            "points_used": 1,
+            "points_discount_cents": 1,
+            "payable_cents": 1498,
+            "user_coupon_id": 2,
+            "created_at": "2026-11-27 08:22:24.948656+00:00",
+            "paid_at": null
+          }
+        ],
+        "facts": [
+          {
+            "id": 201,
+            "status": "PENDING_PAYMENT",
+            "payable_cents": 1498,
+            "points_used": 1,
+            "user_coupon_id": 2,
+            "payments": 0,
+            "payment_cents": "0",
+            "stock_rows": 0,
+            "stock_delta": 0,
+            "point_rows": 0,
+            "point_delta": "0",
+            "redeemed_coupons": 0
+          }
+        ],
+        "idem": []
+      },
+      "after": {
+        "inventory": [
+          {
+            "id": 1,
+            "store_id": 1,
+            "product_id": 1,
+            "available_qty": 1,
+            "updated_at": "2026-11-27 08:22:24.904669+00:00"
+          }
+        ],
+        "wallet": [
+          {
+            "id": 2,
+            "user_id": 4,
+            "points_balance": 15,
+            "updated_at": "2026-11-27 08:22:24.727705+00:00"
+          }
+        ],
+        "coupon": [
+          {
+            "id": 2,
+            "user_id": 4,
+            "template_id": 2,
+            "status": "AVAILABLE",
+            "redeemed_order_id": null,
+            "issued_at": "2026-11-27 08:22:24.935840+00:00",
+            "redeemed_at": null
+          }
+        ],
+        "order": [
+          {
+            "id": 201,
+            "user_id": 4,
+            "store_id": 1,
+            "employee_id": null,
+            "order_source": "ONLINE",
+            "status": "PENDING_PAYMENT",
+            "gross_cents": 1500,
+            "coupon_discount_cents": 1,
+            "points_used": 1,
+            "points_discount_cents": 1,
+            "payable_cents": 1498,
+            "user_coupon_id": 2,
+            "created_at": "2026-11-27 08:22:24.948656+00:00",
+            "paid_at": null
+          }
+        ],
+        "facts": [
+          {
+            "id": 201,
+            "status": "PENDING_PAYMENT",
+            "payable_cents": 1498,
+            "points_used": 1,
+            "user_coupon_id": 2,
+            "payments": 0,
+            "payment_cents": "0",
+            "stock_rows": 0,
+            "stock_delta": 0,
+            "point_rows": 0,
+            "point_delta": "0",
+            "redeemed_coupons": 0
+          }
+        ],
+        "idem": []
+      },
+      "fault": "deferred payment trigger at commit",
+      "retry": {
+        "inventory": [
+          {
+            "id": 1,
+            "store_id": 1,
+            "product_id": 1,
+            "available_qty": 0,
+            "updated_at": "2026-11-27 08:22:25.325156+00:00"
+          }
+        ],
+        "wallet": [
+          {
+            "id": 2,
+            "user_id": 4,
+            "points_balance": 28,
+            "updated_at": "2026-11-27 08:22:26.078929+00:00"
+          }
+        ],
+        "coupon": [
+          {
+            "id": 2,
+            "user_id": 4,
+            "template_id": 2,
+            "status": "REDEEMED",
+            "redeemed_order_id": 201,
+            "issued_at": "2026-11-27 08:22:24.935840+00:00",
+            "redeemed_at": "2026-11-27 08:22:26.078929+00:00"
+          }
+        ],
+        "order": [
+          {
+            "id": 201,
+            "user_id": 4,
+            "store_id": 1,
+            "employee_id": null,
+            "order_source": "ONLINE",
+            "status": "PAID",
+            "gross_cents": 1500,
+            "coupon_discount_cents": 1,
+            "points_used": 1,
+            "points_discount_cents": 1,
+            "payable_cents": 1498,
+            "user_coupon_id": 2,
+            "created_at": "2026-11-27 08:22:24.948656+00:00",
+            "paid_at": "2026-11-27 08:22:26.078929+00:00"
+          }
+        ],
+        "facts": [
+          {
+            "id": 201,
+            "status": "PAID",
+            "payable_cents": 1498,
+            "points_used": 1,
+            "user_coupon_id": 2,
+            "payments": 1,
+            "payment_cents": "1498",
+            "stock_rows": 1,
+            "stock_delta": -1,
+            "point_rows": 2,
+            "point_delta": "13",
+            "redeemed_coupons": 1
+          }
+        ],
+        "idem": [
+          {
+            "id": 406,
+            "actor_id": 4,
+            "scope": "orders:pay:201",
+            "request_key": "73c4d1193c8a4d299e245b364125c822",
+            "payload_hash": "b89edb27614f8e794e62f375ef263e9d544eed71a251cf5f65bafd0eafe45018",
+            "resource_id": 201,
+            "status": "COMPLETED",
+            "created_at": "2026-11-27 08:22:25.325156+00:00"
+          }
+        ]
+      }
+    },
+    "C04": {
+      "orders": [
+        {
+          "id": 202,
+          "status": "PAID",
+          "payable_cents": 1500,
+          "points_used": 0,
+          "user_coupon_id": null,
+          "payments": 1,
+          "payment_cents": "1500",
+          "stock_rows": 1,
+          "stock_delta": -1,
+          "point_rows": 1,
+          "point_delta": "15",
+          "redeemed_coupons": 0
+        }
+      ],
+      "stock_before": 1,
+      "stock_after": 0
+    },
+    "C05": {
+      "orders": [
+        {
+          "id": 203,
+          "status": "PAID",
+          "payable_cents": 1500,
+          "points_used": 0,
+          "user_coupon_id": null,
+          "payments": 1,
+          "payment_cents": "1500",
+          "stock_rows": 1,
+          "stock_delta": -1,
+          "point_rows": 1,
+          "point_delta": "15",
+          "redeemed_coupons": 0
+        }
+      ],
+      "stock_before": 1,
+      "stock_after": 0
+    },
+    "points_balance_mismatches": [],
+    "index_note": "仅在验收库建立候选索引。小样本可能选择顺序扫描，不代表索引无效或已提速。",
+    "performance_period": {
+      "date_from": "2026-10-29",
+      "date_to": "2026-11-27",
+      "order_rows": 203,
+      "note": "每个实际报表接口前后各10次顺序查询，缓存状态未控制。"
+    }
+  },
+  "connection_samples": [
+    {
+      "time": "2026-11-27T08:22:14.068540+00:00",
+      "connections": 2,
+      "active": 0
+    },
+    {
+      "time": "2026-11-27T08:22:14.182684+00:00",
+      "connections": 2,
+      "active": 0
+    },
+    {
+      "time": "2026-11-27T08:22:14.287499+00:00",
+      "connections": 2,
+      "active": 0
+    },
+    {
+      "time": "2026-11-27T08:22:14.397646+00:00",
+      "connections": 2,
+      "active": 0
+    },
+    {
+      "time": "2026-11-27T08:22:14.504203+00:00",
+      "connections": 2,
+      "active": 0
+    },
+    {
+      "time": "2026-11-27T08:22:14.612432+00:00",
+      "connections": 2,
+      "active": 1
+    },
+    {
+      "time": "2026-11-27T08:22:14.720613+00:00",
+      "connections": 2,
+      "active": 0
+    },
+    {
+      "time": "2026-11-27T08:22:14.831956+00:00",
+      "connections": 2,
+      "active": 0
+    },
+    {
+      "time": "2026-11-27T08:22:14.937882+00:00",
+      "connections": 2,
+      "active": 1
+    },
+    {
+      "time": "2026-11-27T08:22:15.045090+00:00",
+      "connections": 2,
+      "active": 1
+    },
+    {
+      "time": "2026-11-27T08:22:15.153104+00:00",
+      "connections": 2,
+      "active": 0
+    },
+    {
+      "time": "2026-11-27T08:22:15.261088+00:00",
+      "connections": 2,
+      "active": 0
+    },
+    {
+      "time": "2026-11-27T08:22:15.369562+00:00",
+      "connections": 2,
+      "active": 0
+    },
+    {
+      "time": "2026-11-27T08:22:15.476987+00:00",
+      "connections": 2,
+      "active": 0
+    },
+    {
+      "time": "2026-11-27T08:22:15.587369+00:00",
+      "connections": 2,
+      "active": 0
+    },
+    {
+      "time": "2026-11-27T08:22:15.707604+00:00",
+      "connections": 2,
+      "active": 0
+    },
+    {
+      "time": "2026-11-27T08:22:15.814269+00:00",
+      "connections": 2,
+      "active": 1
+    },
+    {
+      "time": "2026-11-27T08:22:15.921936+00:00",
+      "connections": 2,
+      "active": 0
+    },
+    {
+      "time": "2026-11-27T08:22:16.029450+00:00",
+      "connections": 2,
+      "active": 0
+    },
+    {
+      "time": "2026-11-27T08:22:16.137541+00:00",
+      "connections": 2,
+      "active": 0
+    },
+    {
+      "time": "2026-11-27T08:22:16.243044+00:00",
+      "connections": 2,
+      "active": 0
+    },
+    {
+      "time": "2026-11-27T08:22:16.351179+00:00",
+      "connections": 2,
+      "active": 0
+    },
+    {
+      "time": "2026-11-27T08:22:16.458786+00:00",
+      "connections": 2,
+      "active": 0
+    },
+    {
+      "time": "2026-11-27T08:22:16.567158+00:00",
+      "connections": 2,
+      "active": 0
+    },
+    {
+      "time": "2026-11-27T08:22:16.674554+00:00",
+      "connections": 2,
+      "active": 0
+    },
+    {
+      "time": "2026-11-27T08:22:16.780604+00:00",
+      "connections": 2,
+      "active": 0
+    },
+    {
+      "time": "2026-11-27T08:22:16.890281+00:00",
+      "connections": 2,
+      "active": 0
+    },
+    {
+      "time": "2026-11-27T08:22:16.999222+00:00",
+      "connections": 2,
+      "active": 0
+    },
+    {
+      "time": "2026-11-27T08:22:17.105795+00:00",
+      "connections": 2,
+      "active": 0
+    },
+    {
+      "time": "2026-11-27T08:22:17.214765+00:00",
+      "connections": 2,
+      "active": 1
+    },
+    {
+      "time": "2026-11-27T08:22:17.333753+00:00",
+      "connections": 2,
+      "active": 0
+    },
+    {
+      "time": "2026-11-27T08:22:17.438884+00:00",
+      "connections": 2,
+      "active": 0
+    },
+    {
+      "time": "2026-11-27T08:22:17.548759+00:00",
+      "connections": 2,
+      "active": 0
+    },
+    {
+      "time": "2026-11-27T08:22:17.654346+00:00",
+      "connections": 2,
+      "active": 0
+    },
+    {
+      "time": "2026-11-27T08:22:17.763538+00:00",
+      "connections": 2,
+      "active": 1
+    },
+    {
+      "time": "2026-11-27T08:22:17.869912+00:00",
+      "connections": 2,
+      "active": 1
+    },
+    {
+      "time": "2026-11-27T08:22:17.977744+00:00",
+      "connections": 2,
+      "active": 0
+    },
+    {
+      "time": "2026-11-27T08:22:18.085503+00:00",
+      "connections": 2,
+      "active": 0
+    },
+    {
+      "time": "2026-11-27T08:22:18.195425+00:00",
+      "connections": 2,
+      "active": 0
+    },
+    {
+      "time": "2026-11-27T08:22:18.304404+00:00",
+      "connections": 2,
+      "active": 1
+    },
+    {
+      "time": "2026-11-27T08:22:18.412377+00:00",
+      "connections": 2,
+      "active": 0
+    },
+    {
+      "time": "2026-11-27T08:22:18.518998+00:00",
+      "connections": 2,
+      "active": 0
+    },
+    {
+      "time": "2026-11-27T08:22:18.665592+00:00",
+      "connections": 2,
+      "active": 0
+    },
+    {
+      "time": "2026-11-27T08:22:18.784482+00:00",
+      "connections": 13,
+      "active": 1
+    },
+    {
+      "time": "2026-11-27T08:22:18.891388+00:00",
+      "connections": 7,
+      "active": 0
+    },
+    {
+      "time": "2026-11-27T08:22:18.999211+00:00",
+      "connections": 13,
+      "active": 0
+    },
+    {
+      "time": "2026-11-27T08:22:19.105100+00:00",
+      "connections": 7,
+      "active": 1
+    },
+    {
+      "time": "2026-11-27T08:22:19.214250+00:00",
+      "connections": 13,
+      "active": 0
+    },
+    {
+      "time": "2026-11-27T08:22:19.319268+00:00",
+      "connections": 9,
+      "active": 1
+    },
+    {
+      "time": "2026-11-27T08:22:19.426718+00:00",
+      "connections": 11,
+      "active": 0
+    },
+    {
+      "time": "2026-11-27T08:22:19.535323+00:00",
+      "connections": 11,
+      "active": 0
+    },
+    {
+      "time": "2026-11-27T08:22:19.641465+00:00",
+      "connections": 13,
+      "active": 0
+    },
+    {
+      "time": "2026-11-27T08:22:19.750520+00:00",
+      "connections": 11,
+      "active": 0
+    },
+    {
+      "time": "2026-11-27T08:22:19.857684+00:00",
+      "connections": 9,
+      "active": 0
+    },
+    {
+      "time": "2026-11-27T08:22:19.965971+00:00",
+      "connections": 6,
+      "active": 0
+    },
+    {
+      "time": "2026-11-27T08:22:20.072949+00:00",
+      "connections": 6,
+      "active": 0
+    },
+    {
+      "time": "2026-11-27T08:22:20.180132+00:00",
+      "connections": 6,
+      "active": 0
+    },
+    {
+      "time": "2026-11-27T08:22:20.287221+00:00",
+      "connections": 6,
+      "active": 0
+    },
+    {
+      "time": "2026-11-27T08:22:20.395705+00:00",
+      "connections": 6,
+      "active": 0
+    },
+    {
+      "time": "2026-11-27T08:22:20.503825+00:00",
+      "connections": 6,
+      "active": 0
+    },
+    {
+      "time": "2026-11-27T08:22:20.610604+00:00",
+      "connections": 6,
+      "active": 0
+    },
+    {
+      "time": "2026-11-27T08:22:20.718741+00:00",
+      "connections": 6,
+      "active": 0
+    },
+    {
+      "time": "2026-11-27T08:22:20.825749+00:00",
+      "connections": 6,
+      "active": 0
+    },
+    {
+      "time": "2026-11-27T08:22:20.933106+00:00",
+      "connections": 6,
+      "active": 0
+    },
+    {
+      "time": "2026-11-27T08:22:21.039895+00:00",
+      "connections": 6,
+      "active": 0
+    },
+    {
+      "time": "2026-11-27T08:22:21.146904+00:00",
+      "connections": 6,
+      "active": 0
+    },
+    {
+      "time": "2026-11-27T08:22:21.257612+00:00",
+      "connections": 6,
+      "active": 0
+    },
+    {
+      "time": "2026-11-27T08:22:21.363333+00:00",
+      "connections": 6,
+      "active": 0
+    },
+    {
+      "time": "2026-11-27T08:22:21.469831+00:00",
+      "connections": 6,
+      "active": 0
+    },
+    {
+      "time": "2026-11-27T08:22:21.577096+00:00",
+      "connections": 6,
+      "active": 0
+    },
+    {
+      "time": "2026-11-27T08:22:21.684249+00:00",
+      "connections": 6,
+      "active": 0
+    },
+    {
+      "time": "2026-11-27T08:22:21.790808+00:00",
+      "connections": 6,
+      "active": 1
+    },
+    {
+      "time": "2026-11-27T08:22:21.897989+00:00",
+      "connections": 6,
+      "active": 0
+    },
+    {
+      "time": "2026-11-27T08:22:22.005853+00:00",
+      "connections": 6,
+      "active": 0
+    },
+    {
+      "time": "2026-11-27T08:22:22.113932+00:00",
+      "connections": 6,
+      "active": 0
+    },
+    {
+      "time": "2026-11-27T08:22:22.222769+00:00",
+      "connections": 6,
+      "active": 0
+    },
+    {
+      "time": "2026-11-27T08:22:22.330123+00:00",
+      "connections": 6,
+      "active": 0
+    },
+    {
+      "time": "2026-11-27T08:22:22.435338+00:00",
+      "connections": 6,
+      "active": 0
+    },
+    {
+      "time": "2026-11-27T08:22:22.543731+00:00",
+      "connections": 6,
+      "active": 0
+    },
+    {
+      "time": "2026-11-27T08:22:22.653183+00:00",
+      "connections": 6,
+      "active": 0
+    },
+    {
+      "time": "2026-11-27T08:22:22.766170+00:00",
+      "connections": 6,
+      "active": 1
+    },
+    {
+      "time": "2026-11-27T08:22:22.871229+00:00",
+      "connections": 6,
+      "active": 0
+    },
+    {
+      "time": "2026-11-27T08:22:22.978173+00:00",
+      "connections": 6,
+      "active": 0
+    },
+    {
+      "time": "2026-11-27T08:22:23.085494+00:00",
+      "connections": 6,
+      "active": 0
+    },
+    {
+      "time": "2026-11-27T08:22:23.193460+00:00",
+      "connections": 6,
+      "active": 0
+    },
+    {
+      "time": "2026-11-27T08:22:23.301416+00:00",
+      "connections": 6,
+      "active": 0
+    },
+    {
+      "time": "2026-11-27T08:22:23.409486+00:00",
+      "connections": 6,
+      "active": 0
+    },
+    {
+      "time": "2026-11-27T08:22:23.513990+00:00",
+      "connections": 6,
+      "active": 0
+    },
+    {
+      "time": "2026-11-27T08:22:23.621776+00:00",
+      "connections": 6,
+      "active": 0
+    },
+    {
+      "time": "2026-11-27T08:22:23.730666+00:00",
+      "connections": 6,
+      "active": 0
+    },
+    {
+      "time": "2026-11-27T08:22:23.838526+00:00",
+      "connections": 6,
+      "active": 0
+    },
+    {
+      "time": "2026-11-27T08:22:23.945674+00:00",
+      "connections": 6,
+      "active": 0
+    },
+    {
+      "time": "2026-11-27T08:22:24.054021+00:00",
+      "connections": 6,
+      "active": 1
+    },
+    {
+      "time": "2026-11-27T08:22:24.162411+00:00",
+      "connections": 6,
+      "active": 0
+    },
+    {
+      "time": "2026-11-27T08:22:24.270810+00:00",
+      "connections": 13,
+      "active": 0
+    },
+    {
+      "time": "2026-11-27T08:22:24.377064+00:00",
+      "connections": 13,
+      "active": 8
+    },
+    {
+      "time": "2026-11-27T08:22:24.487132+00:00",
+      "connections": 13,
+      "active": 7
+    },
+    {
+      "time": "2026-11-27T08:22:24.591783+00:00",
+      "connections": 13,
+      "active": 8
+    },
+    {
+      "time": "2026-11-27T08:22:24.697883+00:00",
+      "connections": 13,
+      "active": 9
+    },
+    {
+      "time": "2026-11-27T08:22:24.803627+00:00",
+      "connections": 13,
+      "active": 9
+    },
+    {
+      "time": "2026-11-27T08:22:24.911379+00:00",
+      "connections": 13,
+      "active": 9
+    },
+    {
+      "time": "2026-11-27T08:22:25.018069+00:00",
+      "connections": 13,
+      "active": 9
+    },
+    {
+      "time": "2026-11-27T08:22:25.126985+00:00",
+      "connections": 13,
+      "active": 9
+    },
+    {
+      "time": "2026-11-27T08:22:25.233814+00:00",
+      "connections": 8,
+      "active": 1
+    },
+    {
+      "time": "2026-11-27T08:22:25.342930+00:00",
+      "connections": 13,
+      "active": 0
+    },
+    {
+      "time": "2026-11-27T08:22:25.447785+00:00",
+      "connections": 10,
+      "active": 0
+    },
+    {
+      "time": "2026-11-27T08:22:25.554427+00:00",
+      "connections": 11,
+      "active": 0
+    },
+    {
+      "time": "2026-11-27T08:22:25.663621+00:00",
+      "connections": 6,
+      "active": 0
+    },
+    {
+      "time": "2026-11-27T08:22:25.774356+00:00",
+      "connections": 6,
+      "active": 0
+    },
+    {
+      "time": "2026-11-27T08:22:25.880700+00:00",
+      "connections": 6,
+      "active": 0
+    },
+    {
+      "time": "2026-11-27T08:22:25.988403+00:00",
+      "connections": 6,
+      "active": 0
+    },
+    {
+      "time": "2026-11-27T08:22:26.094672+00:00",
+      "connections": 6,
+      "active": 1
+    },
+    {
+      "time": "2026-11-27T08:22:26.203034+00:00",
+      "connections": 6,
+      "active": 0
+    },
+    {
+      "time": "2026-11-27T08:22:26.313176+00:00",
+      "connections": 6,
+      "active": 0
+    },
+    {
+      "time": "2026-11-27T08:22:26.416563+00:00",
+      "connections": 6,
+      "active": 0
+    },
+    {
+      "time": "2026-11-27T08:22:26.524169+00:00",
+      "connections": 11,
+      "active": 5
+    },
+    {
+      "time": "2026-11-27T08:22:26.632954+00:00",
+      "connections": 6,
+      "active": 0
+    },
+    {
+      "time": "2026-11-27T08:22:26.741342+00:00",
+      "connections": 6,
+      "active": 0
+    },
+    {
+      "time": "2026-11-27T08:22:26.848703+00:00",
+      "connections": 6,
+      "active": 0
+    },
+    {
+      "time": "2026-11-27T08:22:26.957352+00:00",
+      "connections": 6,
+      "active": 0
+    },
+    {
+      "time": "2026-11-27T08:22:27.066001+00:00",
+      "connections": 6,
+      "active": 0
+    },
+    {
+      "time": "2026-11-27T08:22:27.172166+00:00",
+      "connections": 6,
+      "active": 0
+    },
+    {
+      "time": "2026-11-27T08:22:27.280548+00:00",
+      "connections": 6,
+      "active": 0
+    }
+  ]
+}
