@@ -1,7 +1,6 @@
 """总部受控 Agent，分析、人工确认与审批事务相互独立。"""
 import json
 from asyncio import Semaphore
-import os
 import time
 from datetime import date, datetime, timedelta
 from contextlib import asynccontextmanager
@@ -23,6 +22,7 @@ from app.api.agent_metrics import RULES, metrics, scope, tool_result
 from app.api.hq_common import CHINA_TZ, require_hq
 from app.api.orders import claim_key, fail, response
 from app.core.database import get_db, engine
+from app.core.llm_config import load_llm_config
 from app.core.security import current_user
 from app.models import User
 
@@ -128,20 +128,41 @@ class Review(BaseModel):
 
 
 async def model_call(messages, final=False):
-    key = os.getenv('DEEPSEEK_API_KEY','').strip()
-    if not key:
-        raise RuntimeError('DEEPSEEK_NOT_CONFIGURED')
-    body = {'model':os.getenv('DEEPSEEK_MODEL','deepseek-flash'),
-            'messages':messages,'tools':SCHEMAS,'tool_choice':'none' if final else 'auto',
-            'thinking':{'type':'disabled'},'max_tokens':1200,'stream':False,'temperature':0}
+    # 所有模型供应商共用同一套 Chat Completions 请求格式。
+    config = load_llm_config()
+    body = {
+        'model': config.model,
+        'messages': messages,
+        'tools': SCHEMAS,
+        'tool_choice': 'none' if final else 'auto',
+        'max_tokens': 1200,
+        'stream': False,
+    }
     if final:
-        body['messages'] = messages + [{'role':'user','content':'本轮只能根据已有工具证据总结，不再请求工具。'}]
-    async with httpx.AsyncClient(timeout=20.0) as client:
-        res = await client.post('https://api.deepseek.com/chat/completions', json=body,
-                                headers={'Authorization':'Bearer '+key})
-        res.raise_for_status()
+        body['messages'] = messages + [{'role': 'user', 'content': '本轮只能根据已有工具证据总结，不再请求工具。'}]
+
+    async with httpx.AsyncClient(timeout=config.timeout) as client:
+        res = await client.post(
+            config.api_url,
+            json=body,
+            headers={
+                'Authorization': 'Bearer ' + config.api_key,
+                'Content-Type': 'application/json',
+            },
+        )
+        try:
+            res.raise_for_status()
+        except httpx.HTTPStatusError as exc:
+            raise RuntimeError(f'LLM_HTTP_{exc.response.status_code}') from exc
         payload = res.json()
-    return payload['choices'][0]['message']
+
+    try:
+        message = payload['choices'][0]['message']
+    except (KeyError, IndexError, TypeError) as exc:
+        raise RuntimeError('LLM_INVALID_RESPONSE') from exc
+    if not isinstance(message, dict):
+        raise RuntimeError('LLM_INVALID_RESPONSE')
+    return message
 
 
 def dispatch_tool(db,s,name,request,actor):
@@ -245,7 +266,13 @@ async def run_analysis(body,request,s,actor_id):
         state=await run_graph(messages,model_call,execute_tool_async)
         answer,error=state['answer'],state['error']
     except Exception as exc:
-        error='DEEPSEEK_NOT_CONFIGURED' if str(exc)=='DEEPSEEK_NOT_CONFIGURED' else 'DEEPSEEK_UNAVAILABLE'
+        code = str(exc)
+        error = code if code in {
+            'LLM_API_KEY_NOT_CONFIGURED',
+            'LLM_MODEL_NOT_CONFIGURED',
+            'LLM_TIMEOUT_INVALID',
+            'LLM_INVALID_RESPONSE',
+        } or code.startswith('LLM_HTTP_') else 'LLM_UNAVAILABLE'
     if error:
         answer='智能总结暂不可用。请使用下方规则分析及现有经营报表；未执行任何库存或价格变更。'
     def finish_run():
