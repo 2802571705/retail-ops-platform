@@ -14,6 +14,7 @@ from app.api.admin_membership import router as admin_membership_router
 from app.api.hq_admin import router as hq_admin_router
 from app.api.hq_trend import router as hq_trend_router
 from app.api.hq_analytics import router as hq_analytics_router
+from app.api.agent import router as agent_router
 from app.api.sales_detail import router as sales_detail_router
 
 
@@ -63,3 +64,4 @@ app.include_router(hq_trend_router)
 app.include_router(hq_analytics_router)
 app.include_router(hq_admin_router)
 app.include_router(sales_detail_router)
+app.include_router(agent_router)

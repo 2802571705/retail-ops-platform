@@ -1,4 +1,4 @@
-"""Deterministic, read-only business tools. No model-generated SQL."""
+"""确定性只读经营工具，不执行模型生成的 SQL。"""
 from datetime import date, datetime, time, timedelta
 from sqlalchemy import text
 from app.api.hq_common import CHINA_TZ, check_store_filter
@@ -66,32 +66,32 @@ SELECT sp.store_id,s.name AS store_name,sp.product_id,p.name AS product_name,p.s
 def price_allowed(r, new):
     old, cost = r['price_cents'], r['estimated_cost_cents']
     return (old > 0 and new > 0 and new != old and cost is not None
-            and abs(new-old)*100 <= old*10 and (new-cost)*100 >= new*20
+            and abs(new-old)*100 <= old*RULES["max_change_percent"] and (new-cost)*100 >= new*RULES["minimum_margin_percent"]
             and r['min_price_cents'] <= new <= r['max_price_cents']
             and (r['last_price_changed_at'] is None or
-                 r['observed_at']-r['last_price_changed_at'] >= timedelta(hours=24)))
+                 r['observed_at']-r['last_price_changed_at'] >= timedelta(hours=RULES["cooldown_hours"])))
 
 
 def metrics(db, s, product_id=None):
     result = []
     for row in db.execute(text(METRICS_SQL), {**params(s), 'product': product_id}).mappings():
         r = dict(row)
-        # SUM(bigint) is Decimal in PostgreSQL; retain integral cents/units.
+        # PostgreSQL 的 SUM(bigint) 返回 Decimal，统一保留整数分及整数件。
         for k in ('sold_qty','previous_qty','gross_cents','consumed_qty'):
             r[k] = int(r[k])
         q, prev, used, stock, days = (r['sold_qty'],r['previous_qty'],r['consumed_qty'],r['available_qty'],s['days'])
         cover = stock*days/used if used else None
         r['cover_days'] = round(cover,2) if cover is not None else None
         r['growth_percent'] = round((q-prev)*100/prev,2) if prev else None
-        r['replenish_qty'] = max(0, (used*7+days-1)//days-stock)
+        r['replenish_qty'] = max(0, (used*RULES["target_cover_days"]+days-1)//days-stock)
         r['direction'] = None; r['suggested_price_cents'] = None; r['reason'] = ''
         old = r['price_cents']; new = old
-        if q >= 5 and prev > 0 and q*100 >= prev*120 and used > 0 and stock*days <= 3*used:
-            new = (old*105+50)//100
-            direction, reason = 'PRICE_INCREASE','单品销量较上期增长至少20%，当前库存覆盖不超过3天'
-        elif prev >= 5 and q*100 <= prev*80 and stock > 0 and (used == 0 or stock*days >= 14*used):
-            new = (old*95+50)//100
-            direction, reason = 'DISCOUNT_PRICE','单品销量较上期下降至少20%，库存覆盖至少14天或期间无消耗'
+        if q >= RULES["minimum_sales_units"] and prev > 0 and q*100 >= prev*(100+RULES["growth_percent"]) and used > 0 and stock*days <= RULES["tight_cover_days"]*used:
+            new = (old*(100+RULES["price_step_percent"])+50)//100
+            direction, reason = 'PRICE_INCREASE',f'单品销量较上期增长至少{RULES["growth_percent"]}%，当前库存覆盖不超过{RULES["tight_cover_days"]}天'
+        elif prev >= RULES["minimum_sales_units"] and q*100 <= prev*(100-RULES["growth_percent"]) and stock > 0 and (used == 0 or stock*days >= RULES["high_cover_days"]*used):
+            new = (old*(100-RULES["price_step_percent"])+50)//100
+            direction, reason = 'DISCOUNT_PRICE',f'单品销量较上期下降至少{RULES["growth_percent"]}%，库存覆盖至少{RULES["high_cover_days"]}天或期间无消耗'
         else:
             direction, reason = None, '未达到销量与库存联合筛选条件'
         if direction and s['date_to'] != (datetime.now(CHINA_TZ).date()-timedelta(days=1)).isoformat():
@@ -99,7 +99,7 @@ def metrics(db, s, product_id=None):
         if direction and price_allowed(r,new):
             r['direction'],r['suggested_price_cents'],r['reason'] = direction,new,reason
         else:
-            r['reason'] = reason if not direction else '符合经营筛选，但成本、价格边界、毛利或24小时冷却条件不满足'
+            r['reason'] = reason if not direction else ('建议价按分取整后与原价相同' if new == old else f'符合经营筛选，但成本、价格边界、毛利或{RULES["cooldown_hours"]}小时冷却条件不满足')
         for k in ('last_price_changed_at','observed_at'):
             r[k] = r[k].isoformat() if r[k] is not None else None
         result.append(r)
@@ -111,16 +111,17 @@ def tool_result(db, s, name):
     if name == 'replenishment':
         rows = sorted((r for r in rows if r['replenish_qty']>0),key=lambda r:-r['replenish_qty'])
     elif name == 'price_candidates':
-        rows = [r for r in rows if r['direction']]
+        # 优先展示有较多近期销量依据的候选；同销量按门店与 SKU 稳定排序。
+        rows = sorted((r for r in rows if r['direction']), key=lambda r: (-max(r['sold_qty'],r['previous_qty']),r['store_id'],r['product_id']))
     elif name == 'sku_sales':
         rows = sorted(rows,key=lambda r:-r['sold_qty'])
     else:
         raise ValueError('unknown tool')
-    # The model receives business aggregates only, never customer records or raw costs.
+    # 模型只接收经营汇总，不传输消费者明细或原始成本。
     keys = ['store_id','store_name','product_id','product_name','sku','sold_qty','previous_qty',
             'gross_cents','consumed_qty','available_qty','cover_days','growth_percent']
     if name == 'replenishment': keys += ['replenish_qty']
     if name == 'price_candidates': keys += ['price_cents','price_version','suggested_price_cents','direction','reason']
     return {'scope':s,'total':len(rows),'items':[{k:r[k] for k in keys} for r in rows[:50]],
             'truncated':len(rows)>50,'rules':RULES,
-            'metric_notes':'单品销量及优惠前金额不含套餐；库存消耗包含套餐组成快照；库存为当前快照；无消耗时覆盖天数不可计算；不推断价格因果效应。'}
+            'metric_notes':'单品销量及优惠前金额不含套餐；库存消耗包含套餐组成快照；库存为当前快照；无消耗时覆盖天数不可计算；上期销量为零时增长率不可计算（null 不是零）；调价候选按相邻两期较高销量降序；不推断价格因果效应。'}

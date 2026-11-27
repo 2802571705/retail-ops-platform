@@ -1,6 +1,9 @@
-"""显式LangGraph工具调用循环；模型和工具执行器是普通的Python函数。"""
+"""显式 LangGraph 工具调用循环；模型异步请求，数据库工具由执行器调度。"""
 from typing import TypedDict
 from langgraph.graph import StateGraph, START, END
+
+MAX_ROUNDS = 4
+MAX_TOOLS = 6
 
 
 class AgentState(TypedDict):
@@ -13,33 +16,31 @@ class AgentState(TypedDict):
     error: str | None
 
 
-def run_graph(messages, model_call, execute_tool):
-    """调用模型并判断下一步,最多调用模型 4 次"""
-    def invoke_model(state: AgentState):
-        if state['rounds'] >= 4:
-            return {'error': 'ROUND_LIMIT', 'requested': []}
-        """调用模型后，取出 tool_calls，并先把 rounds 加一、requested 设为本轮请求。"""
-        msg = model_call(state['messages'])
+async def run_graph(messages, model_call, execute_tool):
+    async def invoke_model(state: AgentState):
+        # 最后一轮或工具预算耗尽时只允许总结，不再执行无法总结的工具。
+        final = state['rounds'] >= MAX_ROUNDS - 1 or state['calls'] >= MAX_TOOLS
+        msg = await model_call(state['messages'], final=final)
         requested = msg.get('tool_calls') or []
         update = {'rounds': state['rounds'] + 1, 'requested': requested}
-        """如果模型直接回答、不再调工具：取 content，转字符串，截断到 6000 字符，再 strip()"""
         if not requested:
             answer = str(msg.get('content') or '')[:6000].strip()
             return {**update, 'answer': answer, 'error': ('NO_TOOL_EVIDENCE' if not state['successful'] else None if answer else 'EMPTY_ANSWER')}
-        """最多执行 6 次工具调用，包括失败的调用"""
-        if state['calls'] + len(requested) > 6:
-            return {**update, 'error': 'TOOL_LIMIT', 'requested': []}
+        if final:
+            return {**update, 'error': 'ROUND_LIMIT' if state['rounds'] >= MAX_ROUNDS - 1 else 'TOOL_LIMIT', 'requested': []}
         return {**update, 'messages': state['messages'] + [{'role': 'assistant', 'content': msg.get('content') or '', 'tool_calls': requested}]}
 
-    """执行工具并回填结果"""
-    def execute_tools(state: AgentState):
-        messages = list(state['messages']); successful = state['successful']
+    async def execute_tools(state: AgentState):
+        # 返回完整的新消息列表，避免原地修改共享状态。超额工具不执行，但补齐协议要求的响应。
+        messages = list(state['messages']); successful = state['successful']; calls = state['calls']
         for call in state['requested']:
-            result, ok = execute_tool(call)
-            successful += int(ok)
+            if calls < MAX_TOOLS:
+                result, ok = await execute_tool(call)
+                successful += int(ok); calls += 1
+            else:
+                result = {'role': 'tool', 'tool_call_id': call['id'], 'content': '{"error":"TOOL_LIMIT","message":"工具预算已耗尽，请根据已有证据总结"}'}
             messages.append(result)
-        return {'messages': messages, 'successful': successful,
-                'calls': state['calls'] + len(state['requested']), 'requested': []}
+        return {'messages': messages, 'successful': successful, 'calls': calls, 'requested': []}
 
     def route(state: AgentState):
         return 'tools' if state['requested'] and not state['error'] else END
@@ -50,6 +51,6 @@ def run_graph(messages, model_call, execute_tool):
     graph.add_edge(START, 'model')
     graph.add_conditional_edges('model', route, {'tools': 'tools', END: END})
     graph.add_edge('tools', 'model')
-    return graph.compile().invoke({'messages': messages, 'rounds': 0, 'calls': 0,
-                                   'successful': 0, 'requested': [], 'answer': None, 'error': None},
-                                  config={'recursion_limit': 12})
+    return await graph.compile().ainvoke({'messages': messages, 'rounds': 0, 'calls': 0,
+                                         'successful': 0, 'requested': [], 'answer': None, 'error': None},
+                                        config={'recursion_limit': 2 * MAX_ROUNDS + 2})
