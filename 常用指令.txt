@@ -14,6 +14,11 @@ npm.cmd run dev
 
 网址：http://127.0.0.1:5173/
 
+上传github：
+git add .
+git commit -m "你的提交说明"
+git push
+
 角色					登录邮箱						密码
 门店管理员	demo.store@example.com			  lzq326160
 总部管理员	demo.hq@example.com			  lzq326160

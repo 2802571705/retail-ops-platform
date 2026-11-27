@@ -1,0 +1,2 @@
+1.优惠券管理页面使用了 HTML 原生日期时间选择器导致日期是yyyy-mm-日的形式。解决方法：修改tsx文件，采用 Ant Design 的 DatePicker替换原有日期选择器
+2.SQLAlchemy 对PostgreSQL 默认使用 QueuePool，多并发会报错。解决方法：使用异步信号量（Semaphore）控制数据库访问并发度，

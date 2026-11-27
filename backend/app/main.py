@@ -14,6 +14,7 @@ from app.api.admin_membership import router as admin_membership_router
 from app.api.hq_admin import router as hq_admin_router
 from app.api.hq_trend import router as hq_trend_router
 from app.api.hq_analytics import router as hq_analytics_router
+from app.api.sales_detail import router as sales_detail_router
 
 
 app = FastAPI(title="RetailOps 连锁饮品门店经营与数据分析系统", version="0.5.0")
@@ -61,3 +62,4 @@ app.include_router(store_context_router)
 app.include_router(hq_trend_router)
 app.include_router(hq_analytics_router)
 app.include_router(hq_admin_router)
+app.include_router(sales_detail_router)
