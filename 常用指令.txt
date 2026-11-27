@@ -1,0 +1,20 @@
+终端 1：FastAPI 后端
+如果后端已经运行，保持原终端即可，不要重复启动。
+
+否则执行：
+cd E:\retail-ops-platform
+docker compose up -d db
+cd backend
+..\.venv\Scripts\python.exe -m uvicorn app.main:app --reload --host 127.0.0.1 --port 8000
+
+终端 2：React 前端
+新建一个 PowerShell 终端：
+cd E:\retail-ops-platform\frontend
+npm.cmd run dev
+
+网址：http://127.0.0.1:5173/
+
+角色					登录邮箱						密码
+门店管理员	demo.store@example.com			  lzq326160
+总部管理员	demo.hq@example.com			  lzq326160
+普通消费者	demo.consumer@example.com		  lzq326160

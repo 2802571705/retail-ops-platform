@@ -1,0 +1,2 @@
+# Windows Python may not ship an IANA timezone database; required for Asia/Shanghai business-day windows.
+tzdata>=2025.2

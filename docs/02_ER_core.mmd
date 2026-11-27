@@ -1,0 +1,22 @@
+erDiagram
+    users ||--o{ orders : places
+    stores ||--o{ orders : receives
+    stores ||--o{ employees : has
+    stores ||--o{ store_products : offers
+    products ||--o{ store_products : priced_in
+    stores ||--o{ bundles : sells
+    bundles ||--o{ bundle_items : includes
+    products ||--o{ bundle_items : component
+    store_products ||--o| inventory : stocked_as
+    inventory ||--o{ inventory_ledger : logged_by
+    orders ||--|{ order_items : contains
+    order_items ||--|{ order_item_components : consumes
+    products ||--o{ order_item_components : stocked_sku
+    orders ||--o| payments : paid_by
+    users ||--o| member_accounts : owns
+    member_accounts ||--o{ points_ledger : changes
+    users ||--o{ user_coupons : holds
+    coupon_templates ||--o{ user_coupons : issues
+    orders o|--o| user_coupons : redeems
+    store_products ||--o{ price_recommendations : reviewed_for
+    price_recommendations o|--o| store_price_changes : approved_as
