@@ -17,6 +17,7 @@ from sqlalchemy.orm import Session
 from app.api.admin_common import audit
 from app.api import hq_analytics
 from app.api.agent_graph import run_graph
+from app.api.mcp_client import open_mcp, discover_tools, call_mcp_tool
 from app.api.agent_metrics import params
 from app.api.agent_metrics import RULES, metrics, scope, tool_result
 from app.api.hq_common import CHINA_TZ, require_hq
@@ -127,13 +128,13 @@ class Review(BaseModel):
     reason: str = Field(min_length=2,max_length=300)
 
 
-async def model_call(messages, final=False):
+async def model_call(messages, final=False, schemas=None):
     # 所有模型供应商共用同一套 Chat Completions 请求格式。
     config = load_llm_config()
     body = {
         'model': config.model,
         'messages': messages,
-        'tools': SCHEMAS,
+        'tools': schemas if schemas is not None else SCHEMAS,
         'tool_choice': 'none' if final else 'auto',
         'max_tokens': 1200,
         'stream': False,
@@ -242,37 +243,45 @@ async def run_analysis(body,request,s,actor_id):
         '缺少数据说明原因，区分单品优惠前金额与实付营收，不声称价格因果效应。'
         '输出简短中文，具体数字及建议价以结构化工具证据为准，不承诺审批或执行。工具不相关或数据不足时明确说明；上期为零时增长率不可计算。范围：'+jsonstr(s)},
         {'role':'user','content':body.question}]
-    def execute_tool(call):
-        started=time.monotonic(); name=call['function']['name']; raw=call['function'].get('arguments','')
-        # 每个工具使用独立短事务，不在模型网络等待期间持有业务连接。
-        with Session(engine) as tool_db:
-            try:
-                args=json.loads(raw)
-                if name not in TOOLS or args!={}: raise ValueError('tool or arguments rejected')
-                tool_actor=tool_db.get(User,actor_id)
-                if not tool_actor or tool_actor.status!='ACTIVE': raise ValueError('inactive operator')
-                require_hq(tool_actor)
-                result=dispatch_tool(tool_db,s,name,request,tool_actor); status='SUCCEEDED'
-            except Exception:
-                tool_db.rollback(); result={'error':'TOOL_REJECTED_OR_FAILED','message':'工具不在白名单、参数无效或查询失败'}; status='FAILED'
-            log_tool(tool_db,run_id,name,{'scope':s,'validated':status=='SUCCEEDED'},result,started,status)
-        return {'role':'tool','tool_call_id':call['id'],'content':jsonstr(result)},status=='SUCCEEDED'
-
-    async def execute_tool_async(call):
-        return await run_in_threadpool(execute_tool,call)
-
     answer=None; error=None
     try:
-        state=await run_graph(messages,model_call,execute_tool_async)
-        answer,error=state['answer'],state['error']
-    except Exception as exc:
-        code = str(exc)
-        error = code if code in {
-            'LLM_API_KEY_NOT_CONFIGURED',
-            'LLM_MODEL_NOT_CONFIGURED',
-            'LLM_TIMEOUT_INVALID',
-            'LLM_INVALID_RESPONSE',
-        } or code.startswith('LLM_HTTP_') else 'LLM_UNAVAILABLE'
+        async with open_mcp(request.headers.get('authorization', '')) as session:
+            schemas = await discover_tools(session, TOOLS)
+
+            async def invoke_model(messages, final=False):
+                return await model_call(messages, final=final, schemas=schemas)
+
+            async def execute_tool_async(call):
+                started=time.monotonic(); name=call['function']['name']
+                raw=call['function'].get('arguments','')
+                try:
+                    if name not in TOOLS or json.loads(raw)!={}:
+                        raise ValueError('工具名称或参数不符合白名单')
+                    # 由 MCP Client 执行远程工具，而不是在 Host 内直接查询。
+                    result=await call_mcp_tool(session,name,s)
+                    status='SUCCEEDED'
+                except Exception:
+                    result={'error':'TOOL_REJECTED_OR_FAILED','message':'工具参数无效或 MCP 经营查询失败'}
+                    status='FAILED'
+
+                def record():
+                    with Session(engine) as tool_db:
+                        log_tool(tool_db,run_id,name,{'scope':s,'validated':status=='SUCCEEDED',
+                                 'transport':'MCP','mcp_request_id':result.get('mcp_request_id')},result,started,status)
+                await run_in_threadpool(record)
+                return {'role':'tool','tool_call_id':call['id'],'content':jsonstr(result)},status=='SUCCEEDED'
+
+            try:
+                state=await run_graph(messages,invoke_model,execute_tool_async)
+                answer,error=state['answer'],state['error']
+            except Exception as exc:
+                code=str(exc)
+                error=code if code in {
+                    'LLM_API_KEY_NOT_CONFIGURED','LLM_MODEL_NOT_CONFIGURED',
+                    'LLM_TIMEOUT_INVALID','LLM_INVALID_RESPONSE',
+                } or code.startswith('LLM_HTTP_') else 'LLM_UNAVAILABLE'
+    except Exception:
+        error='MCP_UNAVAILABLE'
     if error:
         answer='智能总结暂不可用。请使用下方规则分析及现有经营报表；未执行任何库存或价格变更。'
     def finish_run():

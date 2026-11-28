@@ -1,0 +1,3 @@
+# 继承第11阶段依赖，使用官方 MCP Python SDK v1。
+-r requirements-stage11.txt
+mcp>=1.26,<2
